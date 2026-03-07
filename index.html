@@ -71,14 +71,43 @@
         }
 
         .logo {
-            font-family: var(--font-display);
-            font-size: 2.2rem;
-            font-weight: 800;
-            color: var(--text-primary);
             text-decoration: none;
-            letter-spacing: -0.5px;
+            display: flex;
+            align-items: center;
         }
-        .logo span { color: var(--accent); }
+        .monogram {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 4.2rem;
+            height: 4.2rem;
+            font-family: var(--font-display);
+            font-size: 1.6rem;
+            font-weight: 800;
+            letter-spacing: 0.05em;
+            color: var(--text-primary);
+            border: 2px solid var(--accent);
+            border-radius: 4px;
+            transform: rotate(-3deg);
+            transition: 0.3s;
+            position: relative;
+        }
+        .monogram::after {
+            content: '';
+            position: absolute;
+            inset: 3px;
+            border: 1px solid rgba(232, 80, 58, 0.3);
+            border-radius: 2px;
+        }
+        .logo:hover .monogram {
+            background: var(--accent);
+            color: #fff;
+            transform: rotate(0deg);
+            box-shadow: 0 0 20px var(--accent-glow);
+        }
+        .logo:hover .monogram::after {
+            border-color: rgba(255,255,255,0.3);
+        }
 
         .nav-right {
             display: flex;
@@ -785,7 +814,7 @@
 <body>
 <!-- ===== HEADER ===== -->
 <header id="header">
-    <a href="#home" class="logo">Simone<span> </span>Candido</a>
+    <a href="#home" class="logo"><span class="monogram">SC</span></a>
     <div class="nav-right">
         <nav class="navbar" id="navbar">
             <ul>
@@ -1096,10 +1125,26 @@
 // ===== LANGUAGE SYSTEM =====
 let currentLang = 'en';
 const typedStrings = {
-    en: ["IoT & 5G/6G", "Full-Stack Development", "AI/ML Research", "Embedded Systems", "Cloud & DevOps"],
-    it: ["IoT & 5G/6G", "Sviluppo Full-Stack", "Ricerca AI/ML", "Sistemi Embedded", "Cloud & DevOps"]
+    en: ["Computer Engineering", "IoT and 5G/6G Networks", "Full-Stack Development", "Computing and Network Infrastructures", "Technical Writing"],
+    it: ["Ingegneria Informatica", "IoT e Reti 5G/6G", "Sviluppo Full-Stack", "Infrastrutture di Calcolo e Rete", "Scrittura Tecnica"]
 };
 let typedInstance = null;
+
+function initTyped(lang) {
+    try {
+        if (typedInstance) typedInstance.destroy();
+        const el = document.querySelector(".typing-text");
+        if (el) el.textContent = '';
+        typedInstance = new Typed(".typing-text", {
+            strings: typedStrings[lang],
+            loop: true,
+            typeSpeed: 50,
+            backSpeed: 30,
+            backDelay: 1500,
+            html: true,
+        });
+    } catch(e) { console.warn('Typed.js init error:', e); }
+}
 
 function setLang(lang) {
     currentLang = lang;
@@ -1111,6 +1156,14 @@ function setLang(lang) {
     document.querySelectorAll('[data-' + lang + ']').forEach(el => {
         const val = el.getAttribute('data-' + lang);
         if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') return;
+        // Skip the typing-text container to avoid conflicts with Typed.js
+        if (el.closest('.typing-line') && !el.hasAttribute('data-ph-' + lang)) {
+            // Only update the prefix span, not the typed target
+            if (!el.classList.contains('typing-text')) {
+                el.innerHTML = val;
+            }
+            return;
+        }
         el.innerHTML = val;
     });
 
@@ -1120,14 +1173,7 @@ function setLang(lang) {
     });
 
     // Restart typed.js
-    if (typedInstance) typedInstance.destroy();
-    typedInstance = new Typed(".typing-text", {
-        strings: typedStrings[lang],
-        loop: true,
-        typeSpeed: 50,
-        backSpeed: 30,
-        backDelay: 1500,
-    });
+    initTyped(lang);
 }
 
 // ===== SKILLS DATA =====
@@ -1233,30 +1279,32 @@ document.getElementById('contact-form').addEventListener('submit', e => {
 });
 
 // ===== PARTICLES.JS =====
-particlesJS('particles-js', {
-    particles: {
-        number: { value: 60, density: { enable: true, value_area: 900 } },
-        color: { value: "#e8503a" },
-        shape: { type: "circle" },
-        opacity: { value: 0.15, random: true },
-        size: { value: 3, random: true },
-        line_linked: { enable: true, distance: 160, color: "#e8503a", opacity: 0.08, width: 1 },
-        move: { enable: true, speed: 1.5, direction: "none", random: true, out_mode: "out" }
-    },
-    interactivity: {
-        detect_on: "canvas",
-        events: {
-            onhover: { enable: true, mode: "grab" },
-            onclick: { enable: true, mode: "push" },
-            resize: true
+try {
+    particlesJS('particles-js', {
+        particles: {
+            number: { value: 60, density: { enable: true, value_area: 900 } },
+            color: { value: "#e8503a" },
+            shape: { type: "circle" },
+            opacity: { value: 0.15, random: true },
+            size: { value: 3, random: true },
+            line_linked: { enable: true, distance: 160, color: "#e8503a", opacity: 0.08, width: 1 },
+            move: { enable: true, speed: 1.5, direction: "none", random: true, out_mode: "out" }
         },
-        modes: {
-            grab: { distance: 180, line_linked: { opacity: 0.3 } },
-            push: { particles_nb: 3 }
-        }
-    },
-    retina_detect: true
-});
+        interactivity: {
+            detect_on: "canvas",
+            events: {
+                onhover: { enable: true, mode: "grab" },
+                onclick: { enable: true, mode: "push" },
+                resize: true
+            },
+            modes: {
+                grab: { distance: 180, line_linked: { opacity: 0.3 } },
+                push: { particles_nb: 3 }
+            }
+        },
+        retina_detect: true
+    });
+} catch(e) { console.warn('Particles.js init error:', e); }
 
 // ===== INIT =====
 renderSkills();
