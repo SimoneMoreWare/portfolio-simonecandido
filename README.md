@@ -55,6 +55,27 @@ The contact form uses [Web3Forms](https://web3forms.com/) — a free service tha
 
 > The access key is safe to expose in public code — it only allows sending emails **to** the registered address, not reading or accessing anything.
 
+## Blog Articles Integration
+
+The portfolio dynamically fetches and displays the latest articles from [moreware.org](https://www.moreware.org/wp/) using the WordPress REST API, which is exposed by default on any WordPress site.
+
+**How it works:**
+
+1. On page load, a `fetch()` call is made to `https://www.moreware.org/wp/wp-json/wp/v2/posts?per_page=6&_embed`
+2. The `_embed` parameter includes featured images (thumbnails) in the response
+3. The JSON response is parsed and rendered as blog cards with title, date, excerpt, and thumbnail
+4. Dates are formatted according to the currently selected language (EN/IT)
+5. If the API is unreachable, a fallback message is displayed
+
+**Why this approach:**
+
+- No backend or third-party service required — the WordPress REST API supports CORS out of the box
+- No API key needed — the endpoint is public and read-only
+- Articles update automatically whenever new content is published on the blog
+- The `_embed` parameter avoids extra API calls for media attachments
+
+**Filtering by author:** To show only articles from a specific author, find your author ID via `https://www.moreware.org/wp/wp-json/wp/v2/users?search=simone` and append `&author=ID` to the API URL.
+
 ## Quick Start (Local)
 
 Just open `index.html` in a browser. No build step, no dependencies to install.
