@@ -1099,6 +1099,8 @@
     </div>
     <div class="contact-wrapper">
         <form id="contact-form">
+            <input type="hidden" name="access_key" value="3015c7d9-97a1-4ccf-b5ce-e0371f62c225">
+            <input type="checkbox" name="botcheck" style="display:none;">
             <div class="form-row">
                 <div class="field">
                     <input type="text" name="name" placeholder="Name" data-ph-en="Name" data-ph-it="Nome" required>
@@ -1332,10 +1334,28 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
 });
 
 // ===== CONTACT FORM (placeholder) =====
-document.getElementById('contact-form').addEventListener('submit', e => {
+document.getElementById('contact-form').addEventListener('submit', async e => {
     e.preventDefault();
-    alert(currentLang === 'it' ? 'Messaggio inviato! (placeholder)' : 'Message sent! (placeholder)');
-    e.target.reset();
+    const btn = e.target.querySelector('button');
+    btn.disabled = true;
+    btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i>';
+    try {
+        const res = await fetch('https://api.web3forms.com/submit', {
+            method: 'POST',
+            body: new FormData(e.target)
+        });
+        const data = await res.json();
+        if (data.success) {
+            alert(currentLang === 'it' ? 'Messaggio inviato!' : 'Message sent!');
+            e.target.reset();
+        } else {
+            alert(currentLang === 'it' ? 'Errore, riprova.' : 'Error, try again.');
+        }
+    } catch(err) {
+        alert(currentLang === 'it' ? 'Errore di rete.' : 'Network error.');
+    }
+    btn.disabled = false;
+    btn.innerHTML = '<span data-en="Send Message" data-it="Invia Messaggio">' + (currentLang === 'it' ? 'Invia Messaggio' : 'Send Message') + '</span> <i class="fas fa-paper-plane"></i>';
 });
 
 // ===== PARTICLES.JS =====
