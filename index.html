@@ -709,7 +709,7 @@
         .project-card .proj-links a:hover { color: var(--accent); }
 
         /* ===== CONTACT ===== */
-        .contact { background: var(--bg-secondary); min-height: auto; padding-bottom: 4rem; }
+        .contact { background: var(--bg-primary); min-height: auto; padding-bottom: 4rem; }
 
         .contact-wrapper {
             max-width: 800px;
@@ -757,7 +757,7 @@
 
         /* ===== FOOTER ===== */
         footer {
-            background: var(--bg-primary);
+            background: var(--bg-secondary);
             border-top: 1px solid var(--border);
             padding: 4rem 6%;
             text-align: center;
@@ -919,6 +919,104 @@
             line-height: 1.6;
             flex-grow: 1;
         }
+        /* ===== NOTES ===== */
+        .notes { background: var(--bg-secondary); }
+        .notes-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2.5rem;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        .note-card {
+            display: flex;
+            flex-direction: column;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            overflow: hidden;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+        .note-card:hover {
+            transform: translateY(-6px);
+            border-color: var(--accent);
+            box-shadow: 0 16px 40px rgba(0,0,0,0.35);
+        }
+        .note-spine {
+            position: relative;
+            overflow: hidden;
+            background: #0a0a0f;
+            border-bottom: 3px solid var(--accent);
+        }
+        .note-spine img {
+            width: 100%;
+            display: block;
+            transition: 0.4s;
+        }
+        .note-card:hover .note-spine img {
+            transform: scale(1.03);
+        }
+        .note-body {
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+        .note-badge {
+            display: inline-block;
+            font-family: var(--font-display);
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--bg-primary);
+            background: var(--accent-secondary);
+            padding: 0.2rem 0.8rem;
+            border-radius: 4px;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-bottom: 0.8rem;
+            width: fit-content;
+        }
+        .note-card h3 {
+            font-family: var(--font-display);
+            font-size: 1.7rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 0.8rem;
+        }
+        .note-card p {
+            font-size: 1.3rem;
+            color: var(--text-secondary);
+            text-transform: none;
+            line-height: 1.6;
+            flex-grow: 1;
+        }
+        .note-tag {
+            display: block;
+            margin-top: 1rem;
+            font-size: 1.15rem;
+            color: var(--accent);
+            font-weight: 600;
+            text-transform: none;
+        }
+        .note-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 1.2rem;
+            font-family: var(--font-display);
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--text-muted);
+            transition: 0.2s;
+        }
+        .note-card:hover .note-link { color: var(--accent); }
+        @media (max-width: 900px) {
+            .notes-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 480px) {
+            .notes-grid { grid-template-columns: 1fr; }
+        }
     </style>
 </head>
 <body>
@@ -934,6 +1032,7 @@
                 <li><a href="#education" data-en="Education" data-it="Formazione">Education</a></li>
                 <li><a href="#experience" data-en="Experience" data-it="Esperienza">Experience</a></li>
                 <li><a href="#projects" data-en="Projects" data-it="Progetti">Projects</a></li>
+                <li><a href="#notes" data-en="Notes" data-it="Appunti">Notes</a></li>
                 <li><a href="#blog" data-en="Blog" data-it="Blog">Blog</a></li>
                 <li><a href="#contact" data-en="Contact" data-it="Contatti">Contact</a></li>
             </ul>
@@ -1199,6 +1298,133 @@
     </div>
 </section>
 
+<!-- ===== NOTES ===== -->
+<section class="notes" id="notes">
+    <div class="section-header">
+        <p class="label" data-en="Knowledge sharing" data-it="Condivisione della conoscenza">Knowledge sharing</p>
+        <h2 data-en="Course <span>Notes</span>" data-it="<span>Appunti</span> dei Corsi">Course <span>Notes</span></h2>
+        <p style="max-width:750px; margin:1.5rem auto 0; font-size:1.5rem; color:var(--text-secondary); text-transform:none; line-height:1.8;"
+        data-en="I believe that knowledge only truly grows when it is shared. Over the years, I have dedicated hundreds of hours to writing comprehensive course notes entirely in LaTeX — not just to study, but to build something lasting for others. Some of these notes have been reviewed and officially adopted by professors for future courses. Each document reflects a deep commitment to clarity, rigor, and the craft of technical writing."
+        data-it="Credo che la conoscenza cresca davvero solo quando viene condivisa. Nel corso degli anni, ho dedicato centinaia di ore alla stesura di appunti completi interamente in LaTeX — non solo per studiare, ma per costruire qualcosa di duraturo per gli altri. Alcuni di questi appunti sono stati revisionati e ufficialmente adottati dai professori per i corsi futuri. Ogni documento riflette un profondo impegno verso chiarezza, rigore e la cura della scrittura tecnica.">
+            I believe that knowledge only truly grows when it is shared. Over the years, I have dedicated hundreds of hours to writing comprehensive course notes entirely in LaTeX — not just to study, but to build something lasting for others. Some of these notes have been reviewed and officially adopted by professors for future courses. Each document reflects a deep commitment to clarity, rigor, and the craft of technical writing.
+        </p>
+    </div>
+    <div class="notes-grid">
+        <a href="https://drive.google.com/file/d/1wTBoGq9930pCDw-1fKX9M2wmIKS4a8Cy/view?usp=drive_link" target="_blank" class="note-card">
+            <div class="note-spine"><img src="assets/images/notes/telcoai.png" alt="TelcoAI"></div>
+            <div class="note-body">
+                <span class="note-badge">EURECOM</span>
+                <h3>TelcoAI</h3>
+                <p data-en="Autonomous agents powered by LLMs for real-time decision-making on cloud-native 5G networks. O-RAN, AI-RAN, GenAI, Kubernetes, network slicing."
+                   data-it="Agenti autonomi basati su LLM per decisioni in tempo reale su reti 5G cloud-native. O-RAN, AI-RAN, GenAI, Kubernetes, network slicing.">
+                    Autonomous agents powered by LLMs for real-time decision-making on cloud-native 5G networks. O-RAN, AI-RAN, GenAI, Kubernetes, network slicing.
+                </p>
+                <span class="note-tag" data-en="📝 Co-written with professor. Adopted for future courses."
+                      data-it="📝 Scritti insieme al professore. Adottati per i corsi futuri.">📝 Co-written with professor. Adopted for future courses.</span>
+                <span class="note-link"><i class="fas fa-external-link-alt"></i> Open</span>
+            </div>
+        </a>
+        <a href="https://drive.google.com/file/d/1gvh7TXSNI0rvk_TrmZDGobVRikueCaK2/view?usp=drive_link" target="_blank" class="note-card">
+<!-- 2 -->  <div class="note-spine"><img src="assets/images/notes/mobsys.png" alt="MobSys"></div>
+            <div class="note-body">
+                <span class="note-badge">EURECOM</span>
+                <h3>MobSys</h3>
+                <p data-en="Mobile Communication Systems: 5G Radio Access Network, 3GPP architecture, OFDM, MIMO, beamforming, OpenAirInterface labs."
+                   data-it="Sistemi di Comunicazione Mobile: Radio Access Network 5G, architettura 3GPP, OFDM, MIMO, beamforming, laboratori OpenAirInterface.">
+                    Mobile Communication Systems: 5G Radio Access Network, 3GPP architecture, OFDM, MIMO, beamforming, OpenAirInterface labs.
+                </p>
+                <span class="note-tag" data-en="📝 Reviewed and approved by professor. Adopted for future courses."
+                      data-it="📝 Revisionati e approvati dal professore. Adottati per i corsi futuri.">📝 Reviewed and approved by professor. Adopted for future courses.</span>
+                <span class="note-link"><i class="fas fa-external-link-alt"></i> Open</span>
+            </div>
+        </a>
+        <a href="https://drive.google.com/file/d/1qs3RgsfMy5ifTc0DIl5aENpziEVl76nC/view?usp=drive_link" target="_blank" class="note-card">
+<!-- 3 -->  <div class="note-spine"><img src="assets/images/notes/mobicore.png" alt="MobiCore"></div>
+            <div class="note-body">
+                <span class="note-badge">EURECOM</span>
+                <h3>MobiCore</h3>
+                <p data-en="Next-gen Mobile Core Network: 5G/6G Service-Based Architecture, NAS procedures, PFCP, GTP, NWDAF for ML-powered networks."
+                   data-it="Core Network Mobile di nuova generazione: architettura 5G/6G Service-Based, procedure NAS, PFCP, GTP, NWDAF per reti ML.">
+                    Next-gen Mobile Core Network: 5G/6G Service-Based Architecture, NAS procedures, PFCP, GTP, NWDAF for ML-powered networks.
+                </p>
+                <span class="note-link"><i class="fas fa-external-link-alt"></i> Open</span>
+            </div>
+        </a>
+        <a href="https://colab.research.google.com/drive/13A304RUd3cOz8f0jpiuQnN-0jZOTWfwu?usp=sharing" target="_blank" class="note-card">
+<!-- 4 -->  <div class="note-spine"><img src="assets/images/notes/deeplearning.png" alt="Deep Learning"></div>
+            <div class="note-body">
+                <span class="note-badge">EURECOM</span>
+                <h3>Deep Learning</h3>
+                <p data-en="DNNs, CNNs, RNNs, Transformers, autoencoders, energy-based models. Theory, optimization, and hands-on projects with real data."
+                   data-it="DNN, CNN, RNN, Transformer, autoencoder, modelli energy-based. Teoria, ottimizzazione e progetti pratici con dati reali.">
+                    DNNs, CNNs, RNNs, Transformers, autoencoders, energy-based models. Theory, optimization, and hands-on projects with real data.
+                </p>
+                <span class="note-link"><i class="fas fa-external-link-alt"></i> Open</span>
+            </div>
+        </a>
+        <a href="https://drive.google.com/file/d/1kuGZzn5SrEk-7rgvwYSfYAnxL60bNn3d/view?usp=drive_link" target="_blank" class="note-card">
+<!-- 5 -->  <div class="note-spine"><img src="assets/images/notes/appiot.png" alt="AppIoT"></div>
+            <div class="note-body">
+                <span class="note-badge">EURECOM</span>
+                <h3>AppIoT</h3>
+                <p data-en="IoT application protocols: CoAP, MQTT, XMPP, AMQP, WebSocket, 3GPP IoT architectures, oneM2M, LwM2M."
+                   data-it="Protocolli applicativi IoT: CoAP, MQTT, XMPP, AMQP, WebSocket, architetture 3GPP IoT, oneM2M, LwM2M.">
+                    IoT application protocols: CoAP, MQTT, XMPP, AMQP, WebSocket, 3GPP IoT architectures, oneM2M, LwM2M.
+                </p>
+                <span class="note-link"><i class="fas fa-external-link-alt"></i> Open</span>
+            </div>
+        </a>
+        <a href="https://drive.google.com/file/d/1nqUbuKs9du6yOVpAl-ntmEkFizF-dnS-/view?usp=sharing" target="_blank" class="note-card">
+<!-- 6 -->  <div class="note-spine"><img src="assets/images/notes/advancedwireless.png" alt="Adv. Wireless Communications"></div>
+            <div class="note-body">
+                <span class="note-badge">EURECOM</span>
+                <h3 data-en="Adv. Wireless Communications" data-it="Comunicazioni Wireless Avanzate">Adv. Wireless Communications</h3>
+                <p data-en="5G hot topics: Massive MIMO, network cooperation, interference management, device coordination. Guest lectures from Intel, Huawei, ETSI."
+                   data-it="Temi caldi 5G: Massive MIMO, cooperazione di rete, gestione interferenza, coordinamento dispositivi. Lezioni da Intel, Huawei, ETSI.">
+                    5G hot topics: Massive MIMO, network cooperation, interference management, device coordination. Guest lectures from Intel, Huawei, ETSI.
+                </p>
+                <span class="note-link"><i class="fas fa-external-link-alt"></i> Open</span>
+            </div>
+        </a>
+        <a href="https://drive.google.com/file/d/1-DfUhzWeGJVAepJ18lpIOGM22Nv_fpxM/view?usp=drive_link" target="_blank" class="note-card">
+            <div class="note-spine"><img src="assets/images/notes/enterprisenetworks.png" alt="Enterprise Networks"></div>
+            <div class="note-body">
+                <span class="note-badge">PoliTo</span>
+                <h3>Enterprise Networks</h3>
+                <p data-en="LAN technologies, datacenter topologies, storage area networks, virtualization, high performance computing."
+                   data-it="Tecnologie LAN, topologie datacenter, storage area network, virtualizzazione, high performance computing.">
+                    LAN technologies, datacenter topologies, storage area networks, virtualization, high performance computing.
+                </p>
+                <span class="note-link"><i class="fas fa-external-link-alt"></i> Open</span>
+            </div>
+        </a>
+        <a href="https://github.com/SimoneMoreWare/ASD" target="_blank" class="note-card">
+            <div class="note-spine"><img src="assets/images/notes/asd.png" alt="ASD"></div>
+            <div class="note-body">
+                <span class="note-badge">PoliTo</span>
+                <h3 data-en="Algorithms and Data Structures" data-it="Algoritmi e Strutture Dati">Algorithms and Data Structures</h3>
+                <p data-en="Complete course material in C. Used by hundreds of PoliTo students."
+                   data-it="Materiale completo del corso in C. Utilizzato da centinaia di studenti del PoliTo.">
+                    Complete course material in C. Used by hundreds of PoliTo students.
+                </p>
+                <span class="note-link"><i class="fas fa-external-link-alt"></i> Open</span>
+            </div>
+        </a>
+        <a href="https://github.com/SimoneMoreWare/object-oriented-programming-" target="_blank" class="note-card">
+            <div class="note-spine"><img src="assets/images/notes/oop.png" alt="OOP"></div>
+            <div class="note-body">
+                <span class="note-badge">PoliTo</span>
+                <h3>Object-Oriented Programming</h3>
+                <p data-en="OOP course material. Used by hundreds of PoliTo students."
+                   data-it="Materiale del corso OOP. Utilizzato da centinaia di studenti del PoliTo.">
+                    OOP course material. Used by hundreds of PoliTo students.
+                </p>
+                <span class="note-link"><i class="fas fa-external-link-alt"></i> Open</span>
+            </div>
+        </a>
+    </div>
+</section>
+
 <!-- ===== CONTACT ===== -->
 <section class="contact" id="contact">
     <div class="section-header">
@@ -1367,6 +1593,7 @@ const skills = {
         { name: "xApp", icon: "https://img.icons8.com/color/48/module.png" },
         { name: "5G/6G", icon: "https://img.icons8.com/color/48/5g.png" },
         { name: "O-RAN", icon: "https://img.icons8.com/color/48/network.png" },
+        { name: "OpenAirInterface", icon: "https://img.icons8.com/color/48/source-code.png" },
     ],
     "Versioning": [
         { name: "Git", icon: "https://img.icons8.com/color/48/000000/git.png" },
