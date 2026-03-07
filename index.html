@@ -1,0 +1,1284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Simone Pio Candido — Computer Engineer, IoT, Full-Stack Developer">
+    <title>Portfolio | Simone Pio Candido</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Source+Sans+3:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #0a0a0f;
+            --bg-secondary: #111118;
+            --bg-card: #16161f;
+            --accent: #e8503a;
+            --accent-glow: rgba(232, 80, 58, 0.3);
+            --accent-secondary: #f0a030;
+            --text-primary: #e8e6e3;
+            --text-secondary: #9a9a9e;
+            --text-muted: #5c5c66;
+            --border: #2a2a35;
+            --gradient-1: linear-gradient(135deg, #e8503a, #f0a030);
+            --font-display: 'Syne', sans-serif;
+            --font-body: 'Source Sans 3', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            font-size: 62.5%;
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+
+        html::-webkit-scrollbar { width: 6px; }
+        html::-webkit-scrollbar-track { background: var(--bg-primary); }
+        html::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 3px; }
+
+        body {
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            line-height: 1.6;
+        }
+
+        /* ===== HEADER ===== */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 6%;
+            height: 7rem;
+            background: rgba(10, 10, 15, 0.85);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255,255,255,0.04);
+            transition: 0.3s;
+        }
+
+        header.scrolled {
+            box-shadow: 0 4px 30px rgba(0,0,0,0.3);
+        }
+
+        .logo {
+            font-family: var(--font-display);
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: var(--text-primary);
+            text-decoration: none;
+            letter-spacing: -0.5px;
+        }
+        .logo span { color: var(--accent); }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .navbar ul {
+            list-style: none;
+            display: flex;
+            gap: 0.5rem;
+        }
+        .navbar ul li a {
+            font-family: var(--font-display);
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-decoration: none;
+            padding: 0.8rem 1.4rem;
+            border-radius: 8px;
+            transition: 0.25s;
+            letter-spacing: 0.02em;
+        }
+        .navbar ul li a:hover,
+        .navbar ul li a.active {
+            color: var(--text-primary);
+            background: rgba(232, 80, 58, 0.1);
+        }
+
+        .lang-toggle {
+            display: flex;
+            background: var(--bg-card);
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            overflow: hidden;
+        }
+        .lang-toggle button {
+            font-family: var(--font-display);
+            font-size: 1.2rem;
+            font-weight: 700;
+            padding: 0.5rem 1rem;
+            border: none;
+            background: transparent;
+            color: var(--text-muted);
+            cursor: pointer;
+            transition: 0.25s;
+        }
+        .lang-toggle button.active {
+            background: var(--accent);
+            color: #fff;
+        }
+
+        #menu-btn {
+            font-size: 2.4rem;
+            color: var(--text-primary);
+            cursor: pointer;
+            display: none;
+        }
+
+        /* ===== HERO ===== */
+        .home {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 10rem 6% 4rem;
+            overflow: hidden;
+        }
+
+        #particles-js {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            z-index: 0;
+        }
+
+        .home .content {
+            position: relative;
+            z-index: 1;
+            flex: 1 1 55%;
+        }
+
+        .home .greeting {
+            font-family: var(--font-display);
+            font-size: 1.8rem;
+            color: var(--accent);
+            font-weight: 600;
+            margin-bottom: 1rem;
+            letter-spacing: 0.05em;
+        }
+
+        .home h1 {
+            font-family: var(--font-display);
+            font-size: 6.5rem;
+            font-weight: 800;
+            line-height: 1.05;
+            margin-bottom: 1.5rem;
+            letter-spacing: -2px;
+        }
+        .home h1 span {
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .home .typing-line {
+            font-size: 2.2rem;
+            color: var(--text-secondary);
+            margin-bottom: 3rem;
+            min-height: 3.5rem;
+        }
+        .home .typing-line .typing-text {
+            color: var(--accent-secondary);
+            font-weight: 600;
+        }
+
+        .home .cta-group {
+            display: flex;
+            gap: 1.5rem;
+            align-items: center;
+            margin-bottom: 4rem;
+        }
+
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.8rem;
+            padding: 1.4rem 3rem;
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #fff;
+            background: var(--accent);
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: 0.3s;
+            box-shadow: 0 4px 20px var(--accent-glow);
+        }
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px var(--accent-glow);
+        }
+
+        .btn-outline {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.8rem;
+            padding: 1.4rem 3rem;
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            background: transparent;
+            border: 2px solid var(--border);
+            border-radius: 10px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+        .btn-outline:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+            transform: translateY(-2px);
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 1.2rem;
+            list-style: none;
+        }
+        .social-icons a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 4.4rem;
+            height: 4.4rem;
+            border-radius: 12px;
+            font-size: 1.8rem;
+            color: var(--text-secondary);
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            transition: 0.3s;
+            text-decoration: none;
+        }
+        .social-icons a:hover {
+            color: #fff;
+            background: var(--accent);
+            border-color: var(--accent);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px var(--accent-glow);
+        }
+
+        .home .image {
+            flex: 1 1 40%;
+            display: flex;
+            justify-content: center;
+            z-index: 1;
+        }
+        .home .image .img-wrapper {
+            position: relative;
+            width: 35rem;
+            height: 35rem;
+        }
+        .home .image .img-wrapper::before {
+            content: '';
+            position: absolute;
+            top: -8px; left: -8px;
+            right: -8px; bottom: -8px;
+            background: var(--gradient-1);
+            border-radius: 50%;
+            z-index: -1;
+            opacity: 0.6;
+            filter: blur(2px);
+        }
+        .home .image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 4px solid var(--bg-primary);
+        }
+
+        /* ===== SECTIONS COMMON ===== */
+        section { min-height: 100vh; padding: 10rem 6%; }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 6rem;
+        }
+        .section-header .label {
+            font-family: var(--font-display);
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            margin-bottom: 1rem;
+        }
+        .section-header h2 {
+            font-family: var(--font-display);
+            font-size: 4.5rem;
+            font-weight: 800;
+            letter-spacing: -1.5px;
+        }
+        .section-header h2 span {
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* ===== ABOUT ===== */
+        .about { background: var(--bg-secondary); }
+
+        .about .row {
+            display: flex;
+            gap: 6rem;
+            align-items: center;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        .about .row .image {
+            flex: 0 0 30rem;
+        }
+        .about .row .image img {
+            width: 100%;
+            border-radius: 16px;
+            filter: grayscale(30%);
+            transition: 0.4s;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+        }
+        .about .row .image img:hover {
+            filter: grayscale(0%);
+            transform: scale(1.02);
+        }
+        .about .row .content {
+            flex: 1;
+        }
+        .about .row .content h3 {
+            font-family: var(--font-display);
+            font-size: 2.8rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        .about .row .content .tag {
+            font-size: 1.5rem;
+            color: var(--accent);
+            font-weight: 600;
+            margin-bottom: 2rem;
+        }
+        .about .row .content p {
+            font-size: 1.6rem;
+            color: var(--text-secondary);
+            margin-bottom: 2.5rem;
+            text-transform: none;
+            line-height: 1.8;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.2rem;
+            margin-bottom: 3rem;
+        }
+        .info-grid .info-item {
+            font-size: 1.4rem;
+            color: var(--text-secondary);
+            text-transform: none;
+        }
+        .info-grid .info-item strong {
+            color: var(--accent);
+            margin-right: 0.5rem;
+        }
+
+        /* ===== SKILLS ===== */
+        .skills { background: var(--bg-primary); }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(14rem, 1fr));
+            gap: 1.5rem;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        .skill-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1.2rem;
+            padding: 2.5rem 1.5rem;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            transition: 0.3s;
+            cursor: default;
+        }
+        .skill-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent);
+            box-shadow: 0 10px 30px rgba(232, 80, 58, 0.12);
+        }
+        .skill-card img {
+            width: 44px;
+            height: 44px;
+        }
+        .skill-card span {
+            font-family: var(--font-display);
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-align: center;
+        }
+
+        /* ===== EDUCATION ===== */
+        .education { background: var(--bg-secondary); }
+
+        .edu-container {
+            max-width: 900px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+        .edu-card {
+            display: flex;
+            gap: 3rem;
+            padding: 3rem;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            transition: 0.3s;
+            align-items: center;
+        }
+        .edu-card:hover {
+            border-color: var(--accent);
+            transform: translateX(5px);
+        }
+        .edu-card .edu-icon {
+            flex-shrink: 0;
+            width: 6rem;
+            height: 6rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(232, 80, 58, 0.1);
+            border-radius: 14px;
+            font-size: 2.6rem;
+            color: var(--accent);
+        }
+        .edu-card h3 {
+            font-family: var(--font-display);
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        .edu-card .school {
+            font-size: 1.5rem;
+            color: var(--accent-secondary);
+            font-weight: 600;
+        }
+        .edu-card .year {
+            font-size: 1.3rem;
+            color: var(--text-muted);
+            margin-top: 0.5rem;
+        }
+        .edu-card .detail {
+            font-size: 1.4rem;
+            color: var(--text-secondary);
+            margin-top: 0.5rem;
+            text-transform: none;
+        }
+
+        /* ===== EXPERIENCE ===== */
+        .experience { background: var(--bg-primary); }
+
+        .timeline {
+            position: relative;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 30px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--border);
+        }
+
+        .timeline-item {
+            position: relative;
+            padding-left: 8rem;
+            margin-bottom: 4rem;
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 22px;
+            top: 8px;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background: var(--accent);
+            border: 3px solid var(--bg-primary);
+            box-shadow: 0 0 0 3px var(--accent);
+        }
+
+        .timeline-item .tl-date {
+            font-family: var(--font-display);
+            font-size: 1.3rem;
+            color: var(--accent-secondary);
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        .timeline-item h3 {
+            font-family: var(--font-display);
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 0.3rem;
+        }
+        .timeline-item .tl-company {
+            font-size: 1.5rem;
+            color: var(--accent);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        .timeline-item p {
+            font-size: 1.5rem;
+            color: var(--text-secondary);
+            text-transform: none;
+            line-height: 1.7;
+        }
+
+        /* ===== PROJECTS ===== */
+        .projects { background: var(--bg-secondary); }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(32rem, 1fr));
+            gap: 2.5rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .project-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 3rem;
+            transition: 0.3s;
+            display: flex;
+            flex-direction: column;
+        }
+        .project-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+        }
+        .project-card .proj-tag {
+            display: inline-block;
+            font-family: var(--font-display);
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--accent);
+            background: rgba(232, 80, 58, 0.1);
+            padding: 0.4rem 1rem;
+            border-radius: 6px;
+            margin-bottom: 1.5rem;
+            width: fit-content;
+        }
+        .project-card h3 {
+            font-family: var(--font-display);
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        .project-card p {
+            font-size: 1.4rem;
+            color: var(--text-secondary);
+            text-transform: none;
+            line-height: 1.7;
+            flex-grow: 1;
+            margin-bottom: 2rem;
+        }
+        .project-card .tech-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+            margin-bottom: 2rem;
+        }
+        .project-card .tech-tags span {
+            font-size: 1.2rem;
+            padding: 0.3rem 0.9rem;
+            border-radius: 6px;
+            background: rgba(240, 160, 48, 0.1);
+            color: var(--accent-secondary);
+            font-weight: 600;
+        }
+        .project-card .proj-links {
+            display: flex;
+            gap: 1rem;
+        }
+        .project-card .proj-links a {
+            font-size: 1.3rem;
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: 0.2s;
+        }
+        .project-card .proj-links a:hover { color: var(--accent); }
+
+        /* ===== CONTACT ===== */
+        .contact { background: var(--bg-primary); min-height: auto; padding-bottom: 4rem; }
+
+        .contact-wrapper {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 5rem;
+        }
+
+        .contact-wrapper form {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+        .form-row {
+            display: flex;
+            gap: 2rem;
+        }
+        .form-row .field { flex: 1; }
+
+        .field input, .field textarea {
+            width: 100%;
+            padding: 1.4rem 1.8rem;
+            font-family: var(--font-body);
+            font-size: 1.5rem;
+            color: var(--text-primary);
+            background: var(--bg-primary);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            outline: none;
+            transition: 0.3s;
+        }
+        .field input:focus, .field textarea:focus {
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px var(--accent-glow);
+        }
+        .field textarea {
+            min-height: 14rem;
+            resize: vertical;
+        }
+        .field input::placeholder, .field textarea::placeholder {
+            color: var(--text-muted);
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background: var(--bg-secondary);
+            border-top: 1px solid var(--border);
+            padding: 4rem 6%;
+            text-align: center;
+        }
+        footer .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1100px;
+            margin: 0 auto;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+        footer p {
+            font-size: 1.4rem;
+            color: var(--text-muted);
+            text-transform: none;
+        }
+        footer .footer-links {
+            display: flex;
+            gap: 2rem;
+        }
+        footer .footer-links a {
+            font-size: 1.4rem;
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: 0.2s;
+        }
+        footer .footer-links a:hover { color: var(--accent); }
+
+        /* ===== SCROLL TOP ===== */
+        #scroll-top {
+            position: fixed;
+            bottom: 3rem;
+            right: 3rem;
+            width: 4.5rem;
+            height: 4.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--accent);
+            color: #fff;
+            border-radius: 12px;
+            font-size: 2rem;
+            text-decoration: none;
+            opacity: 0;
+            pointer-events: none;
+            transition: 0.3s;
+            box-shadow: 0 4px 15px var(--accent-glow);
+            z-index: 999;
+        }
+        #scroll-top.active {
+            opacity: 1;
+            pointer-events: all;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 900px) {
+            html { font-size: 55%; }
+            .home { flex-direction: column-reverse; text-align: center; padding-top: 12rem; }
+            .home .content { flex: unset; }
+            .home .image .img-wrapper { width: 25rem; height: 25rem; }
+            .home h1 { font-size: 4.5rem; }
+            .home .cta-group { justify-content: center; }
+            .social-icons { justify-content: center; }
+            .about .row { flex-direction: column; text-align: center; gap: 3rem; }
+            .about .row .image { flex: unset; }
+            .about .row .image img { width: 25rem; }
+            .info-grid { justify-items: center; }
+            .form-row { flex-direction: column; }
+            .contact-wrapper { padding: 3rem; }
+        }
+
+        @media (max-width: 768px) {
+            #menu-btn { display: block; }
+            .navbar {
+                position: fixed;
+                top: 7rem;
+                right: -100%;
+                width: 70%;
+                height: calc(100vh - 7rem);
+                background: var(--bg-secondary);
+                border-left: 1px solid var(--border);
+                padding: 2rem;
+                transition: 0.35s;
+            }
+            .navbar.open { right: 0; }
+            .navbar ul { flex-direction: column; gap: 0.5rem; }
+            .navbar ul li a { display: block; font-size: 1.6rem; padding: 1.2rem 1.5rem; }
+            .projects-grid { grid-template-columns: 1fr; }
+        }
+
+        @media (max-width: 480px) {
+            html { font-size: 50%; }
+            section { padding: 8rem 4%; }
+            .home h1 { font-size: 4rem; }
+            .skills-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+    </style>
+</head>
+<body>
+<!-- ===== HEADER ===== -->
+<header id="header">
+    <a href="#home" class="logo">Simone<span> </span>Candido</a>
+    <div class="nav-right">
+        <nav class="navbar" id="navbar">
+            <ul>
+                <li><a class="active" href="#home" data-en="Home" data-it="Home">Home</a></li>
+                <li><a href="#about" data-en="About" data-it="Chi Sono">About</a></li>
+                <li><a href="#skills" data-en="Skills" data-it="Competenze">Skills</a></li>
+                <li><a href="#education" data-en="Education" data-it="Formazione">Education</a></li>
+                <li><a href="#experience" data-en="Experience" data-it="Esperienza">Experience</a></li>
+                <li><a href="#projects" data-en="Projects" data-it="Progetti">Projects</a></li>
+                <li><a href="#contact" data-en="Contact" data-it="Contatti">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="lang-toggle">
+            <button id="lang-en" class="active" onclick="setLang('en')">EN</button>
+            <button id="lang-it" onclick="setLang('it')">IT</button>
+        </div>
+        <i class="fas fa-bars" id="menu-btn"></i>
+    </div>
+</header>
+
+<!-- ===== HERO ===== -->
+<section class="home" id="home">
+    <div id="particles-js"></div>
+    <div class="content">
+        <p class="greeting" data-en="Hello, I'm" data-it="Ciao, sono">Hello, I'm</p>
+        <h1>Simone Pio <span>Candido</span></h1>
+        <div class="typing-line">
+            <span data-en="I work with " data-it="Mi occupo di ">I work with </span><span class="typing-text"></span>
+        </div>
+        <div class="cta-group">
+            <a href="#about" class="btn-primary">
+                <span data-en="About Me" data-it="Chi Sono">About Me</span>
+                <i class="fas fa-arrow-down"></i>
+            </a>
+            <a href="#" class="btn-outline" id="resume-btn">
+                <span data-en="Resume" data-it="CV">Resume</span>
+                <i class="fas fa-file-download"></i>
+            </a>
+        </div>
+        <ul class="social-icons">
+            <li><a href="https://www.linkedin.com/in/simone-candido" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a></li>
+            <li><a href="https://github.com/SimoneMoreWare" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a></li>
+            <li><a href="https://moreware.org/wp/blog/author/simonecandido/" target="_blank" aria-label="Blog"><i class="fas fa-blog"></i></a></li>
+            <li><a href="https://instagram.com/simocandido" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a></li>
+            <li><a href="https://x.com/SimoneCandido02" target="_blank" aria-label="X"><i class="fab fa-x-twitter"></i></a></li>
+            <li><a href="https://facebook.com/simone.candido.370" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a></li>
+            <li><a href="https://youtube.com/@UCFFSDYPL0-Fx6OvJD28GP8A" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a></li>
+        </ul>
+    </div>
+    <div class="image">
+        <div class="img-wrapper">
+            <img src="assets/images/profile.png" alt="Simone Pio Candido">
+        </div>
+    </div>
+</section>
+
+<!-- ===== ABOUT ===== -->
+<section class="about" id="about">
+    <div class="section-header">
+        <p class="label" data-en="Get to know me" data-it="Scopri di più">Get to know me</p>
+        <h2 data-en="About <span>Me</span>" data-it="Chi <span>Sono</span>">About <span>Me</span></h2>
+    </div>
+    <div class="row">
+        <div class="image">
+            <img src="assets/images/profile.png" alt="Simone">
+        </div>
+        <div class="content">
+            <h3 data-en="I'm Simone" data-it="Sono Simone">I'm Simone</h3>
+            <p class="tag" data-en="Computer Engineer | IoT | Full-Stack Developer" data-it="Ingegnere Informatico | IoT | Full-Stack Developer">Computer Engineer | IoT | Full-Stack Developer</p>
+            <p data-en="Computer Engineer pursuing a Double MSc at EURECOM and Politecnico di Torino, with a strong foundation in networking, IoT, and full-stack development. Ranked in the top 5% of students. Hands-on experience in AI/ML research (5G O-RAN), production-grade web applications, and embedded systems. Known for autonomy, technical ownership, and the ability to independently master new technologies." 
+               data-it="Ingegnere Informatico con doppio titolo di laurea magistrale presso EURECOM e Politecnico di Torino, con solide basi in networking, IoT e sviluppo full-stack. Nel top 5% degli studenti. Esperienza pratica in ricerca AI/ML (5G O-RAN), applicazioni web production-grade e sistemi embedded. Riconosciuto per autonomia, ownership tecnica e capacità di padroneggiare nuove tecnologie in modo indipendente.">
+                Computer Engineer pursuing a Double MSc at EURECOM and Politecnico di Torino, with a strong foundation in networking, IoT, and full-stack development. Ranked in the top 5% of students. Hands-on experience in AI/ML research (5G O-RAN), production-grade web applications, and embedded systems. Known for autonomy, technical ownership, and the ability to independently master new technologies.
+            </p>
+            <div class="info-grid">
+                <div class="info-item"><strong data-en="Age:" data-it="Età:">Age:</strong> <span id="age-value"><!-- calculated --></span></div>
+                <div class="info-item"><strong>Email:</strong> candidosimone598@gmail.com</div>
+                <div class="info-item"><strong data-en="Phone:" data-it="Tel:">Phone:</strong> +39 351 528 9244</div>
+                <div class="info-item"><strong data-en="Location:" data-it="Luogo:">Location:</strong> Antibes, France / Turin, Italy</div>
+                <div class="info-item"><strong data-en="Languages:" data-it="Lingue:">Languages:</strong> <span data-en="Italian, English, French" data-it="Italiano, Inglese, Francese">Italian, English, French</span></div>
+                <div class="info-item"><strong data-en="Blog:" data-it="Blog:">Blog:</strong> <a href="https://moreware.org/wp" target="_blank" style="color:var(--accent); text-decoration:none;">moreware.org</a></div>
+            </div>
+            <a href="#" class="btn-primary" id="resume-btn-2">
+                <span data-en="Download Resume" data-it="Scarica CV">Download Resume</span>
+                <i class="fas fa-chevron-right"></i>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- ===== SKILLS ===== -->
+<section class="skills" id="skills">
+    <div class="section-header">
+        <p class="label" data-en="What I work with" data-it="Cosa utilizzo">What I work with</p>
+        <h2 data-en="Skills & <span>Tools</span>" data-it="Competenze & <span>Strumenti</span>">Skills & <span>Tools</span></h2>
+    </div>
+    <div class="skills-grid" id="skillsContainer">
+        <!-- Populated by JS -->
+    </div>
+</section>
+
+<!-- ===== EDUCATION ===== -->
+<section class="education" id="education">
+    <div class="section-header">
+        <p class="label" data-en="My academic path" data-it="Il mio percorso accademico">My academic path</p>
+        <h2 data-en="My <span>Education</span>" data-it="La Mia <span>Formazione</span>">My <span>Education</span></h2>
+    </div>
+    <div class="edu-container">
+        <div class="edu-card">
+            <div class="edu-icon"><i class="fas fa-microchip"></i></div>
+            <div>
+                <h3 data-en="MSc Internet of Things — Double Degree" data-it="MSc Internet of Things — Doppio Titolo">MSc Internet of Things — Double Degree</h3>
+                <p class="school">EURECOM — Sophia Antipolis, France</p>
+                <p class="year" data-en="Sep 2025 – Feb 2027 (Expected)" data-it="Set 2025 – Feb 2027 (Previsto)">Sep 2025 – Feb 2027 (Expected)</p>
+                <p class="detail" data-en="Erasmus+ Double Degree. Specialization in IoT and Wireless Communications (5G/6G)." data-it="Doppio Titolo Erasmus+. Specializzazione in IoT e Comunicazioni Wireless (5G/6G).">Erasmus+ Double Degree. Specialization in IoT and Wireless Communications (5G/6G).</p>
+            </div>
+        </div>
+        <div class="edu-card">
+            <div class="edu-icon"><i class="fas fa-network-wired"></i></div>
+            <div>
+                <h3 data-en="MSc Computer Engineering" data-it="Laurea Magistrale in Ingegneria Informatica">MSc Computer Engineering</h3>
+                <p class="school">Politecnico di Torino — Turin, Italy</p>
+                <p class="year" data-en="Sep 2024 – Feb 2027 (Expected)" data-it="Set 2024 – Feb 2027 (Previsto)">Sep 2024 – Feb 2027 (Expected)</p>
+                <p class="detail" data-en="Computing and Network Infrastructures. Top 5% of students." data-it="Infrastrutture di Calcolo e di Rete. Top 5% degli studenti.">Computing and Network Infrastructures. Top 5% of students.</p>
+            </div>
+        </div>
+        <div class="edu-card">
+            <div class="edu-icon"><i class="fas fa-graduation-cap"></i></div>
+            <div>
+                <h3 data-en="BSc Computer Engineering" data-it="Laurea Triennale in Ingegneria Informatica">BSc Computer Engineering</h3>
+                <p class="school">Politecnico di Torino — Turin, Italy</p>
+                <p class="year">Sep 2021 – Jul 2024</p>
+                <p class="detail" data-en="Final Grade: 108/110" data-it="Voto Finale: 108/110">Final Grade: 108/110</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== EXPERIENCE ===== -->
+<section class="experience" id="experience">
+    <div class="section-header">
+        <p class="label" data-en="Where I've worked" data-it="Dove ho lavorato">Where I've worked</p>
+        <h2 data-en="My <span>Experience</span>" data-it="La Mia <span>Esperienza</span>">My <span>Experience</span></h2>
+    </div>
+    <div class="timeline">
+        <div class="timeline-item">
+            <p class="tl-date" data-en="Aug 2019 – Present" data-it="Ago 2019 – Presente">Aug 2019 – Present</p>
+            <h3 data-en="Technical Editor & Content Manager" data-it="Redattore Tecnico & Content Manager">Technical Editor & Content Manager</h3>
+            <p class="tl-company">Moreware IT</p>
+            <p data-en="6+ years of technical articles on Linux, Arduino, Raspberry Pi, and Embedded Systems. Managed editorial deadlines and industry collaborations." 
+               data-it="6+ anni di articoli tecnici su Linux, Arduino, Raspberry Pi e Sistemi Embedded. Gestione delle scadenze editoriali e collaborazioni con l'industria.">
+                6+ years of technical articles on Linux, Arduino, Raspberry Pi, and Embedded Systems. Managed editorial deadlines and industry collaborations.
+            </p>
+        </div>
+        <div class="timeline-item">
+            <p class="tl-date">Mar 2024 – Jun 2024</p>
+            <h3 data-en="Junior Software Developer — R&D Internship" data-it="Junior Software Developer — Stage R&D">Junior Software Developer — R&D Internship</h3>
+            <p class="tl-company">Panini S.p.A. — Turin</p>
+            <p data-en="Took full ownership of a real-time monitoring dashboard for EverneXt scanners using ASP.NET Core and SignalR. Delivered a production-ready tool praised for code quality and autonomy." 
+               data-it="Responsabilità completa di una dashboard di monitoraggio real-time per scanner EverneXt con ASP.NET Core e SignalR. Consegnato uno strumento production-ready apprezzato per qualità del codice e autonomia.">
+                Took full ownership of a real-time monitoring dashboard for EverneXt scanners using ASP.NET Core and SignalR. Delivered a production-ready tool praised for code quality and autonomy.
+            </p>
+        </div>
+        <div class="timeline-item">
+            <p class="tl-date">Mar 2022 – Jun 2022</p>
+            <h3 data-en="STEM Coach" data-it="Coach STEM">STEM Coach</h3>
+            <p class="tl-company">Bridge The Gaps — Turin</p>
+            <p data-en="Organized IT workshops, hackathons, and educational events for various age groups in electronics, robotics, and computer science." 
+               data-it="Organizzazione di workshop IT, hackathon ed eventi educativi per diverse fasce d'età in elettronica, robotica e informatica.">
+                Organized IT workshops, hackathons, and educational events for various age groups in electronics, robotics, and computer science.
+            </p>
+        </div>
+        <div class="timeline-item">
+            <p class="tl-date">Jul 2021 – Aug 2021</p>
+            <h3 data-en="Robotics Teacher" data-it="Insegnante di Robotica">Robotics Teacher</h3>
+            <p class="tl-company">Ortourbano — Manfredonia</p>
+            <p data-en="Taught children the basics of STEM through hands-on robotics workshops, fostering creativity and group collaboration." 
+               data-it="Insegnamento ai bambini delle basi STEM attraverso laboratori pratici di robotica, promuovendo creatività e collaborazione di gruppo.">
+                Taught children the basics of STEM through hands-on robotics workshops, fostering creativity and group collaboration.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- ===== PROJECTS ===== -->
+<section class="projects" id="projects">
+    <div class="section-header">
+        <p class="label" data-en="What I've built" data-it="Cosa ho realizzato">What I've built</p>
+        <h2 data-en="My <span>Projects</span>" data-it="I Miei <span>Progetti</span>">My <span>Projects</span></h2>
+    </div>
+    <div class="projects-grid">
+        <div class="project-card">
+            <span class="proj-tag" data-en="RESEARCH" data-it="RICERCA">RESEARCH</span>
+            <h3 data-en="AI/ML for UE Positioning in 5G O-RAN" data-it="AI/ML per Posizionamento UE in 5G O-RAN">AI/ML for UE Positioning in 5G O-RAN</h3>
+            <p data-en="Beta-VAE anomaly detection model to mitigate NLOS errors in UWB localization using 5G CSI data. Achieved 88% accuracy; deployed as xApp within FlexRIC/OpenAirInterface." 
+               data-it="Modello di anomaly detection Beta-VAE per mitigare errori NLOS nella localizzazione UWB usando dati CSI 5G. Precisione 88%; deployato come xApp in FlexRIC/OpenAirInterface.">
+                Beta-VAE anomaly detection model to mitigate NLOS errors in UWB localization using 5G CSI data. Achieved 88% accuracy; deployed as xApp within FlexRIC/OpenAirInterface.
+            </p>
+            <div class="tech-tags"><span>PyTorch</span><span>O-RAN</span><span>Python</span><span>xApp</span></div>
+            <div class="proj-links">
+                <!-- PLACEHOLDER: aggiungi link -->
+                <a href="#"><i class="fab fa-github"></i> Code</a>
+            </div>
+        </div>
+        <div class="project-card">
+            <span class="proj-tag">BACKEND</span>
+            <h3>Liqo Telemetry Dashboard</h3>
+            <p data-en="Monitoring system migrating telemetry data from AWS DynamoDB to PostgreSQL using Go. Designed data pipelines and Grafana dashboards with Kubernetes and AWS." 
+               data-it="Sistema di monitoraggio per la migrazione di dati telemetrici da AWS DynamoDB a PostgreSQL in Go. Pipeline dati e dashboard Grafana con Kubernetes e AWS.">
+                Monitoring system migrating telemetry data from AWS DynamoDB to PostgreSQL using Go. Designed data pipelines and Grafana dashboards with Kubernetes and AWS.
+            </p>
+            <div class="tech-tags"><span>Go</span><span>PostgreSQL</span><span>Grafana</span><span>AWS</span><span>K8s</span></div>
+            <div class="proj-links"><a href="#"><i class="fab fa-github"></i> Code</a></div>
+        </div>
+        <div class="project-card">
+            <span class="proj-tag">FULL STACK</span>
+            <h3>Stuff Happens — Card Game</h3>
+            <p data-en="Competitive multiplayer card game with secure cross-origin session management; deployed to Vercel and Render." 
+               data-it="Gioco di carte multiplayer competitivo con gestione sicura delle sessioni cross-origin; deployato su Vercel e Render.">
+                Competitive multiplayer card game with secure cross-origin session management; deployed to Vercel and Render.
+            </p>
+            <div class="tech-tags"><span>React</span><span>Node.js</span><span>SQLite</span></div>
+            <div class="proj-links"><a href="#"><i class="fab fa-github"></i> Code</a></div>
+        </div>
+        <div class="project-card">
+            <span class="proj-tag">OPEN SOURCE</span>
+            <h3>Turin Toret Bot</h3>
+            <p data-en="Telegram bot to locate public drinking fountains in Turin, using geolocation algorithms. Collaboration with 'I Love Toret' civic association." 
+               data-it="Bot Telegram per localizzare le fontanelle pubbliche di Torino, con algoritmi di geolocalizzazione. Collaborazione con l'associazione civica 'I Love Toret'.">
+                Telegram bot to locate public drinking fountains in Turin, using geolocation algorithms. Collaboration with "I Love Toret" civic association.
+            </p>
+            <div class="tech-tags"><span>Python</span><span>Telegram API</span><span>Cloud</span></div>
+            <div class="proj-links"><a href="#"><i class="fab fa-github"></i> Code</a></div>
+        </div>
+        <div class="project-card">
+            <span class="proj-tag" data-en="IoT / HARDWARE" data-it="IoT / HARDWARE">IoT / HARDWARE</span>
+            <h3 data-en="License Plate Gate Opener" data-it="Apri-Cancello con Targa">License Plate Gate Opener</h3>
+            <p data-en="Raspberry Pi-based license plate recognition system to automatically open gates. Part of the 30+ open source repositories." 
+               data-it="Sistema di riconoscimento targhe basato su Raspberry Pi per l'apertura automatica dei cancelli. Parte dei 30+ repository open source.">
+                Raspberry Pi-based license plate recognition system to automatically open gates.
+            </p>
+            <div class="tech-tags"><span>Raspberry Pi</span><span>Python</span><span>OpenCV</span></div>
+            <div class="proj-links"><a href="#"><i class="fab fa-github"></i> Code</a></div>
+        </div>
+        <div class="project-card">
+            <span class="proj-tag" data-en="IoT / HARDWARE" data-it="IoT / HARDWARE">IoT / HARDWARE</span>
+            <h3 data-en="Digital Soccer Scoreboard" data-it="Tabellone Calcio Balilla Digitale">Digital Soccer Scoreboard</h3>
+            <p data-en="Arduino/ESP32-based digital scoreboard for table football. Part of the 30+ open source repositories." 
+               data-it="Tabellone digitale basato su Arduino/ESP32 per calcio balilla. Parte dei 30+ repository open source.">
+                Arduino/ESP32-based digital scoreboard for table football.
+            </p>
+            <div class="tech-tags"><span>Arduino</span><span>ESP32</span><span>C++</span></div>
+            <div class="proj-links"><a href="#"><i class="fab fa-github"></i> Code</a></div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== CONTACT ===== -->
+<section class="contact" id="contact">
+    <div class="section-header">
+        <p class="label" data-en="Let's connect" data-it="Restiamo in contatto">Let's connect</p>
+        <h2 data-en="Get In <span>Touch</span>" data-it="<span>Contattami</span>">Get In <span>Touch</span></h2>
+    </div>
+    <div class="contact-wrapper">
+        <form id="contact-form">
+            <div class="form-row">
+                <div class="field">
+                    <input type="text" name="name" placeholder="Name" data-ph-en="Name" data-ph-it="Nome" required>
+                </div>
+                <div class="field">
+                    <input type="email" name="email" placeholder="Email" required>
+                </div>
+            </div>
+            <div class="field">
+                <input type="text" name="subject" placeholder="Subject" data-ph-en="Subject" data-ph-it="Oggetto">
+            </div>
+            <div class="field">
+                <textarea name="message" placeholder="Your message..." data-ph-en="Your message..." data-ph-it="Il tuo messaggio..." required></textarea>
+            </div>
+            <button type="submit" class="btn-primary" style="align-self:flex-end;">
+                <span data-en="Send Message" data-it="Invia Messaggio">Send Message</span>
+                <i class="fas fa-paper-plane"></i>
+            </button>
+        </form>
+    </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+    <div class="footer-content">
+        <p data-en="© 2025 Simone Pio Candido. All rights reserved." data-it="© 2025 Simone Pio Candido. Tutti i diritti riservati.">© 2025 Simone Pio Candido. All rights reserved.</p>
+        <div class="footer-links">
+            <a href="https://www.linkedin.com/in/simone-candido" target="_blank">LinkedIn</a>
+            <a href="https://github.com/SimoneMoreWare" target="_blank">GitHub</a>
+            <a href="https://moreware.org/wp" target="_blank">Blog</a>
+            <a href="https://instagram.com/simocandido" target="_blank">Instagram</a>
+            <a href="https://youtube.com/@UCFFSDYPL0-Fx6OvJD28GP8A" target="_blank">YouTube</a>
+        </div>
+    </div>
+</footer>
+
+<!-- ===== SCROLL TOP ===== -->
+<a href="#home" id="scroll-top"><i class="fas fa-angle-up"></i></a>
+
+<!-- ===== SCRIPTS ===== -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.5/typed.min.js"></script>
+<script>
+// ===== LANGUAGE SYSTEM =====
+let currentLang = 'en';
+const typedStrings = {
+    en: ["IoT & 5G/6G", "Full-Stack Development", "AI/ML Research", "Embedded Systems", "Cloud & DevOps"],
+    it: ["IoT & 5G/6G", "Sviluppo Full-Stack", "Ricerca AI/ML", "Sistemi Embedded", "Cloud & DevOps"]
+};
+let typedInstance = null;
+
+function setLang(lang) {
+    currentLang = lang;
+    document.getElementById('lang-en').classList.toggle('active', lang === 'en');
+    document.getElementById('lang-it').classList.toggle('active', lang === 'it');
+    document.documentElement.lang = lang;
+
+    // Update all data-en/data-it elements
+    document.querySelectorAll('[data-' + lang + ']').forEach(el => {
+        const val = el.getAttribute('data-' + lang);
+        if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') return;
+        el.innerHTML = val;
+    });
+
+    // Update placeholders
+    document.querySelectorAll('[data-ph-' + lang + ']').forEach(el => {
+        el.placeholder = el.getAttribute('data-ph-' + lang);
+    });
+
+    // Restart typed.js
+    if (typedInstance) typedInstance.destroy();
+    typedInstance = new Typed(".typing-text", {
+        strings: typedStrings[lang],
+        loop: true,
+        typeSpeed: 50,
+        backSpeed: 30,
+        backDelay: 1500,
+    });
+}
+
+// ===== SKILLS DATA =====
+const skills = [
+    { name: "Go", icon: "https://img.icons8.com/color/48/golang.png" },
+    { name: "Python", icon: "https://img.icons8.com/color/48/000000/python--v1.png" },
+    { name: "C/C++", icon: "https://img.icons8.com/color/48/000000/c-plus-plus-logo.png" },
+    { name: "Java", icon: "https://img.icons8.com/color/48/000000/java-coffee-cup-logo--v1.png" },
+    { name: "JavaScript", icon: "https://img.icons8.com/color/48/000000/javascript--v1.png" },
+    { name: "TypeScript", icon: "https://img.icons8.com/color/48/000000/typescript.png" },
+    { name: "Rust", icon: "https://img.icons8.com/external-tal-revivo-shadow-tal-revivo/48/external-rust-is-a-multi-paradigm-system-programming-language-logo-shadow-tal-revivo.png" },
+    { name: "C#", icon: "https://img.icons8.com/color/48/000000/c-sharp-logo.png" },
+    { name: "React", icon: "https://img.icons8.com/color/48/000000/react-native.png" },
+    { name: "Node.js", icon: "https://img.icons8.com/color/48/000000/nodejs.png" },
+    { name: "ASP.NET", icon: "https://img.icons8.com/color/48/000000/asp.png" },
+    { name: "Docker", icon: "https://img.icons8.com/color/48/000000/docker.png" },
+    { name: "Kubernetes", icon: "https://img.icons8.com/color/48/000000/kubernetes.png" },
+    { name: "AWS", icon: "https://img.icons8.com/color/48/000000/amazon-web-services.png" },
+    { name: "Git", icon: "https://img.icons8.com/color/48/000000/git.png" },
+    { name: "PostgreSQL", icon: "https://img.icons8.com/color/48/000000/postgreesql.png" },
+    { name: "PyTorch", icon: "https://img.icons8.com/color/48/pytorch.png" },
+    { name: "Linux", icon: "https://img.icons8.com/color/48/000000/linux--v1.png" },
+    { name: "Arduino", icon: "https://img.icons8.com/fluency/48/arduino.png" },
+    { name: "Raspberry Pi", icon: "https://img.icons8.com/color/48/raspberry-pi.png" },
+    { name: "HTML5", icon: "https://img.icons8.com/color/48/000000/html-5--v1.png" },
+    { name: "CSS3", icon: "https://img.icons8.com/color/48/000000/css3.png" },
+    { name: "Bootstrap", icon: "https://img.icons8.com/color/48/000000/bootstrap.png" },
+    { name: "Tailwind", icon: "https://img.icons8.com/color/48/tailwindcss.png" },
+];
+
+function renderSkills() {
+    const container = document.getElementById('skillsContainer');
+    container.innerHTML = skills.map(s => `
+        <div class="skill-card">
+            <img src="${s.icon}" alt="${s.name}" loading="lazy">
+            <span>${s.name}</span>
+        </div>
+    `).join('');
+}
+
+// ===== AGE CALCULATOR =====
+function calcAge() {
+    const bd = new Date(2002, 10, 5); // Nov 5 (approx from LinkedIn)
+    const diff = Date.now() - bd.getTime();
+    const age = Math.floor(diff / (365.25 * 24 * 60 * 60 * 1000));
+    const el = document.getElementById('age-value');
+    if (el) el.textContent = age;
+}
+
+// ===== NAVBAR =====
+const menuBtn = document.getElementById('menu-btn');
+const navbar = document.getElementById('navbar');
+menuBtn.addEventListener('click', () => {
+    navbar.classList.toggle('open');
+    menuBtn.classList.toggle('fa-bars');
+    menuBtn.classList.toggle('fa-xmark');
+});
+
+// Close mobile menu on link click
+document.querySelectorAll('.navbar a').forEach(link => {
+    link.addEventListener('click', () => {
+        navbar.classList.remove('open');
+        menuBtn.classList.add('fa-bars');
+        menuBtn.classList.remove('fa-xmark');
+    });
+});
+
+// ===== SCROLL HANDLING =====
+window.addEventListener('scroll', () => {
+    const header = document.getElementById('header');
+    const scrollTop = document.getElementById('scroll-top');
+    
+    header.classList.toggle('scrolled', window.scrollY > 50);
+    scrollTop.classList.toggle('active', window.scrollY > 400);
+
+    // Active nav link
+    document.querySelectorAll('section').forEach(sec => {
+        const top = sec.offsetTop - 200;
+        const bottom = top + sec.offsetHeight;
+        const id = sec.getAttribute('id');
+        if (window.scrollY >= top && window.scrollY < bottom) {
+            document.querySelectorAll('.navbar a').forEach(a => a.classList.remove('active'));
+            const active = document.querySelector(`.navbar a[href="#${id}"]`);
+            if (active) active.classList.add('active');
+        }
+    });
+});
+
+// Smooth scroll
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+        e.preventDefault();
+        const target = document.querySelector(a.getAttribute('href'));
+        if (target) target.scrollIntoView({ behavior: 'smooth' });
+    });
+});
+
+// ===== CONTACT FORM (placeholder) =====
+document.getElementById('contact-form').addEventListener('submit', e => {
+    e.preventDefault();
+    alert(currentLang === 'it' ? 'Messaggio inviato! (placeholder)' : 'Message sent! (placeholder)');
+    e.target.reset();
+});
+
+// ===== PARTICLES.JS =====
+particlesJS('particles-js', {
+    particles: {
+        number: { value: 60, density: { enable: true, value_area: 900 } },
+        color: { value: "#e8503a" },
+        shape: { type: "circle" },
+        opacity: { value: 0.15, random: true },
+        size: { value: 3, random: true },
+        line_linked: { enable: true, distance: 160, color: "#e8503a", opacity: 0.08, width: 1 },
+        move: { enable: true, speed: 1.5, direction: "none", random: true, out_mode: "out" }
+    },
+    interactivity: {
+        detect_on: "canvas",
+        events: {
+            onhover: { enable: true, mode: "grab" },
+            onclick: { enable: true, mode: "push" },
+            resize: true
+        },
+        modes: {
+            grab: { distance: 180, line_linked: { opacity: 0.3 } },
+            push: { particles_nb: 3 }
+        }
+    },
+    retina_detect: true
+});
+
+// ===== INIT =====
+renderSkills();
+calcAge();
+setLang('en');
+
+// ===== SCROLL REVEAL (CSS only approach) =====
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
+        }
+    });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.edu-card, .timeline-item, .project-card, .skill-card').forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(30px)';
+    el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+    observer.observe(el);
+});
+</script>
+</body>
+</html>
