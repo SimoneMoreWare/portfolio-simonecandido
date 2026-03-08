@@ -1364,47 +1364,56 @@
     </div>
     <div class="projects-grid">
         <div class="project-card">
-            <span class="proj-tag" data-en="RESEARCH" data-it="RICERCA">RESEARCH</span>
-            <h3 data-en="AI/ML for UE Positioning in 5G O-RAN" data-it="AI/ML per Posizionamento UE in 5G O-RAN">AI/ML for UE Positioning in 5G O-RAN</h3>
-            <p data-en="Beta-VAE anomaly detection model to mitigate NLOS errors in UWB localization using 5G CSI data. Achieved 88% accuracy; deployed as xApp within FlexRIC/OpenAirInterface." 
-               data-it="Modello di anomaly detection Beta-VAE per mitigare errori NLOS nella localizzazione UWB usando dati CSI 5G. Precisione 88%; deployato come xApp in FlexRIC/OpenAirInterface.">
-                Beta-VAE anomaly detection model to mitigate NLOS errors in UWB localization using 5G CSI data. Achieved 88% accuracy; deployed as xApp within FlexRIC/OpenAirInterface.
+            <img src="assets/images/projects/betavae-nlos.png" alt="Beta-VAE NLoS Detection" style="width:100%; border-radius:12px 12px 0 0; margin:-3rem -3rem 2rem -3rem; width:calc(100% + 6rem); object-fit:cover; max-height:22rem;">
+            <span class="proj-tag" data-en="RESEARCH — EURECOM" data-it="RICERCA — EURECOM">RESEARCH — EURECOM</span>
+            <h3 data-en="NLoS Identification in 5G NR Using Variational Autoencoders" data-it="Identificazione NLoS in 5G NR con Autoencoder Variazionali">NLoS Identification in 5G NR Using Variational Autoencoders</h3>
+            <p data-en="Developed a Beta-VAE trained exclusively on LoS Channel Impulse Response data from the GEO-5G testbed at EURECOM. The model detects NLoS signals as out-of-distribution anomalies using the TISSI metric, achieving 88.97% accuracy (balanced) and 97.62% (realistic indoor conditions) — surpassing the 85% UWB benchmark. Deployed as a C++ xApp on the FlexRIC Near-RT RIC via LibTorch, processing 4-antenna CIR measurements in real-time (~59ms latency) with 99.7% NLoS detection on emulator testing."
+            data-it="Sviluppato un Beta-VAE addestrato esclusivamente su dati LoS di Channel Impulse Response dal testbed GEO-5G di EURECOM. Il modello rileva segnali NLoS come anomalie out-of-distribution tramite la metrica TISSI, raggiungendo 88.97% di accuratezza (bilanciato) e 97.62% (condizioni indoor realistiche) — superando il benchmark UWB dell'85%. Deployato come xApp C++ sul Near-RT RIC FlexRIC via LibTorch, elaborando misurazioni CIR a 4 antenne in tempo reale (~59ms di latenza) con 99.7% di rilevamento NLoS nei test con emulatore.">
+                Developed a Beta-VAE trained exclusively on LoS Channel Impulse Response data from the GEO-5G testbed at EURECOM. The model detects NLoS signals as out-of-distribution anomalies using the TISSI metric, achieving 88.97% accuracy (balanced) and 97.62% (realistic indoor conditions) — surpassing the 85% UWB benchmark. Deployed as a C++ xApp on the FlexRIC Near-RT RIC via LibTorch, processing 4-antenna CIR measurements in real-time (~59ms latency) with 99.7% NLoS detection on emulator testing.
             </p>
-            <div class="tech-tags"><span>PyTorch</span><span>O-RAN</span><span>Python</span><span>xApp</span></div>
+            <div class="tech-tags"><span>PyTorch</span><span>Beta-VAE</span><span>O-RAN</span><span>FlexRIC</span><span>LibTorch</span><span>C++</span><span>Python</span><span>xApp</span><span>5G NR</span></div>
+            <p style="font-size:1.2rem; color:var(--text-muted); margin:0; text-transform:none;" data-en="Private repository — EURECOM semester project" data-it="Repository privato — progetto semestrale EURECOM">Private repository — EURECOM semester project</p>
+        </div>
+        <div class="project-card">
+            <img src="assets/images/projects/liqodashboard.png" alt="Liqo Telemetry Dashboard" style="width:100%; border-radius:12px 12px 0 0; margin:-3rem -3rem 2rem -3rem; width:calc(100% + 6rem); object-fit:cover; max-height:22rem;">
+            <span class="proj-tag" data-en="BACKEND — PoliTo" data-it="BACKEND — PoliTo">BACKEND — PoliTo</span>
+            <h3>Liqo Telemetry Dashboard</h3>
+            <p data-en="Built a monitoring system to migrate and analyze telemetry data from Kubernetes clusters. Engineered a Go backend with GORM and GJSON to extract data from AWS DynamoDB, transform it into a normalized relational schema (9 correlated tables), and load it into PostgreSQL via CloudNativePG. Implemented hybrid sync strategies (daily full refresh + incremental sync) handling DynamoDB's 1MB scan limit. Infrastructure orchestrated with Kubernetes/Kind/Docker. Designed advanced Grafana dashboards for cluster performance, geographical distribution, and versioning trends — enabling data-driven decisions for non-technical stakeholders."
+            data-it="Sviluppato un sistema di monitoraggio per migrare e analizzare dati telemetrici da cluster Kubernetes. Backend in Go con GORM e GJSON per estrarre dati da AWS DynamoDB, trasformarli in uno schema relazionale normalizzato (9 tabelle correlate) e caricarli in PostgreSQL via CloudNativePG. Implementate strategie di sincronizzazione ibride (refresh completo giornaliero + sync incrementale) gestendo il limite di 1MB delle scan DynamoDB. Infrastruttura orchestrata con Kubernetes/Kind/Docker. Progettate dashboard Grafana avanzate per performance cluster, distribuzione geografica e trend di versioning — abilitando decisioni data-driven per stakeholder non tecnici.">
+                Built a monitoring system to migrate and analyze telemetry data from Kubernetes clusters. Engineered a Go backend with GORM and GJSON to extract data from AWS DynamoDB, transform it into a normalized relational schema (9 correlated tables), and load it into PostgreSQL via CloudNativePG. Implemented hybrid sync strategies (daily full refresh + incremental sync) handling DynamoDB's 1MB scan limit. Infrastructure orchestrated with Kubernetes/Kind/Docker. Designed advanced Grafana dashboards for cluster performance, geographical distribution, and versioning trends — enabling data-driven decisions for non-technical stakeholders.
+            </p>
+            <div class="tech-tags"><span>Go</span><span>GORM</span><span>PostgreSQL</span><span>AWS DynamoDB</span><span>Grafana</span><span>Kubernetes</span><span>Kind</span><span>Docker</span><span>CloudNativePG</span></div>
+            <p style="font-size:1.2rem; color:var(--text-muted); margin:0; text-transform:none;" data-en="Private repository — dashboard screenshots use fictitious data for privacy" data-it="Repository privato — gli screenshot delle dashboard usano dati fittizi per privacy">Private repository — dashboard screenshots use fictitious data for privacy</p>
+        </div>
+        <div class="project-card">
+            <img src="assets/images/projects/stuffhappens.png" alt="Stuff Happens Card Game" style="width:100%; border-radius:12px 12px 0 0; margin:-3rem -3rem 2rem -3rem; width:calc(100% + 6rem); object-fit:cover; max-height:22rem;">
+            <span class="proj-tag">FULL STACK</span>
+            <h3>Stuff Happens — Card Game</h3>
+            <p data-en="Full-stack card game where players race against a 30-second timer to position cards by Bad Luck Index. Features drag-and-drop gameplay (DnD Kit), secure authentication (Passport.js), and a RESTful API backed by SQLite. Solved cross-origin session management between Vercel frontend and Render backend by implementing secure SameSite cookie attributes and proxy trust. Includes demo mode, persistent history tracking, and server-side timer validation to prevent cheating."
+            data-it="Gioco di carte full-stack dove i giocatori gareggiano contro un timer di 30 secondi per posizionare le carte in base al Bad Luck Index. Gameplay drag-and-drop (DnD Kit), autenticazione sicura (Passport.js) e API RESTful con SQLite. Risolto il problema delle sessioni cross-origin tra frontend Vercel e backend Render implementando attributi cookie SameSite sicuri e proxy trust. Include modalità demo, storico persistente e validazione timer server-side anti-cheat.">
+                Full-stack card game where players race against a 30-second timer to position cards by Bad Luck Index. Features drag-and-drop gameplay (DnD Kit), secure authentication (Passport.js), and a RESTful API backed by SQLite. Solved cross-origin session management between Vercel frontend and Render backend by implementing secure SameSite cookie attributes and proxy trust. Includes demo mode, persistent history tracking, and server-side timer validation to prevent cheating.
+            </p>
+            <div class="tech-tags"><span>React</span><span>Node.js</span><span>SQLite</span><span>Passport.js</span><span>DnD Kit</span><span>Vite</span><span>Vercel</span><span>Render</span></div>
             <div class="proj-links">
-                <!-- PLACEHOLDER: aggiungi link -->
-                <a href="#"><i class="fab fa-github"></i> Code</a>
+                <a href="https://github.com/SimoneMoreWare/Stuff-Happens-WebApp" target="_blank"><i class="fab fa-github"></i> Code</a>
+                <a href="https://stuff-happens-web-app.vercel.app/" target="_blank"><i class="fas fa-external-link-alt"></i> Live Demo</a>
             </div>
         </div>
         <div class="project-card">
-            <span class="proj-tag">BACKEND</span>
-            <h3>Liqo Telemetry Dashboard</h3>
-            <p data-en="Monitoring system migrating telemetry data from AWS DynamoDB to PostgreSQL using Go. Designed data pipelines and Grafana dashboards with Kubernetes and AWS." 
-               data-it="Sistema di monitoraggio per la migrazione di dati telemetrici da AWS DynamoDB a PostgreSQL in Go. Pipeline dati e dashboard Grafana con Kubernetes e AWS.">
-                Monitoring system migrating telemetry data from AWS DynamoDB to PostgreSQL using Go. Designed data pipelines and Grafana dashboards with Kubernetes and AWS.
-            </p>
-            <div class="tech-tags"><span>Go</span><span>PostgreSQL</span><span>Grafana</span><span>AWS</span><span>K8s</span></div>
-            <div class="proj-links"><a href="#"><i class="fab fa-github"></i> Code</a></div>
-        </div>
-        <div class="project-card">
-            <span class="proj-tag">FULL STACK</span>
-            <h3>Stuff Happens — Card Game</h3>
-            <p data-en="Competitive multiplayer card game with secure cross-origin session management; deployed to Vercel and Render." 
-               data-it="Gioco di carte multiplayer competitivo con gestione sicura delle sessioni cross-origin; deployato su Vercel e Render.">
-                Competitive multiplayer card game with secure cross-origin session management; deployed to Vercel and Render.
-            </p>
-            <div class="tech-tags"><span>React</span><span>Node.js</span><span>SQLite</span></div>
-            <div class="proj-links"><a href="#"><i class="fab fa-github"></i> Code</a></div>
-        </div>
-        <div class="project-card">
+            <img src="assets/images/projects/toretbot.jpg" alt="Turin Toret Bot" style="width:100%; border-radius:12px 12px 0 0; margin:-3rem -3rem 2rem -3rem; width:calc(100% + 6rem); object-fit:cover; max-height:22rem;">
             <span class="proj-tag">OPEN SOURCE</span>
             <h3>Turin Toret Bot</h3>
-            <p data-en="Telegram bot to locate public drinking fountains in Turin, using geolocation algorithms. Collaboration with 'I Love Toret' civic association." 
-               data-it="Bot Telegram per localizzare le fontanelle pubbliche di Torino, con algoritmi di geolocalizzazione. Collaborazione con l'associazione civica 'I Love Toret'.">
-                Telegram bot to locate public drinking fountains in Turin, using geolocation algorithms. Collaboration with "I Love Toret" civic association.
+            <p data-en="Telegram bot to find the nearest public drinking fountain in Turin by sending your GPS location. Built with Python using Telegram Bot API and a custom geolocation algorithm that calculates distances from a live database of fountain coordinates fetched from the I Love Toret API. Officially featured on ilovetoret.it and developed in collaboration with the 'I Love Toret' civic association. Hosted on Render.com for 24/7 availability."
+            data-it="Bot Telegram per trovare la fontanella pubblica più vicina a Torino inviando la propria posizione GPS. Sviluppato in Python con Telegram Bot API e un algoritmo di geolocalizzazione personalizzato che calcola le distanze da un database live di coordinate delle fontanelle tramite l'API di I Love Toret. Presente ufficialmente su ilovetoret.it e sviluppato in collaborazione con l'associazione civica 'I Love Toret'. Hostato su Render.com per disponibilità 24/7.">
+                Telegram bot to find the nearest public drinking fountain in Turin by sending your GPS location. Built with Python using Telegram Bot API and a custom geolocation algorithm that calculates distances from a live database of fountain coordinates fetched from the I Love Toret API. Officially featured on ilovetoret.it and developed in collaboration with the "I Love Toret" civic association. Hosted on Render.com for 24/7 availability.
             </p>
-            <div class="tech-tags"><span>Python</span><span>Telegram API</span><span>Cloud</span></div>
-            <div class="proj-links"><a href="#"><i class="fab fa-github"></i> Code</a></div>
+            <div class="tech-tags"><span>Python</span><span>Telegram Bot API</span><span>Geolocation</span><span>Render.com</span><span>REST API</span><span>Open Source</span></div>
+            <div class="proj-links">
+                <a href="https://github.com/SimoneMoreWare/Turin_toret_bot" target="_blank"><i class="fab fa-github"></i> Code</a>
+                <a href="https://t.me/turin_toret_bot" target="_blank"><i class="fab fa-telegram"></i> Try it</a>
+                <a href="https://ilovetoret.it" target="_blank"><i class="fas fa-heart"></i> I Love Toret</a>
+                <a href="https://www.linkedin.com/posts/simone-candido_bot-telegram-turin-activity-6954749121035390976-30ze" target="_blank"><i class="fab fa-linkedin"></i> Post</a>
+            </div>
         </div>
         <div class="project-card">
             <span class="proj-tag" data-en="IoT / HARDWARE" data-it="IoT / HARDWARE">IoT / HARDWARE</span>
