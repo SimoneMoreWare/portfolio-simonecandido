@@ -645,19 +645,22 @@
             color: var(--accent-secondary);
             font-weight: 600;
         }
-        .tl-logo {
-            width: 4rem;
-            height: 4rem;
-            object-fit: contain;
-            position: absolute;
-            right: 0;
-            top: 0;
-            border-radius: 8px;
-            opacity: 0.7;
-            transition: 0.3s;
+        .tl-header {
+            display: flex;
+            align-items: center;
+            gap: 1.2rem;
+            margin-bottom: 0.5rem;
         }
-        .timeline-item { position: relative; }
-        .timeline-item:hover .tl-logo { opacity: 1; }
+        .tl-logo {
+            width: 4.5rem;
+            height: 4.5rem;
+            object-fit: contain;
+            border-radius: 10px;
+            border: 1px solid var(--border);
+            padding: 0.4rem;
+            background: rgba(255,255,255,0.05);
+            flex-shrink: 0;
+        }
 
         /* ===== PROJECTS ===== */
         .projects { background: var(--bg-secondary); }
@@ -1256,10 +1259,14 @@
     </div>
     <div class="timeline">
         <div class="timeline-item">
-            <img src="assets/images/exp/moreware.jpg" alt="Moreware" class="tl-logo">
             <p class="tl-date" data-en="Aug 2019 – Present" data-it="Ago 2019 – Presente">Aug 2019 – Present</p>
-            <h3 data-en="Technical Editor and Content Manager" data-it="Redattore Tecnico e Content Manager">Technical Editor and Content Manager</h3>
-            <p class="tl-company">Moreware IT — Remote</p>
+            <div class="tl-header">
+                <img src="assets/images/exp/moreware.jpg" alt="Moreware" class="tl-logo">
+                <div>
+                    <h3 data-en="Technical Editor and Content Manager" data-it="Redattore Tecnico e Content Manager">Technical Editor and Content Manager</h3>
+                    <p class="tl-company">Moreware IT — Remote</p>
+                </div>
+            </div>
             <p data-en="6+ years authoring technical articles and tutorials on Linux, Arduino, Raspberry Pi, and Embedded Systems. Translating complex technical concepts into accessible content for a broad audience. Managing editorial deadlines and industry collaborations."
             data-it="6+ anni di articoli tecnici e tutorial su Linux, Arduino, Raspberry Pi e Sistemi Embedded. Traduzione di concetti tecnici complessi in contenuti accessibili per un pubblico ampio. Gestione delle scadenze editoriali e collaborazioni con l'industria.">
                 6+ years authoring technical articles and tutorials on Linux, Arduino, Raspberry Pi, and Embedded Systems. Translating complex technical concepts into accessible content for a broad audience. Managing editorial deadlines and industry collaborations.
@@ -1268,10 +1275,14 @@
         </div>
 
         <div class="timeline-item">
-            <img src="assets/images/exp/panini.jpg" alt="Panini" class="tl-logo">
             <p class="tl-date">Mar 2024 – Jun 2024</p>
-            <h3 data-en="Junior Software Developer — R&D Internship" data-it="Junior Software Developer — Stage R&D">Junior Software Developer — R&D Internship</h3>
-            <p class="tl-company">Panini S.p.A. — Turin</p>
+            <div class="tl-header">
+                <img src="assets/images/exp/panini.jpg" alt="Panini" class="tl-logo">
+                <div>
+                    <h3 data-en="Junior Software Developer — R&D Internship" data-it="Junior Software Developer — Stage R&D">Junior Software Developer — R&D Internship</h3>
+                    <p class="tl-company">Panini S.p.A. — Turin</p>
+                </div>
+            </div>
             <p data-en="Developed a dashboard for managing EverneXt scanners using HTML, CSS, JavaScript, tiff.js, SignalR for real-time communication, and Bootstrap for responsive design. Integrated asynchronous features and API calls. Implemented an approach based on ASP.NET Core MVC, Razor Pages, and Azure Functions for the cloud. Testing and validation were conducted, and the code was documented, improving the efficiency and management of scanning processes."
             data-it="Sviluppata una dashboard per la gestione degli scanner EverneXt utilizzando HTML, CSS, JavaScript, tiff.js, SignalR per la comunicazione real-time e Bootstrap per il design responsive. Integrate funzionalità asincrone e chiamate API. Implementato un approccio basato su ASP.NET Core MVC, Razor Pages e Azure Functions per il cloud. Eseguiti testing e validazione, e il codice è stato documentato, migliorando l'efficienza e la gestione dei processi di scansione.">
                 Developed a dashboard for managing EverneXt scanners using HTML, CSS, JavaScript, tiff.js, SignalR for real-time communication, and Bootstrap for responsive design. Integrated asynchronous features and API calls. Implemented an approach based on ASP.NET Core MVC, Razor Pages, and Azure Functions for the cloud. Testing and validation were conducted, and the code was documented, improving the efficiency and management of scanning processes.
@@ -1280,10 +1291,14 @@
         </div>
 
         <div class="timeline-item">
-            <img src="assets/images/exp/bridgethegaps.jpg" alt="Bridge The Gaps" class="tl-logo">
             <p class="tl-date">Mar 2022 – Jun 2022</p>
-            <h3 data-en="STEM Coach" data-it="Coach STEM">STEM Coach</h3>
-            <p class="tl-company">Bridge The Gaps — Turin</p>
+            <div class="tl-header">
+                <img src="assets/images/exp/bridgethegaps.jpg" alt="Bridge The Gaps" class="tl-logo">
+                <div>
+                    <h3 data-en="STEM Coach" data-it="Coach STEM">STEM Coach</h3>
+                    <p class="tl-company">Bridge The Gaps — Turin</p>
+                </div>
+            </div>
             <p data-en="Organized and delivered IT workshops, hackathons, and educational events for various age groups in electronics, robotics, and computer science. Worked within a young, multidisciplinary team of project managers, event coordinators, and IT engineers."
             data-it="Organizzazione e conduzione di workshop IT, hackathon ed eventi educativi per diverse fasce d'età in elettronica, robotica e informatica. Collaborazione in un team giovane e multidisciplinare di project manager, coordinatori eventi e ingegneri IT.">
                 Organized and delivered IT workshops, hackathons, and educational events for various age groups in electronics, robotics, and computer science. Worked within a young, multidisciplinary team of project managers, event coordinators, and IT engineers.
@@ -1292,9 +1307,14 @@
         </div>
 
         <div class="timeline-item">
-            <img src="assets/images/exp/milegoalterritorio.jpg" alt="Mi Lego Al Territorio" class="tl-logo">
             <p class="tl-date">Sep 2021 – Jun 2022</p>
-            <h3 data-en="Embedded Systems Developer" data-it="Sviluppatore Sistemi Embedded">Embedded Systems Developer</h3>            <p class="tl-company">Mi Lego Al Territorio — PoliTo Student Team</p>
+            <div class="tl-header">
+                <img src="assets/images/exp/milegoalterritorio.jpg" alt="Mi Lego Al Territorio" class="tl-logo">
+                <div>
+                    <h3 data-en="Embedded Systems Developer" data-it="Sviluppatore Sistemi Embedded">Embedded Systems Developer</h3>
+                    <p class="tl-company">Mi Lego Al Territorio — PoliTo Student Team</p>
+                </div>
+            </div>
             <p data-en="Built interactive models using LEGO bricks, Arduino, and Raspberry Pi to simulate natural hazards (earthquakes, floods) for awareness campaigns. Integrated a real seismograph into educational demonstrations. Promoted hydrogeological and seismic risk education across universities and institutions."
             data-it="Costruzione di modelli interattivi con mattoncini LEGO, Arduino e Raspberry Pi per simulare eventi naturali (terremoti, alluvioni) in campagne di sensibilizzazione. Integrato un sismografo reale nelle dimostrazioni educative. Promossa l'educazione sul rischio idrogeologico e sismico presso università e istituzioni.">
                 Built interactive models using LEGO bricks, Arduino, and Raspberry Pi to simulate natural hazards (earthquakes, floods) for awareness campaigns. Integrated a real seismograph into educational demonstrations. Promoted hydrogeological and seismic risk education across universities and institutions.
@@ -1303,10 +1323,14 @@
         </div>
 
         <div class="timeline-item">
-            <img src="assets/images/exp/ortourbano.jpg" alt="Ortourbano" class="tl-logo">
             <p class="tl-date">Jul 2021 – Aug 2021</p>
-            <h3 data-en="Robotics Teacher" data-it="Insegnante di Robotica">Robotics Teacher</h3>
-            <p class="tl-company">Ortourbano — Manfredonia</p>
+            <div class="tl-header">
+                <img src="assets/images/exp/ortourbano.jpg" alt="Ortourbano" class="tl-logo">
+                <div>
+                    <h3 data-en="Robotics Teacher" data-it="Insegnante di Robotica">Robotics Teacher</h3>
+                    <p class="tl-company">Ortourbano — Manfredonia</p>
+                </div>
+            </div>
             <p data-en="Designed and led a robotics workshop for children, teaching STEM fundamentals through hands-on projects. Focused on creativity, problem-solving, and collaborative brainstorming — guiding students from idea to working prototype with minimal instructions."
             data-it="Progettazione e conduzione di un laboratorio di robotica per bambini, insegnando i fondamenti STEM attraverso progetti pratici. Focus su creatività, problem-solving e brainstorming collaborativo — guidando gli studenti dall'idea al prototipo funzionante con istruzioni minime.">
                 Designed and led a robotics workshop for children, teaching STEM fundamentals through hands-on projects. Focused on creativity, problem-solving, and collaborative brainstorming — guiding students from idea to working prototype with minimal instructions.
@@ -1315,10 +1339,14 @@
         </div>
 
         <div class="timeline-item">
-            <img src="assets/images/exp/pcassembly.png" alt="PC Assembly" class="tl-logo">
             <p class="tl-date">Jan 2017 – Mar 2020</p>
-            <h3 data-en="PC Assembly and Maintenance — Freelance" data-it="Assemblaggio e Manutenzione PC — Freelance">PC Assembly and Maintenance — Freelance</h3>
-            <p class="tl-company" data-en="Freelance — Manfredonia" data-it="Autonomo — Manfredonia">Freelance — Manfredonia</p>
+            <div class="tl-header">
+                <img src="assets/images/exp/pcassembly.png" alt="PC Assembly" class="tl-logo">
+                <div>
+                    <h3 data-en="PC Assembly and Maintenance — Freelance" data-it="Assemblaggio e Manutenzione PC — Freelance">PC Assembly and Maintenance — Freelance</h3>
+                    <p class="tl-company" data-en="Freelance — Manfredonia" data-it="Autonomo — Manfredonia">Freelance — Manfredonia</p>
+                </div>
+            </div>
             <p data-en="Assembled and repaired desktop and laptop PCs. Created custom builds from scratch tailored to client budgets and needs. Diagnosed hardware and software issues through systematic troubleshooting."
             data-it="Assemblaggio e riparazione di PC desktop e laptop. Creazione di configurazioni personalizzate da zero in base al budget e alle esigenze del cliente. Diagnosi di problemi hardware e software tramite troubleshooting sistematico.">
                 Assembled and repaired desktop and laptop PCs. Created custom builds from scratch tailored to client budgets and needs. Diagnosed hardware and software issues through systematic troubleshooting.
