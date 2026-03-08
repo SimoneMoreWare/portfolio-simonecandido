@@ -709,7 +709,7 @@
         .project-card .proj-links a:hover { color: var(--accent); }
 
         /* ===== CONTACT ===== */
-        .contact { background: var(--bg-primary); min-height: auto; padding-bottom: 4rem; }
+        .contact { background: var(--bg-secondary); min-height: auto; padding-bottom: 4rem; }
 
         .contact-wrapper {
             max-width: 800px;
@@ -757,7 +757,7 @@
 
         /* ===== FOOTER ===== */
         footer {
-            background: var(--bg-secondary);
+            background: var(--bg-primary);
             border-top: 1px solid var(--border);
             padding: 4rem 6%;
             text-align: center;
@@ -1017,6 +1017,64 @@
         @media (max-width: 480px) {
             .notes-grid { grid-template-columns: 1fr; }
         }
+        /* ===== TESTIMONIALS ===== */
+        .testimonials { background: var(--bg-primary); min-height: auto; }
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2.5rem;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        .testimonial-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 3rem;
+            position: relative;
+            transition: 0.3s;
+        }
+        .testimonial-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-4px);
+            box-shadow: 0 12px 35px rgba(0,0,0,0.3);
+        }
+        .testimonial-quote {
+            font-size: 3rem;
+            color: var(--accent);
+            opacity: 0.3;
+            margin-bottom: 1.5rem;
+        }
+        .testimonial-card p {
+            font-size: 1.4rem;
+            color: var(--text-secondary);
+            text-transform: none;
+            line-height: 1.8;
+            font-style: italic;
+            margin-bottom: 2rem;
+        }
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 1.2rem;
+            border-top: 1px solid var(--border);
+            padding-top: 1.5rem;
+        }
+        .testimonial-author h4 {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+        .testimonial-author span {
+            display: block;
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            text-transform: none;
+        }
+        @media (max-width: 768px) {
+            .testimonials-grid { grid-template-columns: 1fr; }
+        }
     </style>
 </head>
 <body>
@@ -1034,6 +1092,7 @@
                 <li><a href="#projects" data-en="Projects" data-it="Progetti">Projects</a></li>
                 <li><a href="#notes" data-en="Notes" data-it="Appunti">Notes</a></li>
                 <li><a href="#blog" data-en="Blog" data-it="Blog">Blog</a></li>
+                <li><a href="#testimonials" data-en="Testimonials" data-it="Referenze">Testimonials</a></li>
                 <li><a href="#contact" data-en="Contact" data-it="Contatti">Contact</a></li>
             </ul>
         </nav>
@@ -1151,14 +1210,14 @@
             </div>
         </div>
         <div class="edu-card">
-            <div class="edu-icon"><img src="assets/images/politologo.png" alt="Politecnico di Torino"></div>
-            <div>
-                <h3 data-en="BSc Computer Engineering" data-it="Laurea Triennale in Ingegneria Informatica">BSc Computer Engineering</h3>
-                <p class="school">Politecnico di Torino — Turin, Italy</p>
-                <p class="year">Sep 2021 – Jul 2024</p>
-                <p class="detail" data-en="Final Grade: 108/110" data-it="Voto Finale: 108/110">Final Grade: 108/110</p>
-            </div>
+    <div class="edu-icon"><img src="assets/images/politologo.png" alt="Politecnico di Torino"></div>
+    <div>
+            <h3 data-en="BSc Computer Engineering" data-it="Laurea Triennale in Ingegneria Informatica">BSc Computer Engineering</h3>
+            <p class="school">Politecnico di Torino — Turin, Italy</p>
+            <p class="year">Sep 2021 – Jul 2024</p>
+            <p class="detail" data-en="Final Grade: 108/110 — Top 11.8% of graduates (Diploma Supplement). 4× cum laude grades including Signal Theory and Automatic Control." data-it="Voto Finale: 108/110 — Top 11.8% dei laureati (Diploma Supplement). 4 lodi tra cui Teoria dei Segnali e Controlli Automatici.">Final Grade: 108/110 — Top 11.8% of graduates (Diploma Supplement). 4× cum laude grades including Signal Theory and Automatic Control.</p>
         </div>
+    </div>
     </div>
 </section>
 
@@ -1424,6 +1483,46 @@
                 <span class="note-link"><i class="fas fa-external-link-alt"></i> Open</span>
             </div>
         </a>
+    </div>
+</section>
+
+<!-- ===== TESTIMONIALS ===== -->
+<section class="testimonials" id="testimonials">
+    <div class="section-header">
+        <p class="label" data-en="What professors say" data-it="Cosa dicono i professori">What professors say</p>
+        <h2 data-en="<span>Testimonials</span>" data-it="<span>Referenze</span>"><span>Testimonials</span></h2>
+    </div>
+    <div class="testimonials-grid">
+        <div class="testimonial-card">
+            <i class="fas fa-quote-left testimonial-quote"></i>
+            <p data-en="Simone demonstrated outstanding academic performance. One of his strengths is his structured and highly organized approach to learning. He is meticulous in mastering every detail of a topic. His ability to manage multiple challenges simultaneously is evident from his completion of four exams in the first available session."
+               data-it="Simone ha dimostrato prestazioni accademiche eccellenti. Uno dei suoi punti di forza è il suo approccio strutturato e altamente organizzato all'apprendimento. È meticoloso nel padroneggiare ogni dettaglio. La sua capacità di gestire più sfide simultaneamente è evidente dal superamento di quattro esami nella prima sessione disponibile.">
+                Simone demonstrated outstanding academic performance. One of his strengths is his structured and highly organized approach to learning. He is meticulous in mastering every detail of a topic. His ability to manage multiple challenges simultaneously is evident from his completion of four exams in the first available session.
+            </p>
+            <div class="testimonial-author">
+                <div>
+                    <h4>Prof. Gabriella Bosco</h4>
+                    <span data-en="Full Professor — Dept. of Electronics and Telecommunications" data-it="Professoressa Ordinaria — Dip. di Elettronica e Telecomunicazioni">Full Professor — Dept. of Electronics and Telecommunications</span>
+                    <span>Politecnico di Torino</span>
+                </div>
+            </div>
+            <a href="assets/pdf/reference-bosco.pdf" target="_blank" class="note-link"><i class="fas fa-file-pdf"></i> <span data-en="Full Reference Letter" data-it="Lettera di Referenza Completa">Full Reference Letter</span></a>
+        </div>
+        <div class="testimonial-card">
+            <i class="fas fa-quote-left testimonial-quote"></i>
+            <p data-en="He is very determined and has gained interests in advanced features of computer science, in particular computer networking, data science, and especially their application in IoT. He obtained above-average performance as a direct result of his hard work and strong focus. He ranks in the top 5% of the students I had in my courses."
+               data-it="È molto determinato e ha sviluppato interesse per le funzionalità avanzate dell'informatica, in particolare reti, data science e soprattutto le loro applicazioni nell'IoT. Ha ottenuto prestazioni sopra la media come risultato diretto del suo duro lavoro e della sua concentrazione. Si posiziona nel top 5% degli studenti che ho avuto nei miei corsi.">
+                He is very determined and has gained interests in advanced features of computer science, in particular computer networking, data science, and especially their application in IoT. He obtained above-average performance as a direct result of his hard work and strong focus. He ranks in the top 5% of the students I had in my courses.
+            </p>
+            <div class="testimonial-author">
+                <div>
+                    <h4>Prof. Guido Marchetto, PhD</h4>
+                    <span data-en="Associate Professor — Dept. of Control and Computer Engineering" data-it="Professore Associato — Dip. di Automatica e Informatica">Associate Professor — Dept. of Control and Computer Engineering</span>
+                    <span>Politecnico di Torino</span>
+                </div>
+            </div>
+            <a href="assets/pdf/reference-marchetto.pdf" target="_blank" class="note-link"><i class="fas fa-file-pdf"></i> <span data-en="Full Reference Letter" data-it="Lettera di Referenza Completa">Full Reference Letter</span></a>
+        </div>
     </div>
 </section>
 
