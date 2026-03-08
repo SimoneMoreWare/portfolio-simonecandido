@@ -49,6 +49,31 @@
             line-height: 1.6;
         }
 
+        html.light {
+            --bg-primary: #f5f5f7;
+            --bg-secondary: #ffffff;
+            --bg-card: #f0f0f3;
+            --accent: #e8503a;
+            --accent-glow: rgba(232, 80, 58, 0.2);
+            --accent-secondary: #c47a20;
+            --text-primary: #1a1a2e;
+            --text-secondary: #4a4a5a;
+            --text-muted: #8a8a9a;
+            --border: #d8d8e0;
+        }
+        html.light header {
+            background: rgba(245, 245, 247, 0.9);
+        }
+        html.light .navbar.open {
+            background: var(--bg-secondary);
+        }
+        html.light .social-icons a {
+            background: #fff;
+        }
+        html.light .skill-card {
+            background: rgba(0,0,0,0.03);
+        }
+
         /* ===== HEADER ===== */
         header {
             position: fixed;
@@ -1136,6 +1161,9 @@
                 <li><a href="#contact" data-en="Contact" data-it="Contatti">Contact</a></li>
             </ul>
         </nav>
+        <button id="theme-toggle" onclick="toggleTheme()" style="background:none; border:1px solid var(--border); border-radius:8px; padding:0.5rem 0.8rem; cursor:pointer; font-size:1.4rem; color:var(--text-primary); transition:0.25s;">
+            <i class="fas fa-moon"></i>
+        </button>
         <div class="lang-toggle">
             <button id="lang-en" class="active" onclick="setLang('en')">EN</button>
             <button id="lang-it" onclick="setLang('it')">IT</button>
@@ -2283,6 +2311,25 @@ function toggleMoreProjects() {
         btn.innerHTML = '<span data-en="Show More Projects" data-it="Mostra Altri Progetti">' + (currentLang === 'it' ? 'Mostra Altri Progetti' : 'Show More Projects') + '</span> <i class="fas fa-chevron-down"></i>';
     }
 }
+
+// ===== THEME TOGGLE =====
+function toggleTheme() {
+    document.documentElement.classList.toggle('light');
+    const btn = document.getElementById('theme-toggle');
+    const isLight = document.documentElement.classList.contains('light');
+    btn.innerHTML = isLight ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
+    localStorage.setItem('theme', isLight ? 'light' : 'dark');
+}
+// Load saved theme
+(function() {
+    const saved = localStorage.getItem('theme');
+    if (saved === 'light') {
+        document.documentElement.classList.add('light');
+        document.addEventListener('DOMContentLoaded', () => {
+            document.getElementById('theme-toggle').innerHTML = '<i class="fas fa-sun"></i>';
+        });
+    }
+})();
 
 // ===== INIT =====
 renderSkills();
