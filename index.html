@@ -631,6 +631,33 @@
             text-transform: none;
             line-height: 1.7;
         }
+        .tl-skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+        .tl-skills span {
+            font-size: 1.1rem;
+            padding: 0.3rem 0.8rem;
+            border-radius: 6px;
+            background: rgba(240, 160, 48, 0.1);
+            color: var(--accent-secondary);
+            font-weight: 600;
+        }
+        .tl-logo {
+            width: 4rem;
+            height: 4rem;
+            object-fit: contain;
+            position: absolute;
+            right: 0;
+            top: 0;
+            border-radius: 8px;
+            opacity: 0.7;
+            transition: 0.3s;
+        }
+        .timeline-item { position: relative; }
+        .timeline-item:hover .tl-logo { opacity: 1; }
 
         /* ===== PROJECTS ===== */
         .projects { background: var(--bg-secondary); }
@@ -1197,27 +1224,27 @@
                 <h3 data-en="MSc Internet of Things — Double Degree" data-it="MSc Internet of Things — Doppio Titolo">MSc Internet of Things — Double Degree</h3>
                 <p class="school">EURECOM — Sophia Antipolis, France</p>
                 <p class="year" data-en="Sep 2025 – Feb 2027 (Expected)" data-it="Set 2025 – Feb 2027 (Previsto)">Sep 2025 – Feb 2027 (Expected)</p>
-                <p class="detail" data-en="Erasmus+ Double Degree. Specialization in IoT and Wireless Communications (5G/6G)." data-it="Doppio Titolo Erasmus+. Specializzazione in IoT e Comunicazioni Wireless (5G/6G).">Erasmus+ Double Degree. Specialization in IoT and Wireless Communications (5G/6G).</p>
+                <p class="detail" data-en="Erasmus+ Double Degree. Specialization in IoT and Wireless Communications (5G/6G). First semester GPA: 18.29/20 — all A/A+ grades." data-it="Doppio Titolo Erasmus+. Specializzazione in IoT e Comunicazioni Wireless (5G/6G). Media primo semestre: 18.29/20 — tutti voti A/A+.">Erasmus+ Double Degree. Specialization in IoT and Wireless Communications (5G/6G). First semester GPA: 18.29/20 — all A/A+ grades.</p>
             </div>
         </div>
         <div class="edu-card">
             <div class="edu-icon"><img src="assets/images/politologo.png" alt="Politecnico di Torino"></div>
-            <div>
-                <h3 data-en="MSc Computer Engineering" data-it="Laurea Magistrale in Ingegneria Informatica">MSc Computer Engineering</h3>
-                <p class="school">Politecnico di Torino — Turin, Italy</p>
-                <p class="year" data-en="Sep 2024 – Feb 2027 (Expected)" data-it="Set 2024 – Feb 2027 (Previsto)">Sep 2024 – Feb 2027 (Expected)</p>
-                <p class="detail" data-en="Computing and Network Infrastructures. Top 5% of students." data-it="Infrastrutture di Calcolo e di Rete. Top 5% degli studenti.">Computing and Network Infrastructures. Top 5% of students.</p>
-            </div>
+                <div>
+                    <h3 data-en="MSc Computer Engineering" data-it="Laurea Magistrale in Ingegneria Informatica">MSc Computer Engineering</h3>
+                    <p class="school">Politecnico di Torino — Turin, Italy</p>
+                    <p class="year" data-en="Sep 2024 – Feb 2027 (Expected)" data-it="Set 2024 – Feb 2027 (Previsto)">Sep 2024 – Feb 2027 (Expected)</p>
+                    <p class="detail" data-en="Computing and Network Infrastructures. Top 5% of students (Ref. Prof. G. Marchetto). Key courses: Enterprise Networks, System and Device Programming, Software Engineering." data-it="Infrastrutture di Calcolo e di Rete. Top 5% degli studenti (Rif. Prof. G. Marchetto). Corsi chiave: Enterprise Networks, System and Device Programming, Ingegneria del Software.">Computing and Network Infrastructures. Top 5% of students (Ref. Prof. G. Marchetto). Key courses: Enterprise Networks, System and Device Programming, Software Engineering.</p>
+                </div>
         </div>
         <div class="edu-card">
-    <div class="edu-icon"><img src="assets/images/politologo.png" alt="Politecnico di Torino"></div>
-    <div>
-            <h3 data-en="BSc Computer Engineering" data-it="Laurea Triennale in Ingegneria Informatica">BSc Computer Engineering</h3>
-            <p class="school">Politecnico di Torino — Turin, Italy</p>
-            <p class="year">Sep 2021 – Jul 2024</p>
-            <p class="detail" data-en="Final Grade: 108/110 — Top 11.8% of graduates (Diploma Supplement). 4× cum laude grades including Signal Theory and Automatic Control." data-it="Voto Finale: 108/110 — Top 11.8% dei laureati (Diploma Supplement). 4 lodi tra cui Teoria dei Segnali e Controlli Automatici.">Final Grade: 108/110 — Top 11.8% of graduates (Diploma Supplement). 4× cum laude grades including Signal Theory and Automatic Control.</p>
+            <div class="edu-icon"><img src="assets/images/politologo.png" alt="Politecnico di Torino"></div>
+            <div>
+                    <h3 data-en="BSc Computer Engineering" data-it="Laurea Triennale in Ingegneria Informatica">BSc Computer Engineering</h3>
+                    <p class="school">Politecnico di Torino — Turin, Italy</p>
+                    <p class="year">Sep 2021 – Jul 2024</p>
+                    <p class="detail" data-en="Final Grade: 108/110 — Top 11.8% of graduates (Diploma Supplement). 4× cum laude grades including Signal Theory and Automatic Control." data-it="Voto Finale: 108/110 — Top 11.8% dei laureati (Diploma Supplement). 4 lodi tra cui Teoria dei Segnali e Controlli Automatici.">Final Grade: 108/110 — Top 11.8% of graduates (Diploma Supplement). 4× cum laude grades including Signal Theory and Automatic Control.</p>
+            </div>
         </div>
-    </div>
     </div>
 </section>
 
@@ -1229,42 +1256,74 @@
     </div>
     <div class="timeline">
         <div class="timeline-item">
+            <img src="assets/images/exp/moreware.jpg" alt="Moreware" class="tl-logo">
             <p class="tl-date" data-en="Aug 2019 – Present" data-it="Ago 2019 – Presente">Aug 2019 – Present</p>
-            <h3 data-en="Technical Editor & Content Manager" data-it="Redattore Tecnico & Content Manager">Technical Editor & Content Manager</h3>
-            <p class="tl-company">Moreware IT</p>
-            <p data-en="6+ years of technical articles on Linux, Arduino, Raspberry Pi, and Embedded Systems. Managed editorial deadlines and industry collaborations." 
-               data-it="6+ anni di articoli tecnici su Linux, Arduino, Raspberry Pi e Sistemi Embedded. Gestione delle scadenze editoriali e collaborazioni con l'industria.">
-                6+ years of technical articles on Linux, Arduino, Raspberry Pi, and Embedded Systems. Managed editorial deadlines and industry collaborations.
+            <h3 data-en="Technical Editor and Content Manager" data-it="Redattore Tecnico e Content Manager">Technical Editor and Content Manager</h3>
+            <p class="tl-company">Moreware IT — Remote</p>
+            <p data-en="6+ years authoring technical articles and tutorials on Linux, Arduino, Raspberry Pi, and Embedded Systems. Translating complex technical concepts into accessible content for a broad audience. Managing editorial deadlines and industry collaborations."
+            data-it="6+ anni di articoli tecnici e tutorial su Linux, Arduino, Raspberry Pi e Sistemi Embedded. Traduzione di concetti tecnici complessi in contenuti accessibili per un pubblico ampio. Gestione delle scadenze editoriali e collaborazioni con l'industria.">
+                6+ years authoring technical articles and tutorials on Linux, Arduino, Raspberry Pi, and Embedded Systems. Translating complex technical concepts into accessible content for a broad audience. Managing editorial deadlines and industry collaborations.
             </p>
+            <div class="tl-skills"><span>Technical Writing</span><span>Linux</span><span>Arduino</span><span>Raspberry Pi</span><span>Embedded Systems</span><span>Editorial Management</span></div>
         </div>
+
         <div class="timeline-item">
+            <img src="assets/images/exp/panini.jpg" alt="Panini" class="tl-logo">
             <p class="tl-date">Mar 2024 – Jun 2024</p>
-            <h3 data-en="Junior Software Developer — R&D Internship" data-it="Junior Software Developer — Stage R&D">
-                Junior Software Developer — R&D Internship
-            </h3>
+            <h3 data-en="Junior Software Developer — R&D Internship" data-it="Junior Software Developer — Stage R&D">Junior Software Developer — R&D Internship</h3>
             <p class="tl-company">Panini S.p.A. — Turin</p>
-            <p data-en="Developed a dashboard for managing EverneXt scanners using HTML, CSS, JavaScript, tiff.js, and SignalR for real-time communication. Implemented an approach based on ASP.NET Core MVC, Razor Pages, and Azure Functions, integrating asynchronous features and API calls for cloud management. Conducted testing and validation, significantly improving the efficiency of scanning processes." 
-            data-it="Sviluppata una dashboard per la gestione degli scanner EverneXt utilizzando HTML, CSS, JavaScript, tiff.js e SignalR per la comunicazione real-time. Implementato un approccio basato su ASP.NET Core MVC, Razor Pages e Azure Functions per il cloud, integrando funzionalità asincrone e chiamate API. Gestito il testing e la validazione del codice, ottimizzando l'efficienza dei processi di scansione.">
-                Developed a dashboard for managing EverneXt scanners using HTML, CSS, JavaScript, tiff.js, and SignalR for real-time communication. Implemented an approach based on ASP.NET Core MVC, Razor Pages, and Azure Functions, integrating asynchronous features and API calls for cloud management. Conducted testing and validation, significantly improving the efficiency of scanning processes.
+            <p data-en="Developed a dashboard for managing EverneXt scanners using HTML, CSS, JavaScript, tiff.js, SignalR for real-time communication, and Bootstrap for responsive design. Integrated asynchronous features and API calls. Implemented an approach based on ASP.NET Core MVC, Razor Pages, and Azure Functions for the cloud. Testing and validation were conducted, and the code was documented, improving the efficiency and management of scanning processes."
+            data-it="Sviluppata una dashboard per la gestione degli scanner EverneXt utilizzando HTML, CSS, JavaScript, tiff.js, SignalR per la comunicazione real-time e Bootstrap per il design responsive. Integrate funzionalità asincrone e chiamate API. Implementato un approccio basato su ASP.NET Core MVC, Razor Pages e Azure Functions per il cloud. Eseguiti testing e validazione, e il codice è stato documentato, migliorando l'efficienza e la gestione dei processi di scansione.">
+                Developed a dashboard for managing EverneXt scanners using HTML, CSS, JavaScript, tiff.js, SignalR for real-time communication, and Bootstrap for responsive design. Integrated asynchronous features and API calls. Implemented an approach based on ASP.NET Core MVC, Razor Pages, and Azure Functions for the cloud. Testing and validation were conducted, and the code was documented, improving the efficiency and management of scanning processes.
             </p>
+            <div class="tl-skills"><span>ASP.NET Core MVC</span><span>C#</span><span>SignalR</span><span>Azure Functions</span><span>Razor Pages</span><span>JavaScript</span><span>HTML/CSS</span><span>Bootstrap</span><span>tiff.js</span></div>
         </div>
+
         <div class="timeline-item">
+            <img src="assets/images/exp/bridgethegaps.jpg" alt="Bridge The Gaps" class="tl-logo">
             <p class="tl-date">Mar 2022 – Jun 2022</p>
             <h3 data-en="STEM Coach" data-it="Coach STEM">STEM Coach</h3>
             <p class="tl-company">Bridge The Gaps — Turin</p>
-            <p data-en="Organized IT workshops, hackathons, and educational events for various age groups in electronics, robotics, and computer science." 
-               data-it="Organizzazione di workshop IT, hackathon ed eventi educativi per diverse fasce d'età in elettronica, robotica e informatica.">
-                Organized IT workshops, hackathons, and educational events for various age groups in electronics, robotics, and computer science.
+            <p data-en="Organized and delivered IT workshops, hackathons, and educational events for various age groups in electronics, robotics, and computer science. Worked within a young, multidisciplinary team of project managers, event coordinators, and IT engineers."
+            data-it="Organizzazione e conduzione di workshop IT, hackathon ed eventi educativi per diverse fasce d'età in elettronica, robotica e informatica. Collaborazione in un team giovane e multidisciplinare di project manager, coordinatori eventi e ingegneri IT.">
+                Organized and delivered IT workshops, hackathons, and educational events for various age groups in electronics, robotics, and computer science. Worked within a young, multidisciplinary team of project managers, event coordinators, and IT engineers.
             </p>
+            <div class="tl-skills"><span>Team Building</span><span>Teaching</span><span>Electronics</span><span>Robotics</span><span>Event Organization</span></div>
         </div>
+
         <div class="timeline-item">
+            <img src="assets/images/exp/milegoalterritorio.jpg" alt="Mi Lego Al Territorio" class="tl-logo">
+            <p class="tl-date">Sep 2021 – Jun 2022</p>
+            <h3 data-en="Embedded Systems Developer" data-it="Sviluppatore Sistemi Embedded">Embedded Systems Developer</h3>            <p class="tl-company">Mi Lego Al Territorio — PoliTo Student Team</p>
+            <p data-en="Built interactive models using LEGO bricks, Arduino, and Raspberry Pi to simulate natural hazards (earthquakes, floods) for awareness campaigns. Integrated a real seismograph into educational demonstrations. Promoted hydrogeological and seismic risk education across universities and institutions."
+            data-it="Costruzione di modelli interattivi con mattoncini LEGO, Arduino e Raspberry Pi per simulare eventi naturali (terremoti, alluvioni) in campagne di sensibilizzazione. Integrato un sismografo reale nelle dimostrazioni educative. Promossa l'educazione sul rischio idrogeologico e sismico presso università e istituzioni.">
+                Built interactive models using LEGO bricks, Arduino, and Raspberry Pi to simulate natural hazards (earthquakes, floods) for awareness campaigns. Integrated a real seismograph into educational demonstrations. Promoted hydrogeological and seismic risk education across universities and institutions.
+            </p>
+            <div class="tl-skills"><span>Arduino</span><span>Raspberry Pi</span><span>Team Building</span><span>Science Communication</span></div>
+        </div>
+
+        <div class="timeline-item">
+            <img src="assets/images/exp/ortourbano.jpg" alt="Ortourbano" class="tl-logo">
             <p class="tl-date">Jul 2021 – Aug 2021</p>
             <h3 data-en="Robotics Teacher" data-it="Insegnante di Robotica">Robotics Teacher</h3>
             <p class="tl-company">Ortourbano — Manfredonia</p>
-            <p data-en="Taught children the basics of STEM through hands-on robotics workshops, fostering creativity and group collaboration." 
-               data-it="Insegnamento ai bambini delle basi STEM attraverso laboratori pratici di robotica, promuovendo creatività e collaborazione di gruppo.">
-                Taught children the basics of STEM through hands-on robotics workshops, fostering creativity and group collaboration.
+            <p data-en="Designed and led a robotics workshop for children, teaching STEM fundamentals through hands-on projects. Focused on creativity, problem-solving, and collaborative brainstorming — guiding students from idea to working prototype with minimal instructions."
+            data-it="Progettazione e conduzione di un laboratorio di robotica per bambini, insegnando i fondamenti STEM attraverso progetti pratici. Focus su creatività, problem-solving e brainstorming collaborativo — guidando gli studenti dall'idea al prototipo funzionante con istruzioni minime.">
+                Designed and led a robotics workshop for children, teaching STEM fundamentals through hands-on projects. Focused on creativity, problem-solving, and collaborative brainstorming — guiding students from idea to working prototype with minimal instructions.
             </p>
+            <div class="tl-skills"><span>Teaching</span><span>Arduino</span><span>Problem Solving</span><span>Creativity</span></div>
+        </div>
+
+        <div class="timeline-item">
+            <img src="assets/images/exp/pcassembly.png" alt="PC Assembly" class="tl-logo">
+            <p class="tl-date">Jan 2017 – Mar 2020</p>
+            <h3 data-en="PC Assembly and Maintenance — Freelance" data-it="Assemblaggio e Manutenzione PC — Freelance">PC Assembly and Maintenance — Freelance</h3>
+            <p class="tl-company" data-en="Freelance — Manfredonia" data-it="Autonomo — Manfredonia">Freelance — Manfredonia</p>
+            <p data-en="Assembled and repaired desktop and laptop PCs. Created custom builds from scratch tailored to client budgets and needs. Diagnosed hardware and software issues through systematic troubleshooting."
+            data-it="Assemblaggio e riparazione di PC desktop e laptop. Creazione di configurazioni personalizzate da zero in base al budget e alle esigenze del cliente. Diagnosi di problemi hardware e software tramite troubleshooting sistematico.">
+                Assembled and repaired desktop and laptop PCs. Created custom builds from scratch tailored to client budgets and needs. Diagnosed hardware and software issues through systematic troubleshooting.
+            </p>
+            <div class="tl-skills"><span>Troubleshooting</span><span>Hardware</span><span>PC Maintenance</span><span>Client Relations</span></div>
         </div>
     </div>
 </section>
