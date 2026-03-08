@@ -738,7 +738,16 @@
             transition: 0.2s;
         }
         .project-card .proj-links a:hover { color: var(--accent); }
-
+        .projects-hidden {
+            display: none;
+        }
+        .projects-hidden.show {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(32rem, 1fr));
+            gap: 2.5rem;
+            max-width: 1200px;
+            margin: 2.5rem auto 0;
+        }
         /* ===== CONTACT ===== */
         .contact { background: var(--bg-secondary); min-height: auto; padding-bottom: 4rem; }
 
@@ -1362,14 +1371,21 @@
     <div class="section-header">
         <p class="label" data-en="What I've built" data-it="Cosa ho realizzato">What I've built</p>
         <h2 data-en="My <span>Projects</span>" data-it="I Miei <span>Progetti</span>">My <span>Projects</span></h2>
+        <div style="margin-top:1.5rem;">
+            <a href="https://github.com/SimoneMoreWare?tab=repositories" target="_blank" class="btn-outline">
+                <span data-en="View All 30+ on GitHub" data-it="Vedi Tutti i 30+ su GitHub">View All 30+ on GitHub</span>
+                <i class="fab fa-github"></i>
+            </a>
+        </div>
     </div>
     <div class="projects-grid">
+        <!-- I 6 PROGETTI PRINCIPALI (copia identici come li hai) -->
         <div class="project-card">
             <img src="assets/images/projects/betavae-nlos.png" alt="Beta-VAE NLoS Detection" style="width:100%; border-radius:12px 12px 0 0; margin:-3rem -3rem 2rem -3rem; width:calc(100% + 6rem); object-fit:cover; max-height:22rem;">
             <span class="proj-tag" data-en="RESEARCH — EURECOM" data-it="RICERCA — EURECOM">RESEARCH — EURECOM</span>
             <h3 data-en="NLoS Identification in 5G NR Using Variational Autoencoders" data-it="Identificazione NLoS in 5G NR con Autoencoder Variazionali">NLoS Identification in 5G NR Using Variational Autoencoders</h3>
             <p data-en="Developed a Beta-VAE trained exclusively on LoS Channel Impulse Response data from the GEO-5G testbed at EURECOM. The model detects NLoS signals as out-of-distribution anomalies using the TISSI metric, achieving 88.97% accuracy (balanced) and 97.62% (realistic indoor conditions) — surpassing the 85% UWB benchmark. Deployed as a C++ xApp on the FlexRIC Near-RT RIC via LibTorch, processing 4-antenna CIR measurements in real-time (~59ms latency) with 99.7% NLoS detection on emulator testing."
-            data-it="Sviluppato un Beta-VAE addestrato esclusivamente su dati LoS di Channel Impulse Response dal testbed GEO-5G di EURECOM. Il modello rileva segnali NLoS come anomalie out-of-distribution tramite la metrica TISSI, raggiungendo 88.97% di accuratezza (bilanciato) e 97.62% (condizioni indoor realistiche) — superando il benchmark UWB dell'85%. Deployato come xApp C++ sul Near-RT RIC FlexRIC via LibTorch, elaborando misurazioni CIR a 4 antenne in tempo reale (~59ms di latenza) con 99.7% di rilevamento NLoS nei test con emulatore.">
+               data-it="Sviluppato un Beta-VAE addestrato esclusivamente su dati LoS di Channel Impulse Response dal testbed GEO-5G di EURECOM. Il modello rileva segnali NLoS come anomalie out-of-distribution tramite la metrica TISSI, raggiungendo 88.97% di accuratezza (bilanciato) e 97.62% (condizioni indoor realistiche) — superando il benchmark UWB dell'85%. Deployato come xApp C++ sul Near-RT RIC FlexRIC via LibTorch, elaborando misurazioni CIR a 4 antenne in tempo reale (~59ms di latenza) con 99.7% di rilevamento NLoS nei test con emulatore.">
                 Developed a Beta-VAE trained exclusively on LoS Channel Impulse Response data from the GEO-5G testbed at EURECOM. The model detects NLoS signals as out-of-distribution anomalies using the TISSI metric, achieving 88.97% accuracy (balanced) and 97.62% (realistic indoor conditions) — surpassing the 85% UWB benchmark. Deployed as a C++ xApp on the FlexRIC Near-RT RIC via LibTorch, processing 4-antenna CIR measurements in real-time (~59ms latency) with 99.7% NLoS detection on emulator testing.
             </p>
             <div class="tech-tags"><span>PyTorch</span><span>Beta-VAE</span><span>O-RAN</span><span>FlexRIC</span><span>LibTorch</span><span>C++</span><span>Python</span><span>xApp</span><span>5G NR</span></div>
@@ -1380,7 +1396,7 @@
             <span class="proj-tag" data-en="BACKEND — PoliTo" data-it="BACKEND — PoliTo">BACKEND — PoliTo</span>
             <h3>Liqo Telemetry Dashboard</h3>
             <p data-en="Built a monitoring system to migrate and analyze telemetry data from Kubernetes clusters. Engineered a Go backend with GORM and GJSON to extract data from AWS DynamoDB, transform it into a normalized relational schema (9 correlated tables), and load it into PostgreSQL via CloudNativePG. Implemented hybrid sync strategies (daily full refresh + incremental sync) handling DynamoDB's 1MB scan limit. Infrastructure orchestrated with Kubernetes/Kind/Docker. Designed advanced Grafana dashboards for cluster performance, geographical distribution, and versioning trends — enabling data-driven decisions for non-technical stakeholders."
-            data-it="Sviluppato un sistema di monitoraggio per migrare e analizzare dati telemetrici da cluster Kubernetes. Backend in Go con GORM e GJSON per estrarre dati da AWS DynamoDB, trasformarli in uno schema relazionale normalizzato (9 tabelle correlate) e caricarli in PostgreSQL via CloudNativePG. Implementate strategie di sincronizzazione ibride (refresh completo giornaliero + sync incrementale) gestendo il limite di 1MB delle scan DynamoDB. Infrastruttura orchestrata con Kubernetes/Kind/Docker. Progettate dashboard Grafana avanzate per performance cluster, distribuzione geografica e trend di versioning — abilitando decisioni data-driven per stakeholder non tecnici.">
+               data-it="Sviluppato un sistema di monitoraggio per migrare e analizzare dati telemetrici da cluster Kubernetes. Backend in Go con GORM e GJSON per estrarre dati da AWS DynamoDB, trasformarli in uno schema relazionale normalizzato (9 tabelle correlate) e caricarli in PostgreSQL via CloudNativePG. Implementate strategie di sincronizzazione ibride (refresh completo giornaliero + sync incrementale) gestendo il limite di 1MB delle scan DynamoDB. Infrastruttura orchestrata con Kubernetes/Kind/Docker. Progettate dashboard Grafana avanzate per performance cluster, distribuzione geografica e trend di versioning — abilitando decisioni data-driven per stakeholder non tecnici.">
                 Built a monitoring system to migrate and analyze telemetry data from Kubernetes clusters. Engineered a Go backend with GORM and GJSON to extract data from AWS DynamoDB, transform it into a normalized relational schema (9 correlated tables), and load it into PostgreSQL via CloudNativePG. Implemented hybrid sync strategies (daily full refresh + incremental sync) handling DynamoDB's 1MB scan limit. Infrastructure orchestrated with Kubernetes/Kind/Docker. Designed advanced Grafana dashboards for cluster performance, geographical distribution, and versioning trends — enabling data-driven decisions for non-technical stakeholders.
             </p>
             <div class="tech-tags"><span>Go</span><span>GORM</span><span>PostgreSQL</span><span>AWS DynamoDB</span><span>Grafana</span><span>Kubernetes</span><span>Kind</span><span>Docker</span><span>CloudNativePG</span></div>
@@ -1391,7 +1407,7 @@
             <span class="proj-tag">FULL STACK</span>
             <h3>Stuff Happens — Card Game</h3>
             <p data-en="Full-stack card game where players race against a 30-second timer to position cards by Bad Luck Index. Features drag-and-drop gameplay (DnD Kit), secure authentication (Passport.js), and a RESTful API backed by SQLite. Solved cross-origin session management between Vercel frontend and Render backend by implementing secure SameSite cookie attributes and proxy trust. Includes demo mode, persistent history tracking, and server-side timer validation to prevent cheating."
-            data-it="Gioco di carte full-stack dove i giocatori gareggiano contro un timer di 30 secondi per posizionare le carte in base al Bad Luck Index. Gameplay drag-and-drop (DnD Kit), autenticazione sicura (Passport.js) e API RESTful con SQLite. Risolto il problema delle sessioni cross-origin tra frontend Vercel e backend Render implementando attributi cookie SameSite sicuri e proxy trust. Include modalità demo, storico persistente e validazione timer server-side anti-cheat.">
+               data-it="Gioco di carte full-stack dove i giocatori gareggiano contro un timer di 30 secondi per posizionare le carte in base al Bad Luck Index. Gameplay drag-and-drop (DnD Kit), autenticazione sicura (Passport.js) e API RESTful con SQLite. Risolto il problema delle sessioni cross-origin tra frontend Vercel e backend Render implementando attributi cookie SameSite sicuri e proxy trust. Include modalità demo, storico persistente e validazione timer server-side anti-cheat.">
                 Full-stack card game where players race against a 30-second timer to position cards by Bad Luck Index. Features drag-and-drop gameplay (DnD Kit), secure authentication (Passport.js), and a RESTful API backed by SQLite. Solved cross-origin session management between Vercel frontend and Render backend by implementing secure SameSite cookie attributes and proxy trust. Includes demo mode, persistent history tracking, and server-side timer validation to prevent cheating.
             </p>
             <div class="tech-tags"><span>React</span><span>Node.js</span><span>SQLite</span><span>Passport.js</span><span>DnD Kit</span><span>Vite</span><span>Vercel</span><span>Render</span></div>
@@ -1405,7 +1421,7 @@
             <span class="proj-tag">OPEN SOURCE</span>
             <h3>Turin Toret Bot</h3>
             <p data-en="Telegram bot to find the nearest public drinking fountain in Turin by sending your GPS location. Built with Python using Telegram Bot API and a custom geolocation algorithm that calculates distances from a live database of fountain coordinates fetched from the I Love Toret API. Officially featured on ilovetoret.it and developed in collaboration with the 'I Love Toret' civic association. Hosted on Render.com for 24/7 availability."
-            data-it="Bot Telegram per trovare la fontanella pubblica più vicina a Torino inviando la propria posizione GPS. Sviluppato in Python con Telegram Bot API e un algoritmo di geolocalizzazione personalizzato che calcola le distanze da un database live di coordinate delle fontanelle tramite l'API di I Love Toret. Presente ufficialmente su ilovetoret.it e sviluppato in collaborazione con l'associazione civica 'I Love Toret'. Hostato su Render.com per disponibilità 24/7.">
+               data-it="Bot Telegram per trovare la fontanella pubblica più vicina a Torino inviando la propria posizione GPS. Sviluppato in Python con Telegram Bot API e un algoritmo di geolocalizzazione personalizzato che calcola le distanze da un database live di coordinate delle fontanelle tramite l'API di I Love Toret. Presente ufficialmente su ilovetoret.it e sviluppato in collaborazione con l'associazione civica 'I Love Toret'. Hostato su Render.com per disponibilità 24/7.">
                 Telegram bot to find the nearest public drinking fountain in Turin by sending your GPS location. Built with Python using Telegram Bot API and a custom geolocation algorithm that calculates distances from a live database of fountain coordinates fetched from the I Love Toret API. Officially featured on ilovetoret.it and developed in collaboration with the "I Love Toret" civic association. Hosted on Render.com for 24/7 availability.
             </p>
             <div class="tech-tags"><span>Python</span><span>Telegram Bot API</span><span>Geolocation</span><span>Render.com</span><span>REST API</span><span>Open Source</span></div>
@@ -1417,25 +1433,57 @@
             </div>
         </div>
         <div class="project-card">
+            <img src="assets/images/projects/plate.png" alt="License Plate Recognition" style="width:100%; border-radius:12px 12px 0 0; margin:-3rem -3rem 2rem -3rem; width:calc(100% + 6rem); object-fit:cover; max-height:22rem;">
             <span class="proj-tag" data-en="IoT / HARDWARE" data-it="IoT / HARDWARE">IoT / HARDWARE</span>
-            <h3 data-en="License Plate Gate Opener" data-it="Apri-Cancello con Targa">License Plate Gate Opener</h3>
-            <p data-en="Raspberry Pi-based license plate recognition system to automatically open gates. Part of the 30+ open source repositories." 
-               data-it="Sistema di riconoscimento targhe basato su Raspberry Pi per l'apertura automatica dei cancelli. Parte dei 30+ repository open source.">
-                Raspberry Pi-based license plate recognition system to automatically open gates.
+            <h3 data-en="License Plate Recognition Gate Opener" data-it="Riconoscimento Targhe con Apertura Cancello">License Plate Recognition Gate Opener</h3>
+            <p data-en="Automated license plate recognition system built with Raspberry Pi CM4 and the Ochin V2 carrier board. Uses OpenCV for plate detection via edge detection and contour analysis, and Tesseract OCR for character recognition. Results are sent in real-time to a Telegram bot with photo and recognized text. Applicable to automated toll systems, security monitoring, and gate access control. Published as a full technical tutorial on moreware.org (955+ views)."
+               data-it="Sistema automatizzato di riconoscimento targhe costruito con Raspberry Pi CM4 e la carrier board Ochin V2. Utilizza OpenCV per il rilevamento della targa tramite edge detection e analisi dei contorni, e Tesseract OCR per il riconoscimento dei caratteri. I risultati vengono inviati in tempo reale a un bot Telegram con foto e testo riconosciuto. Applicabile a caselli automatizzati, monitoraggio di sicurezza e controllo accessi cancelli. Pubblicato come tutorial tecnico completo su moreware.org (955+ visualizzazioni).">
+                Automated license plate recognition system built with Raspberry Pi CM4 and the Ochin V2 carrier board. Uses OpenCV for plate detection via edge detection and contour analysis, and Tesseract OCR for character recognition. Results are sent in real-time to a Telegram bot with photo and recognized text. Applicable to automated toll systems, security monitoring, and gate access control. Published as a full technical tutorial on moreware.org (955+ views).
             </p>
-            <div class="tech-tags"><span>Raspberry Pi</span><span>Python</span><span>OpenCV</span></div>
-            <div class="proj-links"><a href="#"><i class="fab fa-github"></i> Code</a></div>
+            <div class="tech-tags"><span>Raspberry Pi CM4</span><span>Python</span><span>OpenCV</span><span>Tesseract OCR</span><span>Telegram Bot</span><span>Ochin V2</span></div>
+            <div class="proj-links">
+                <a href="https://www.moreware.org/wp/blog/2024/09/17/riconoscimento-targhe-con-raspberry-pi-cm4-e-ochin-v2/" target="_blank"><i class="fas fa-newspaper"></i> Article</a>
+            </div>
         </div>
         <div class="project-card">
-            <span class="proj-tag" data-en="IoT / HARDWARE" data-it="IoT / HARDWARE">IoT / HARDWARE</span>
-            <h3 data-en="Digital Soccer Scoreboard" data-it="Tabellone Calcio Balilla Digitale">Digital Soccer Scoreboard</h3>
-            <p data-en="Arduino/ESP32-based digital scoreboard for table football. Part of the 30+ open source repositories." 
-               data-it="Tabellone digitale basato su Arduino/ESP32 per calcio balilla. Parte dei 30+ repository open source.">
-                Arduino/ESP32-based digital scoreboard for table football.
+            <img src="assets/images/projects/snakelove.png" alt="Snake Love" style="width:100%; border-radius:12px 12px 0 0; margin:-3rem -3rem 2rem -3rem; width:calc(100% + 6rem); object-fit:cover; max-height:22rem;">
+            <span class="proj-tag" data-en="FUN / CREATIVE" data-it="FUN / CREATIVO">FUN / CREATIVE</span>
+            <h3>Snake Love</h3>
+            <p data-en="A romantic twist on the classic Snake game — the snake grows by eating the most used emojis between you and your loved one. Navigate through the grid, avoid hitting your tail, and enjoy a heartwarming experience with every move. Built as a creative gift project combining gameplay with personalization."
+               data-it="Una variante romantica del classico gioco Snake — il serpente cresce mangiando le emoji più usate tra te e la tua dolce metà. Naviga nella griglia, evita di colpire la coda e goditi un'esperienza romantica ad ogni mossa. Progetto creativo che combina gameplay e personalizzazione.">
+                A romantic twist on the classic Snake game — the snake grows by eating the most used emojis between you and your loved one. Navigate through the grid, avoid hitting your tail, and enjoy a heartwarming experience with every move. Built as a creative gift project combining gameplay with personalization.
             </p>
-            <div class="tech-tags"><span>Arduino</span><span>ESP32</span><span>C++</span></div>
-            <div class="proj-links"><a href="#"><i class="fab fa-github"></i> Code</a></div>
+            <div class="tech-tags"><span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>Canvas</span></div>
+            <div class="proj-links">
+                <a href="https://github.com/SimoneMoreWare/snake-love" target="_blank"><i class="fab fa-github"></i> Code</a>
+                <a href="https://simonemoreware.github.io/snake-love/public/index.html" target="_blank"><i class="fas fa-external-link-alt"></i> Play it</a>
+            </div>
         </div>
+    </div>
+    <!-- BOTTONE SHOW MORE - centrato sotto la griglia -->
+    <div style="text-align:center; margin-top:3rem;">
+        <button class="btn-outline" id="toggleProjects" onclick="toggleMoreProjects()">
+            <span data-en="Show More Projects" data-it="Mostra Altri Progetti">Show More Projects</span>
+            <i class="fas fa-chevron-down"></i>
+        </button>
+    </div>
+    <!-- PROGETTI NASCOSTI -->
+    <div class="projects-hidden" id="moreProjects">
+        <div class="project-card">
+            <img src="assets/images/projects/marioclock.png" alt="Super Mario Bros Clock" style="width:100%; border-radius:12px 12px 0 0; margin:-3rem -3rem 2rem -3rem; width:calc(100% + 6rem); object-fit:cover; max-height:22rem;">
+            <span class="proj-tag" data-en="FUN / CREATIVE" data-it="FUN / CREATIVO">FUN / CREATIVE</span>
+            <h3>Super Mario Bros LoFi Clock</h3>
+            <p data-en="A fun clock application inspired by Super Mario Bros, enhanced with study-time lofi music. Features animated Mario characters and elements, providing a delightful way to keep track of time while enjoying soothing background music for study sessions."
+               data-it="Un'applicazione orologio ispirata a Super Mario Bros, arricchita con musica lofi per lo studio. Presenta personaggi e elementi animati di Mario, offrendo un modo piacevole per tenere traccia del tempo mentre si studia con musica di sottofondo rilassante.">
+                A fun clock application inspired by Super Mario Bros, enhanced with study-time lofi music. Features animated Mario characters and elements, providing a delightful way to keep track of time while enjoying soothing background music for study sessions.
+            </p>
+            <div class="tech-tags"><span>HTML5</span><span>CSS3</span><span>JavaScript</span></div>
+            <div class="proj-links">
+                <a href="https://github.com/SimoneMoreWare/SuperMarioBrosClockStudyTimeLofiMusic.github.io" target="_blank"><i class="fab fa-github"></i> Code</a>
+                <a href="https://simonemoreware.github.io/SuperMarioBrosClockStudyTimeLofiMusic.github.io/" target="_blank"><i class="fas fa-external-link-alt"></i> Try it</a>
+            </div>
+        </div>
+        <!-- Aggiungi qui altri progetti futuri -->
     </div>
 </section>
 
@@ -1977,6 +2025,18 @@ async function fetchBlog() {
     } catch(e) {
         console.warn('Blog fetch error:', e);
         document.getElementById('blogContainer').innerHTML = '<p style="text-align:center;color:var(--text-muted);font-size:1.4rem;">Unable to load articles.</p>';
+    }
+}
+
+// ===== TOGGLE MORE PROJECTS =====
+function toggleMoreProjects() {
+    const more = document.getElementById('moreProjects');
+    const btn = document.getElementById('toggleProjects');
+    more.classList.toggle('show');
+    if (more.classList.contains('show')) {
+        btn.innerHTML = '<span data-en="Show Less" data-it="Mostra Meno">' + (currentLang === 'it' ? 'Mostra Meno' : 'Show Less') + '</span> <i class="fas fa-chevron-up"></i>';
+    } else {
+        btn.innerHTML = '<span data-en="Show More Projects" data-it="Mostra Altri Progetti">' + (currentLang === 'it' ? 'Mostra Altri Progetti' : 'Show More Projects') + '</span> <i class="fas fa-chevron-down"></i>';
     }
 }
 
