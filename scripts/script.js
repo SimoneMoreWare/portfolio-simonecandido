@@ -1,3 +1,39 @@
+// ===== SECTION LOADER =====
+// Loads HTML partials from sections/ folder into placeholder divs
+const sectionOrder = [
+    'about', 'skills', 'education', 'experience',
+    'projects', 'notes', 'blog', 'testimonials', 'contact'
+];
+
+async function loadSections() {
+    const promises = sectionOrder.map(async (name) => {
+        const container = document.getElementById(`section-${name}`);
+        if (!container) return;
+        try {
+            const res = await fetch(`sections/${name}.html`);
+            if (res.ok) {
+                container.innerHTML = await res.text();
+            } else {
+                console.warn(`Failed to load sections/${name}.html: ${res.status}`);
+            }
+        } catch (e) {
+            console.warn(`Error loading sections/${name}.html:`, e);
+        }
+    });
+    await Promise.all(promises);
+    // After all sections are loaded, initialize everything
+    initApp();
+}
+
+function initApp() {
+    renderSkills();
+    calcAge();
+    setLang('en');
+    fetchBlog();
+    initContactForm();
+    initScrollReveal();
+}
+
 // ===== LANGUAGE SYSTEM =====
 let currentLang = 'en';
 const typedStrings = {
@@ -193,7 +229,10 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
 });
 
 // ===== CONTACT FORM =====
-document.getElementById('contact-form').addEventListener('submit', async e => {
+function initContactForm() {
+    const form = document.getElementById('contact-form');
+    if (!form) return;
+    form.addEventListener('submit', async e => {
     e.preventDefault();
     const btn = e.target.querySelector('button');
     btn.disabled = true;
@@ -215,7 +254,8 @@ document.getElementById('contact-form').addEventListener('submit', async e => {
     }
     btn.disabled = false;
     btn.innerHTML = '<span data-en="Send Message" data-it="Invia Messaggio">' + (currentLang === 'it' ? 'Invia Messaggio' : 'Send Message') + '</span> <i class="fas fa-paper-plane"></i>';
-});
+    });
+}
 
 // ===== PARTICLES.JS =====
 try {
@@ -303,13 +343,10 @@ function toggleTheme() {
     }
 })();
 
-// ===== INIT =====
-renderSkills();
-calcAge();
-setLang('en');
-fetchBlog();
+// ===== INIT (handled by loadSections) =====
 
 // ===== SCROLL REVEAL =====
+function initScrollReveal() {
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -325,3 +362,7 @@ document.querySelectorAll('.edu-card, .timeline-item, .project-card, .skill-card
     el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
     observer.observe(el);
 });
+}
+
+// ===== BOOTSTRAP: Load all sections then initialize =====
+loadSections();

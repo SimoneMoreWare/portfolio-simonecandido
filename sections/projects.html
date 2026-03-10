@@ -1,0 +1,325 @@
+<!-- ===== PROJECTS ===== -->
+<section class="projects" id="projects">
+    <div class="section-header">
+        <p class="label" data-en="What I've built" data-it="Cosa ho realizzato">What I've built</p>
+        <h2 data-en="My <span>Projects</span>" data-it="I Miei <span>Progetti</span>">My <span>Projects</span></h2>
+        <div style="margin-top:1.5rem;">
+            <a href="https://github.com/SimoneMoreWare?tab=repositories" target="_blank" class="btn-outline">
+                <span data-en="View All 30+ on GitHub" data-it="Vedi Tutti i 30+ su GitHub">View All 30+ on GitHub</span>
+                <i class="fab fa-github"></i>
+            </a>
+        </div>
+    </div>
+    <div class="projects-grid">
+        <!-- I 6 PROGETTI PRINCIPALI (copia identici come li hai) -->
+        <div class="project-card">
+            <img src="assets/images/projects/betavae-nlos.png" alt="Beta-VAE NLoS Detection" style="width:100%; border-radius:12px 12px 0 0; margin:-3rem -3rem 2rem -3rem; width:calc(100% + 6rem); object-fit:cover; max-height:22rem;">
+            <span class="proj-tag" data-en="RESEARCH — EURECOM" data-it="RICERCA — EURECOM">RESEARCH — EURECOM</span>
+            <h3 data-en="NLoS Identification in 5G NR Using Variational Autoencoders" data-it="Identificazione NLoS in 5G NR con Autoencoder Variazionali">NLoS Identification in 5G NR Using Variational Autoencoders</h3>
+            <p data-en="Developed a Beta-VAE trained exclusively on LoS Channel Impulse Response data from the GEO-5G testbed at EURECOM. The model detects NLoS signals as out-of-distribution anomalies using the TISSI metric, achieving 88.97% accuracy (balanced) and 97.62% (realistic indoor conditions) — surpassing the 85% UWB benchmark. Deployed as a C++ xApp on the FlexRIC Near-RT RIC via LibTorch, processing 4-antenna CIR measurements in real-time (ms latency) with 99.7% NLoS detection on emulator testing."
+               data-it="Sviluppato un Beta-VAE addestrato esclusivamente su dati LoS di Channel Impulse Response dal testbed GEO-5G di EURECOM. Il modello rileva segnali NLoS come anomalie out-of-distribution tramite la metrica TISSI, raggiungendo 88.97% di accuratezza (bilanciato) e 97.62% (condizioni indoor realistiche) — superando il benchmark UWB dell'85%. Deployato come xApp C++ sul Near-RT RIC FlexRIC via LibTorch, elaborando misurazioni CIR a 4 antenne in tempo reale (ms di latenza) con 99.7% di rilevamento NLoS nei test con emulatore.">
+                Developed a Beta-VAE trained exclusively on LoS Channel Impulse Response data from the GEO-5G testbed at EURECOM. The model detects NLoS signals as out-of-distribution anomalies using the TISSI metric, achieving 88.97% accuracy (balanced) and 97.62% (realistic indoor conditions) — surpassing the 85% UWB benchmark. Deployed as a C++ xApp on the FlexRIC Near-RT RIC via LibTorch, processing 4-antenna CIR measurements in real-time (ms latency) with 99.7% NLoS detection on emulator testing.
+            </p>
+            <div class="tech-tags"><span>PyTorch</span><span>Beta-VAE</span><span>O-RAN</span><span>FlexRIC</span><span>LibTorch</span><span>C++</span><span>Python</span><span>xApp</span><span>5G NR</span></div>
+            <p style="font-size:1.2rem; color:var(--text-muted); margin:0; text-transform:none;" data-en="Private repository — EURECOM semester project" data-it="Repository privato — progetto semestrale EURECOM">Private repository — EURECOM semester project</p>
+        </div>
+        <div class="project-card">
+            <img src="assets/images/projects/liqodashboard.png" alt="Liqo Telemetry Dashboard" style="width:100%; border-radius:12px 12px 0 0; margin:-3rem -3rem 2rem -3rem; width:calc(100% + 6rem); object-fit:cover; max-height:22rem;">
+            <span class="proj-tag" data-en="BACKEND — PoliTo" data-it="BACKEND — PoliTo">BACKEND — PoliTo</span>
+            <h3>Liqo Telemetry Dashboard</h3>
+            <p data-en="Built a monitoring system to migrate and analyze telemetry data from Kubernetes clusters. Engineered a Go backend with GORM and GJSON to extract data from AWS DynamoDB, transform it into a normalized relational schema (9 correlated tables), and load it into PostgreSQL via CloudNativePG. Implemented hybrid sync strategies (daily full refresh + incremental sync) handling DynamoDB's 1MB scan limit. Infrastructure orchestrated with Kubernetes/Kind/Docker. Designed advanced Grafana dashboards for cluster performance, geographical distribution, and versioning trends — enabling data-driven decisions for non-technical stakeholders."
+               data-it="Sviluppato un sistema di monitoraggio per migrare e analizzare dati telemetrici da cluster Kubernetes. Backend in Go con GORM e GJSON per estrarre dati da AWS DynamoDB, trasformarli in uno schema relazionale normalizzato (9 tabelle correlate) e caricarli in PostgreSQL via CloudNativePG. Implementate strategie di sincronizzazione ibride (refresh completo giornaliero + sync incrementale) gestendo il limite di 1MB delle scan DynamoDB. Infrastruttura orchestrata con Kubernetes/Kind/Docker. Progettate dashboard Grafana avanzate per performance cluster, distribuzione geografica e trend di versioning — abilitando decisioni data-driven per stakeholder non tecnici.">
+                Built a monitoring system to migrate and analyze telemetry data from Kubernetes clusters. Engineered a Go backend with GORM and GJSON to extract data from AWS DynamoDB, transform it into a normalized relational schema (9 correlated tables), and load it into PostgreSQL via CloudNativePG. Implemented hybrid sync strategies (daily full refresh + incremental sync) handling DynamoDB's 1MB scan limit. Infrastructure orchestrated with Kubernetes/Kind/Docker. Designed advanced Grafana dashboards for cluster performance, geographical distribution, and versioning trends — enabling data-driven decisions for non-technical stakeholders.
+            </p>
+            <div class="tech-tags"><span>Go</span><span>GORM</span><span>PostgreSQL</span><span>AWS DynamoDB</span><span>Grafana</span><span>Kubernetes</span><span>Kind</span><span>Docker</span><span>CloudNativePG</span></div>
+            <p style="font-size:1.2rem; color:var(--text-muted); margin:0; text-transform:none;" data-en="Private repository — dashboard screenshots use fictitious data for privacy" data-it="Repository privato — gli screenshot delle dashboard usano dati fittizi per privacy">Private repository — dashboard screenshots use fictitious data for privacy</p>
+        </div>
+        <div class="project-card">
+            <img src="assets/images/projects/stuffhappens.png" alt="Stuff Happens Card Game" style="width:100%; border-radius:12px 12px 0 0; margin:-3rem -3rem 2rem -3rem; width:calc(100% + 6rem); object-fit:cover; max-height:22rem;">
+            <span class="proj-tag">FULL STACK</span>
+            <h3>Stuff Happens — Card Game</h3>
+            <p data-en="Full-stack card game where players race against a 30-second timer to position cards by Bad Luck Index. Features drag-and-drop gameplay (DnD Kit), secure authentication (Passport.js), and a RESTful API backed by SQLite. Solved cross-origin session management between Vercel frontend and Render backend by implementing secure SameSite cookie attributes and proxy trust. Includes demo mode, persistent history tracking, and server-side timer validation to prevent cheating."
+               data-it="Gioco di carte full-stack dove i giocatori gareggiano contro un timer di 30 secondi per posizionare le carte in base al Bad Luck Index. Gameplay drag-and-drop (DnD Kit), autenticazione sicura (Passport.js) e API RESTful con SQLite. Risolto il problema delle sessioni cross-origin tra frontend Vercel e backend Render implementando attributi cookie SameSite sicuri e proxy trust. Include modalità demo, storico persistente e validazione timer server-side anti-cheat.">
+                Full-stack card game where players race against a 30-second timer to position cards by Bad Luck Index. Features drag-and-drop gameplay (DnD Kit), secure authentication (Passport.js), and a RESTful API backed by SQLite. Solved cross-origin session management between Vercel frontend and Render backend by implementing secure SameSite cookie attributes and proxy trust. Includes demo mode, persistent history tracking, and server-side timer validation to prevent cheating.
+            </p>
+            <div class="tech-tags"><span>React</span><span>Node.js</span><span>SQLite</span><span>Passport.js</span><span>DnD Kit</span><span>Vite</span><span>Vercel</span><span>Render</span></div>
+            <div class="proj-links">
+                <a href="https://github.com/SimoneMoreWare/Stuff-Happens-WebApp" target="_blank"><i class="fab fa-github"></i> Code</a>
+                <a href="https://stuff-happens-web-app.vercel.app/" target="_blank"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+            </div>
+        </div>
+        <div class="project-card">
+            <img src="assets/images/projects/toretbot.jpg" alt="Turin Toret Bot" style="width:100%; border-radius:12px 12px 0 0; margin:-3rem -3rem 2rem -3rem; width:calc(100% + 6rem); object-fit:cover; max-height:22rem;">
+            <span class="proj-tag">OPEN SOURCE</span>
+            <h3>Turin Toret Bot</h3>
+            <p data-en="Telegram bot to find the nearest public drinking fountain in Turin by sending your GPS location. Built with Python using Telegram Bot API and a custom geolocation algorithm that calculates distances from a live database of fountain coordinates fetched from the I Love Toret API. Officially featured on ilovetoret.it and developed in collaboration with the 'I Love Toret' civic association. Hosted on Railway.com for 24/7 availability."
+               data-it="Bot Telegram per trovare la fontanella pubblica più vicina a Torino inviando la propria posizione GPS. Sviluppato in Python con Telegram Bot API e un algoritmo di geolocalizzazione personalizzato che calcola le distanze da un database live di coordinate delle fontanelle tramite l'API di I Love Toret. Presente ufficialmente su ilovetoret.it e sviluppato in collaborazione con l'associazione civica 'I Love Toret'. Hostato su Railway.com per disponibilità 24/7.">
+                Telegram bot to find the nearest public drinking fountain in Turin by sending your GPS location. Built with Python using Telegram Bot API and a custom geolocation algorithm that calculates distances from a live database of fountain coordinates fetched from the I Love Toret API. Officially featured on ilovetoret.it and developed in collaboration with the "I Love Toret" civic association. Hosted on Railway.com for 24/7 availability.
+            </p>
+            <div class="tech-tags"><span>Python</span><span>Telegram Bot API</span><span>Geolocation</span><span>Railway.com</span><span>REST API</span><span>Open Source</span></div>
+            <div class="proj-links">
+                <a href="https://github.com/SimoneMoreWare/Turin_toret_bot" target="_blank"><i class="fab fa-github"></i> Code</a>
+                <a href="https://t.me/turin_toret_bot" target="_blank"><i class="fab fa-telegram"></i> Try it</a>
+                <a href="https://ilovetoret.it" target="_blank"><i class="fas fa-heart"></i> I Love Toret</a>
+                <a href="https://www.linkedin.com/posts/simone-candido_bot-telegram-turin-activity-6954749121035390976-30ze" target="_blank"><i class="fab fa-linkedin"></i> Post</a>
+            </div>
+        </div>
+        <div class="project-card">
+            <img src="assets/images/projects/plate.png" alt="License Plate Recognition" style="width:100%; border-radius:12px 12px 0 0; margin:-3rem -3rem 2rem -3rem; width:calc(100% + 6rem); object-fit:cover; max-height:22rem;">
+            <span class="proj-tag" data-en="IoT / HARDWARE" data-it="IoT / HARDWARE">IoT / HARDWARE</span>
+            <h3 data-en="License Plate Recognition Gate Opener" data-it="Riconoscimento Targhe con Apertura Cancello">License Plate Recognition Gate Opener</h3>
+            <p data-en="Automated license plate recognition system built with Raspberry Pi CM4 and the Ochin V2 carrier board. Uses OpenCV for plate detection via edge detection and contour analysis, and Tesseract OCR for character recognition. Results are sent in real-time to a Telegram bot with photo and recognized text. Applicable to automated toll systems, security monitoring, and gate access control. Published as a full technical tutorial on moreware.org (955+ views)."
+               data-it="Sistema automatizzato di riconoscimento targhe costruito con Raspberry Pi CM4 e la carrier board Ochin V2. Utilizza OpenCV per il rilevamento della targa tramite edge detection e analisi dei contorni, e Tesseract OCR per il riconoscimento dei caratteri. I risultati vengono inviati in tempo reale a un bot Telegram con foto e testo riconosciuto. Applicabile a caselli automatizzati, monitoraggio di sicurezza e controllo accessi cancelli. Pubblicato come tutorial tecnico completo su moreware.org (955+ visualizzazioni).">
+                Automated license plate recognition system built with Raspberry Pi CM4 and the Ochin V2 carrier board. Uses OpenCV for plate detection via edge detection and contour analysis, and Tesseract OCR for character recognition. Results are sent in real-time to a Telegram bot with photo and recognized text. Applicable to automated toll systems, security monitoring, and gate access control. Published as a full technical tutorial on moreware.org (955+ views).
+            </p>
+            <div class="tech-tags"><span>Raspberry Pi CM4</span><span>Python</span><span>OpenCV</span><span>Tesseract OCR</span><span>Telegram Bot</span><span>Ochin V2</span></div>
+            <div class="proj-links">
+                <a href="https://www.moreware.org/wp/blog/2024/09/17/riconoscimento-targhe-con-raspberry-pi-cm4-e-ochin-v2/" target="_blank"><i class="fas fa-newspaper"></i> Article</a>
+            </div>
+        </div>
+        <div class="project-card">
+            <img src="assets/images/projects/snakelove.png" alt="Snake Love" style="width:100%; border-radius:12px 12px 0 0; margin:-3rem -3rem 2rem -3rem; width:calc(100% + 6rem); object-fit:cover; max-height:22rem;">
+            <span class="proj-tag" data-en="FUN / CREATIVE" data-it="FUN / CREATIVO">FUN / CREATIVE</span>
+            <h3>Snake Love</h3>
+            <p data-en="A romantic twist on the classic Snake game — the snake grows by eating the most used emojis between you and your loved one. Navigate through the grid, avoid hitting your tail, and enjoy a heartwarming experience with every move. Built as a creative gift project combining gameplay with personalization."
+               data-it="Una variante romantica del classico gioco Snake — il serpente cresce mangiando le emoji più usate tra te e la tua dolce metà. Naviga nella griglia, evita di colpire la coda e goditi un'esperienza romantica ad ogni mossa. Progetto creativo che combina gameplay e personalizzazione.">
+                A romantic twist on the classic Snake game — the snake grows by eating the most used emojis between you and your loved one. Navigate through the grid, avoid hitting your tail, and enjoy a heartwarming experience with every move. Built as a creative gift project combining gameplay with personalization.
+            </p>
+            <div class="tech-tags"><span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>Canvas</span></div>
+            <div class="proj-links">
+                <a href="https://github.com/SimoneMoreWare/snake-love" target="_blank"><i class="fab fa-github"></i> Code</a>
+                <a href="https://simonemoreware.github.io/snake-love/public/index.html" target="_blank"><i class="fas fa-external-link-alt"></i> Play it</a>
+            </div>
+        </div>
+    </div>
+    <!-- BOTTONE SHOW MORE - centrato sotto la griglia -->
+    <div style="text-align:center; margin-top:3rem;">
+        <button class="btn-outline" id="toggleProjects" onclick="toggleMoreProjects()">
+            <span data-en="Show More Projects" data-it="Mostra Altri Progetti">Show More Projects</span>
+            <i class="fas fa-chevron-down"></i>
+        </button>
+    </div>
+    <!-- PROGETTI NASCOSTI -->
+    <div class="projects-hidden" id="moreProjects">
+        <div class="project-card">
+            <img src="assets/images/projects/marioclock.png" alt="Super Mario Bros Clock" style="width:100%; border-radius:12px 12px 0 0; margin:-3rem -3rem 2rem -3rem; width:calc(100% + 6rem); object-fit:cover; max-height:22rem;">
+            <span class="proj-tag" data-en="FUN / CREATIVE" data-it="FUN / CREATIVO">FUN / CREATIVE</span>
+            <h3>Super Mario Bros LoFi Clock</h3>
+            <p data-en="A fun clock application inspired by Super Mario Bros, enhanced with study-time lofi music. Features animated Mario characters and elements, providing a delightful way to keep track of time while enjoying soothing background music for study sessions."
+               data-it="Un'applicazione orologio ispirata a Super Mario Bros, arricchita con musica lofi per lo studio. Presenta personaggi e elementi animati di Mario, offrendo un modo piacevole per tenere traccia del tempo mentre si studia con musica di sottofondo rilassante.">
+                A fun clock application inspired by Super Mario Bros, enhanced with study-time lofi music. Features animated Mario characters and elements, providing a delightful way to keep track of time while enjoying soothing background music for study sessions.
+            </p>
+            <div class="tech-tags"><span>HTML5</span><span>CSS3</span><span>JavaScript</span></div>
+            <div class="proj-links">
+                <a href="https://github.com/SimoneMoreWare/SuperMarioBrosClockStudyTimeLofiMusic.github.io" target="_blank"><i class="fab fa-github"></i> Code</a>
+                <a href="https://simonemoreware.github.io/SuperMarioBrosClockStudyTimeLofiMusic.github.io/" target="_blank"><i class="fas fa-external-link-alt"></i> Try it</a>
+            </div>
+        </div>
+        <!-- Aggiungi qui altri progetti futuri -->
+         <div class="project-card">
+            <img src="assets/images/projects/seismograph.png" alt="Raspberry Pi Seismograph" style="width:100%; border-radius:12px 12px 0 0; margin:-3rem -3rem 2rem -3rem; width:calc(100% + 6rem); object-fit:cover; max-height:22rem;">
+            <span class="proj-tag" data-en="IoT / HARDWARE" data-it="IoT / HARDWARE">IoT / HARDWARE</span>
+            <h3 data-en="DIY Seismograph with Raspberry Pi" data-it="Sismografo DIY con Raspberry Pi">DIY Seismograph with Raspberry Pi</h3>
+            <p data-en="Built a real-time seismograph using a Raspberry Pi and the GY-521 accelerometer/gyroscope module (MPU-6050). Reads vibration data via I2C bus and visualizes live acceleration plots using matplotlib. Used in educational demonstrations with the Mi Lego Al Territorio student team. Published as a full technical tutorial on moreware.org (3,200+ views)."
+            data-it="Costruito un sismografo in tempo reale usando un Raspberry Pi e il modulo accelerometro/giroscopio GY-521 (MPU-6050). Legge i dati di vibrazione tramite bus I2C e visualizza grafici di accelerazione live con matplotlib. Utilizzato nelle dimostrazioni educative con il team studentesco Mi Lego Al Territorio. Pubblicato come tutorial tecnico completo su moreware.org (3.200+ visualizzazioni).">
+                Built a real-time seismograph using a Raspberry Pi and the GY-521 accelerometer/gyroscope module (MPU-6050). Reads vibration data via I2C bus and visualizes live acceleration plots using matplotlib. Used in educational demonstrations with the Mi Lego Al Territorio student team. Published as a full technical tutorial on moreware.org (3,200+ views).
+            </p>
+            <div class="tech-tags"><span>Raspberry Pi</span><span>Python</span><span>I2C</span><span>MPU-6050</span><span>matplotlib</span><span>smbus</span></div>
+            <div class="proj-links">
+                <a href="https://www.moreware.org/wp/blog/2022/09/27/raspberry-sismografo-con-gy521-display-e-live-plot/" target="_blank"><i class="fas fa-newspaper"></i> Article</a>
+            </div>
+        </div>
+        <div class="project-card">
+            <img src="assets/images/projects/dispenser.png" alt="Arduino Pet Treat Dispenser" style="width:100%; border-radius:12px 12px 0 0; margin:-3rem -3rem 2rem -3rem; width:calc(100% + 6rem); object-fit:cover; max-height:22rem;">
+            <span class="proj-tag" data-en="IoT / HARDWARE" data-it="IoT / HARDWARE">IoT / HARDWARE</span>
+            <h3 data-en="Arduino Automatic Pet Treat Dispenser" data-it="Distributore Automatico di Biscottini con Arduino">Arduino Automatic Pet Treat Dispenser</h3>
+            <p data-en="Built an automatic treat dispenser for pets using Arduino, an ultrasonic distance sensor (SR04), and a servo motor. When a pet approaches within 20cm, the servo rotates to release a treat from a Pringles tube. Designed with low-cost, easily available components — no 3D printing required. Published as a tutorial on moreware.org (3,700+ views) with a YouTube video walkthrough."
+            data-it="Costruito un distributore automatico di biscottini per animali domestici usando Arduino, un sensore di distanza a ultrasuoni (SR04) e un servo motore. Quando l'animale si avvicina entro 20cm, il servo ruota per rilasciare un biscottino da un tubo di Pringles. Progettato con componenti a basso costo e facilmente reperibili — nessuna stampa 3D necessaria. Pubblicato come tutorial su moreware.org (3.700+ visualizzazioni) con video su YouTube.">
+                Built an automatic treat dispenser for pets using Arduino, an ultrasonic distance sensor (SR04), and a servo motor. When a pet approaches within 20cm, the servo rotates to release a treat from a Pringles tube. Designed with low-cost, easily available components — no 3D printing required. Published as a tutorial on moreware.org (3,700+ views) with a YouTube video walkthrough.
+            </p>
+            <div class="tech-tags"><span>Arduino</span><span>C++</span><span>Servo Motor</span><span>Ultrasonic Sensor</span><span>IoT</span></div>
+            <div class="proj-links">
+                <a href="https://www.moreware.org/wp/blog/2021/04/05/arduino-realizzare-distributore-automatico-per-biscottini/" target="_blank"><i class="fas fa-newspaper"></i> Article</a>
+            </div>
+        </div>
+        <div class="project-card">
+            <img src="assets/images/projects/progetto1.png" alt="ESP32 Telegram Photo Bot" style="width:100%; border-radius:12px 12px 0 0; margin:-3rem -3rem 2rem -3rem; width:calc(100% + 6rem); object-fit:cover; max-height:22rem;">
+            <span class="proj-tag" data-en="IoT / HARDWARE" data-it="IoT / HARDWARE">IoT / HARDWARE</span>
+            <h3 data-en="ESP32-CAM Telegram Photo Bot" data-it="Bot Telegram con Foto ESP32-CAM">ESP32-CAM Telegram Photo Bot</h3>
+            <p data-en="Telegram bot running on ESP32-CAM that captures and sends real-time photos on command. Features flash LED control, authorized user validation, and Wi-Fi connectivity. Published on moreware.org (2,300+ views)."
+            data-it="Bot Telegram su ESP32-CAM che cattura e invia foto in tempo reale su comando. Controllo LED flash, validazione utenti autorizzati e connettività Wi-Fi. Pubblicato su moreware.org (2.300+ visualizzazioni).">
+                Telegram bot running on ESP32-CAM that captures and sends real-time photos on command. Features flash LED control, authorized user validation, and Wi-Fi connectivity. Published on moreware.org (2,300+ views).
+            </p>
+            <div class="tech-tags"><span>ESP32</span><span>C++</span><span>Telegram API</span><span>Arduino</span></div>
+            <div class="proj-links">
+                <a href="https://www.moreware.org/wp/blog/2023/02/14/come-creare-bot-che-ti-manda-foto-su-esp32-14/" target="_blank"><i class="fas fa-newspaper"></i> Article</a>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <img src="assets/images/projects/progetto2.png" alt="Raspberry Pi Camera Web Interface" style="width:100%; border-radius:12px 12px 0 0; margin:-3rem -3rem 2rem -3rem; width:calc(100% + 6rem); object-fit:cover; max-height:22rem;">
+            <span class="proj-tag" data-en="IoT / HARDWARE" data-it="IoT / HARDWARE">IoT / HARDWARE</span>
+            <h3 data-en="Raspberry Pi Camera Web Interface" data-it="Interfaccia Web per Raspberry Pi Camera">Raspberry Pi Camera Web Interface</h3>
+            <p data-en="Web interface for controlling a Raspberry Pi Camera remotely — with motion detection, time-lapse, video recording, and parameter tuning. Includes a full guide on port forwarding, NAT, and remote access from any device worldwide. Published on moreware.org (3,300+ views)."
+            data-it="Interfaccia web per controllare una Raspberry Pi Camera da remoto — con rilevamento movimenti, time-lapse, registrazione video e regolazione parametri. Include guida completa su port forwarding, NAT e accesso remoto da qualsiasi dispositivo. Pubblicato su moreware.org (3.300+ visualizzazioni).">
+                Web interface for controlling a Raspberry Pi Camera remotely — with motion detection, time-lapse, video recording, and parameter tuning. Includes a full guide on port forwarding, NAT, and remote access from any device worldwide. Published on moreware.org (3,300+ views).
+            </p>
+            <div class="tech-tags"><span>Raspberry Pi</span><span>Networking</span><span>Port Forwarding</span><span>NAT</span></div>
+            <div class="proj-links">
+                <a href="https://www.moreware.org/wp/blog/2021/09/06/come-creare-interfaccia-web-con-la-raspberry-pi-camera/" target="_blank"><i class="fas fa-newspaper"></i> Article</a>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <img src="assets/images/projects/progetto3.png" alt="MotionEye Surveillance System" style="width:100%; border-radius:12px 12px 0 0; margin:-3rem -3rem 2rem -3rem; width:calc(100% + 6rem); object-fit:cover; max-height:22rem;">
+            <span class="proj-tag" data-en="IoT / HARDWARE" data-it="IoT / HARDWARE">IoT / HARDWARE</span>
+            <h3 data-en="Video Surveillance with MotionEye" data-it="Videosorveglianza con MotionEye">Video Surveillance with MotionEye</h3>
+            <p data-en="Complete video surveillance system using MotionEye OS on Raspberry Pi. Features motion detection with email alerts, Wi-Fi configuration, scheduled recording, cloud storage, and remote streaming access. Published on moreware.org (4,300+ views)."
+            data-it="Sistema di videosorveglianza completo con MotionEye OS su Raspberry Pi. Rilevamento movimenti con notifiche email, configurazione Wi-Fi, registrazione programmata, storage cloud e accesso streaming remoto. Pubblicato su moreware.org (4.300+ visualizzazioni).">
+                Complete video surveillance system using MotionEye OS on Raspberry Pi. Features motion detection with email alerts, Wi-Fi configuration, scheduled recording, cloud storage, and remote streaming access. Published on moreware.org (4,300+ views).
+            </p>
+            <div class="tech-tags"><span>Raspberry Pi</span><span>MotionEye</span><span>Linux</span><span>Networking</span></div>
+            <div class="proj-links">
+                <a href="https://www.moreware.org/wp/blog/2021/10/26/sistema-di-videosorveglianza-con-motioneye-e-raspberry/" target="_blank"><i class="fas fa-newspaper"></i> Article</a>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <img src="assets/images/projects/progetto4.png" alt="TensorFlow Lite Object Detection" style="width:100%; border-radius:12px 12px 0 0; margin:-3rem -3rem 2rem -3rem; width:calc(100% + 6rem); object-fit:cover; max-height:22rem;">
+            <span class="proj-tag">AI / IoT</span>
+            <h3 data-en="AI Object Detection with TensorFlow Lite" data-it="Rilevamento Oggetti AI con TensorFlow Lite">AI Object Detection with TensorFlow Lite</h3>
+            <p data-en="Real-time object detection on Raspberry Pi using TensorFlow Lite and a SSDLite-MobileNet model trained on MSCOCO (80 object classes). Features live webcam feed with bounding boxes and labels. Includes a beginner-friendly introduction to AI, ML, and computer vision. Published on moreware.org (4,800+ views)."
+            data-it="Rilevamento oggetti in tempo reale su Raspberry Pi usando TensorFlow Lite e un modello SSDLite-MobileNet addestrato su MSCOCO (80 classi di oggetti). Feed webcam live con bounding box ed etichette. Include introduzione a AI, ML e computer vision per principianti. Pubblicato su moreware.org (4.800+ visualizzazioni).">
+                Real-time object detection on Raspberry Pi using TensorFlow Lite and a SSDLite-MobileNet model trained on MSCOCO (80 object classes). Features live webcam feed with bounding boxes and labels. Includes a beginner-friendly introduction to AI, ML, and computer vision. Published on moreware.org (4,800+ views).
+            </p>
+            <div class="tech-tags"><span>Raspberry Pi</span><span>TensorFlow Lite</span><span>Python</span><span>OpenCV</span><span>AI</span></div>
+            <div class="proj-links">
+                <a href="https://www.moreware.org/wp/blog/2021/11/30/raspberry-pi-ai-per-rilevare-oggetti-con-tensorflow/" target="_blank"><i class="fas fa-newspaper"></i> Article</a>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <img src="assets/images/projects/progetto5.png" alt="Facial Expression Recognition" style="width:100%; border-radius:12px 12px 0 0; margin:-3rem -3rem 2rem -3rem; width:calc(100% + 6rem); object-fit:cover; max-height:22rem;">
+            <span class="proj-tag">AI / IoT</span>
+            <h3 data-en="Facial Expression Recognition with Raspberry Pi" data-it="Riconoscimento Espressioni Facciali con Raspberry Pi">Facial Expression Recognition with Raspberry Pi</h3>
+            <p data-en="Real-time facial expression recognition system using Raspberry Pi Camera, OpenCV, TensorFlow, and Keras. Detects 6 emotions (Angry, Fear, Happy, Neutral, Sad, Surprise) from live video feed using a pre-trained deep learning model. Published on moreware.org (2,300+ views)."
+            data-it="Sistema di riconoscimento espressioni facciali in tempo reale usando Raspberry Pi Camera, OpenCV, TensorFlow e Keras. Rileva 6 emozioni (Rabbia, Paura, Felicità, Neutrale, Tristezza, Sorpresa) da video live con un modello deep learning pre-addestrato. Pubblicato su moreware.org (2.300+ visualizzazioni).">
+                Real-time facial expression recognition system using Raspberry Pi Camera, OpenCV, TensorFlow, and Keras. Detects 6 emotions (Angry, Fear, Happy, Neutral, Sad, Surprise) from live video feed using a pre-trained deep learning model. Published on moreware.org (2,300+ views).
+            </p>
+            <div class="tech-tags"><span>Raspberry Pi</span><span>TensorFlow</span><span>Keras</span><span>OpenCV</span><span>Python</span></div>
+            <div class="proj-links">
+                <a href="https://www.moreware.org/wp/blog/2022/01/03/riconoscimento-espressioni-facciali-con-raspberry-pi/" target="_blank"><i class="fas fa-newspaper"></i> Article</a>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <img src="assets/images/projects/progetto6.png" alt="Motion Detection Telegram Bot" style="width:100%; border-radius:12px 12px 0 0; margin:-3rem -3rem 2rem -3rem; width:calc(100% + 6rem); object-fit:cover; max-height:22rem;">
+            <span class="proj-tag" data-en="IoT / HARDWARE" data-it="IoT / HARDWARE">IoT / HARDWARE</span>
+            <h3 data-en="Motion Detection Telegram Alert System" data-it="Sistema di Allerta Movimenti via Telegram">Motion Detection Telegram Alert System</h3>
+            <p data-en="Raspberry Pi Camera system that sends Telegram notifications with photos when motion is detected. Uses MotionEye for detection and custom Bash scripts for Telegram API integration. Features configurable motion thresholds and automated alerts. Published on moreware.org (3,000+ views)."
+            data-it="Sistema con Raspberry Pi Camera che invia notifiche Telegram con foto al rilevamento di movimenti. Usa MotionEye per il rilevamento e script Bash personalizzati per l'integrazione API Telegram. Soglie di movimento configurabili e allerte automatiche. Pubblicato su moreware.org (3.000+ visualizzazioni).">
+                Raspberry Pi Camera system that sends Telegram notifications with photos when motion is detected. Uses MotionEye for detection and custom Bash scripts for Telegram API integration. Features configurable motion thresholds and automated alerts. Published on moreware.org (3,000+ views).
+            </p>
+            <div class="tech-tags"><span>Raspberry Pi</span><span>Bash</span><span>Telegram API</span><span>MotionEye</span></div>
+            <div class="proj-links">
+                <a href="https://www.moreware.org/wp/blog/2022/03/03/raspberry-pi-cam-bot-telegram-che-rileva-movimenti/" target="_blank"><i class="fas fa-newspaper"></i> Article</a>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <img src="assets/images/projects/progetto7.png" alt="ESP32 Video Web Server" style="width:100%; border-radius:12px 12px 0 0; margin:-3rem -3rem 2rem -3rem; width:calc(100% + 6rem); object-fit:cover; max-height:22rem;">
+            <span class="proj-tag" data-en="IoT / HARDWARE" data-it="IoT / HARDWARE">IoT / HARDWARE</span>
+            <h3 data-en="ESP32-CAM Video Web Server" data-it="Video Web Server con ESP32-CAM">ESP32-CAM Video Web Server</h3>
+            <p data-en="Video streaming web server running on ESP32-CAM. Streams live video via Wi-Fi accessible through any LAN browser, with configurable resolution, quality, and camera parameters. Published on moreware.org (2,700+ views)."
+            data-it="Web server di streaming video su ESP32-CAM. Streaming video live via Wi-Fi accessibile da qualsiasi browser in LAN, con risoluzione, qualità e parametri camera configurabili. Pubblicato su moreware.org (2.700+ visualizzazioni).">
+                Video streaming web server running on ESP32-CAM. Streams live video via Wi-Fi accessible through any LAN browser, with configurable resolution, quality, and camera parameters. Published on moreware.org (2,700+ views).
+            </p>
+            <div class="tech-tags"><span>ESP32</span><span>C++</span><span>Wi-Fi</span><span>Video Streaming</span></div>
+            <div class="proj-links">
+                <a href="https://www.moreware.org/wp/blog/2023/01/02/video-web-server-con-esp32-cam-5-2/" target="_blank"><i class="fas fa-newspaper"></i> Article</a>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <img src="assets/images/projects/progetto8.png" alt="ESP32 Camera Web Server" style="width:100%; border-radius:12px 12px 0 0; margin:-3rem -3rem 2rem -3rem; width:calc(100% + 6rem); object-fit:cover; max-height:22rem;">
+            <span class="proj-tag" data-en="IoT / HARDWARE" data-it="IoT / HARDWARE">IoT / HARDWARE</span>
+            <h3 data-en="ESP32-CAM Camera Web Server" data-it="Camera Web Server con ESP32-CAM">ESP32-CAM Camera Web Server</h3>
+            <p data-en="Camera web server on ESP32-CAM with full control panel — adjust brightness, saturation, resolution, flip, and mirror settings via browser. Supports multiple ESP32-CAM board models. Published on moreware.org (2,600+ views)."
+            data-it="Camera web server su ESP32-CAM con pannello di controllo completo — regolazione luminosità, saturazione, risoluzione, flip e mirror via browser. Supporta vari modelli di schede ESP32-CAM. Pubblicato su moreware.org (2.600+ visualizzazioni).">
+                Camera web server on ESP32-CAM with full control panel — adjust brightness, saturation, resolution, flip, and mirror settings via browser. Supports multiple ESP32-CAM board models. Published on moreware.org (2,600+ views).
+            </p>
+            <div class="tech-tags"><span>ESP32</span><span>C++</span><span>Wi-Fi</span><span>Arduino</span></div>
+            <div class="proj-links">
+                <a href="https://www.moreware.org/wp/blog/2022/12/27/camera-web-server-con-esp32-cam-5-1/" target="_blank"><i class="fas fa-newspaper"></i> Article</a>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <img src="assets/images/projects/progetto9.png" alt="Simon Says Game" style="width:100%; border-radius:12px 12px 0 0; margin:-3rem -3rem 2rem -3rem; width:calc(100% + 6rem); object-fit:cover; max-height:22rem;">
+            <span class="proj-tag" data-en="IoT / HARDWARE" data-it="IoT / HARDWARE">IoT / HARDWARE</span>
+            <h3 data-en="Arduino Simon Says Game" data-it="Gioco Simon Says con Arduino">Arduino Simon Says Game</h3>
+            <p data-en="Interactive Simon Says memory game built with Arduino. Players must replicate LED sequences using buttons, with increasing difficulty over 13 rounds. Features 4 LEDs, 4 buttons, buzzer sounds, and timed responses. Published on moreware.org (3,400+ views)."
+            data-it="Gioco interattivo Simon Says costruito con Arduino. I giocatori devono replicare sequenze LED con i bottoni, con difficoltà crescente su 13 round. 4 LED, 4 bottoni, suoni buzzer e risposte a tempo. Pubblicato su moreware.org (3.400+ visualizzazioni).">
+                Interactive Simon Says memory game built with Arduino. Players must replicate LED sequences using buttons, with increasing difficulty over 13 rounds. Features 4 LEDs, 4 buttons, buzzer sounds, and timed responses. Published on moreware.org (3,400+ views).
+            </p>
+            <div class="tech-tags"><span>Arduino</span><span>C++</span><span>Electronics</span><span>Game Design</span></div>
+            <div class="proj-links">
+                <a href="https://www.moreware.org/wp/blog/2020/04/09/arduino-ecco-come-creare-il-simon-says-game/" target="_blank"><i class="fas fa-newspaper"></i> Article</a>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <img src="assets/images/projects/progetto10.png" alt="IR Remote Game" style="width:100%; border-radius:12px 12px 0 0; margin:-3rem -3rem 2rem -3rem; width:calc(100% + 6rem); object-fit:cover; max-height:22rem;">
+            <span class="proj-tag" data-en="IoT / HARDWARE" data-it="IoT / HARDWARE">IoT / HARDWARE</span>
+            <h3 data-en="Arduino IR Remote Game" data-it="Gioco con Telecomando IR e Arduino">Arduino IR Remote Game</h3>
+            <p data-en="Interactive game using Arduino, an LCD display, IR receiver, and any TV remote. Players press mapped keys matching symbols scrolling on screen, with increasing speed per level. Features custom key mapping, score tracking, 10 levels, and buzzer feedback. Published on moreware.org (3,500+ views)."
+            data-it="Gioco interattivo con Arduino, display LCD, ricevitore IR e qualsiasi telecomando TV. I giocatori premono i tasti mappati corrispondenti ai simboli sullo schermo, con velocità crescente per livello. Mappatura tasti personalizzata, punteggio, 10 livelli e feedback sonoro. Pubblicato su moreware.org (3.500+ visualizzazioni).">
+                Interactive game using Arduino, an LCD display, IR receiver, and any TV remote. Players press mapped keys matching symbols scrolling on screen, with increasing speed per level. Features custom key mapping, score tracking, 10 levels, and buzzer feedback. Published on moreware.org (3,500+ views).
+            </p>
+            <div class="tech-tags"><span>Arduino</span><span>C++</span><span>IR Receiver</span><span>LCD Display</span></div>
+            <div class="proj-links">
+                <a href="https://www.moreware.org/wp/blog/2020/05/01/arduino-creare-un-gioco-con-ricevitore-ir/" target="_blank"><i class="fas fa-newspaper"></i> Article</a>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <img src="assets/images/projects/progetto11.png" alt="BleBricks IoT Instrument Storage" style="width:100%; border-radius:12px 12px 0 0; margin:-3rem -3rem 2rem -3rem; width:calc(100% + 6rem); object-fit:cover; max-height:22rem;">
+            <span class="proj-tag">IoT</span>
+            <h3 data-en="BleBricks IoT Instrument Monitor" data-it="Monitor IoT per Strumenti con BleBricks">BleBricks IoT Instrument Monitor</h3>
+            <p data-en="IoT environmental monitoring system for musical instrument storage using BleBricks modular platform. Sends smartphone alerts when humidity falls outside optimal range (45%-55%). No-code setup using MakeApp with If/Then logic interactions. Published on moreware.org (2,000+ views)."
+            data-it="Sistema IoT di monitoraggio ambientale per la conservazione di strumenti musicali con la piattaforma modulare BleBricks. Invia allerte smartphone quando l'umidità esce dal range ottimale (45%-55%). Configurazione no-code con MakeApp e logica If/Then. Pubblicato su moreware.org (2.000+ visualizzazioni).">
+                IoT environmental monitoring system for musical instrument storage using BleBricks modular platform. Sends smartphone alerts when humidity falls outside optimal range (45%-55%). No-code setup using MakeApp with If/Then logic interactions. Published on moreware.org (2,000+ views).
+            </p>
+            <div class="tech-tags"><span>IoT</span><span>BLE</span><span>BleBricks</span><span>No-Code</span></div>
+            <div class="proj-links">
+                <a href="https://www.moreware.org/wp/blog/2021/06/01/blebricks-come-conservare-gli-strumenti-con-progetto-iot/" target="_blank"><i class="fas fa-newspaper"></i> Article</a>
+            </div>
+        </div>
+        <div class="project-card">
+            <img src="assets/images/projects/virtualsecretary.jpg" alt="Virtual Secretary Bot" style="width:100%; border-radius:12px 12px 0 0; margin:-3rem -3rem 2rem -3rem; width:calc(100% + 6rem); object-fit:cover; max-height:22rem;">
+            <span class="proj-tag" data-en="PRODUCTIVITY / AI" data-it="PRODUTTIVITÀ / AI">PRODUCTIVITY / AI</span>
+            <h3>Virtual Secretary Bot</h3>
+            <p data-en="Python-based Telegram userbot that acts as a personal secretary. Automatically responds to messages based on Google Calendar availability, parses natural language dates, translates queries with Google Translate, and generates AI-powered responses using Hugging Face (Gemma 2). Built with Telethon for userbot capabilities — unlike standard bot libraries, it operates as a regular Telegram user."
+            data-it="Userbot Telegram in Python che funge da segretario personale. Risponde automaticamente ai messaggi in base alla disponibilità su Google Calendar, interpreta date in linguaggio naturale, traduce le richieste con Google Translate e genera risposte AI con Hugging Face (Gemma 2). Costruito con Telethon per funzionalità userbot — a differenza delle librerie bot standard, opera come un utente Telegram normale.">
+                Python-based Telegram userbot that acts as a personal secretary. Automatically responds to messages based on Google Calendar availability, parses natural language dates, translates queries with Google Translate, and generates AI-powered responses using Hugging Face (Gemma 2). Built with Telethon for userbot capabilities — unlike standard bot libraries, it operates as a regular Telegram user.
+            </p>
+            <div class="tech-tags"><span>Python</span><span>Telethon</span><span>Google Calendar API</span><span>Hugging Face</span><span>NLP</span><span>Google Translate</span></div>
+            <div class="proj-links">
+                <a href="https://github.com/SimoneMoreWare/virtual-secretary-bot" target="_blank"><i class="fab fa-github"></i> Code</a>
+            </div>
+        </div>
+        <div class="project-card">
+            <img src="assets/images/projects/soccertable.jpg" alt="Digital Soccer Table Scoreboard" style="width:100%; border-radius:12px 12px 0 0; margin:-3rem -3rem 2rem -3rem; width:calc(100% + 6rem); object-fit:cover; max-height:22rem;">
+            <span class="proj-tag" data-en="IoT / HARDWARE" data-it="IoT / HARDWARE">IoT / HARDWARE</span>
+            <h3 data-en="Digital Soccer Table Scoreboard" data-it="Tabellone Digitale per Calcio Balilla">Digital Soccer Table Scoreboard</h3>
+            <p data-en="Real-time digital scoreboard for table football built with ESP32. A laser beam and photoresistor sensor on each goal detect when the ball breaks the light beam — triggering a buzzer and sending the goal event via HTTP to a cloud server (AWS EC2) for live score tracking, like a mini Flashscore for your table football matches. Features JWT-authenticated API calls and Wi-Fi connectivity."
+            data-it="Tabellone digitale in tempo reale per calcio balilla costruito con ESP32. Un fascio laser e un sensore fotoresistore su ogni porta rilevano quando la pallina interrompe il fascio di luce — attivando un buzzer e inviando l'evento gol via HTTP a un server cloud (AWS EC2) per il tracciamento live del punteggio, come un mini Flashscore per le partite di biliardino. Chiamate API autenticate con JWT e connettività Wi-Fi.">
+                Real-time digital scoreboard for table football built with ESP32. A laser beam and photoresistor sensor on each goal detect when the ball breaks the light beam — triggering a buzzer and sending the goal event via HTTP to a cloud server (AWS EC2) for live score tracking, like a mini Flashscore for your table football matches. Features JWT-authenticated API calls and Wi-Fi connectivity.
+            </p>
+            <div class="tech-tags"><span>ESP32</span><span>C++</span><span>Photoresistor</span><span>Laser</span><span>AWS EC2</span><span>REST API</span><span>IoT</span></div>
+            <div class="proj-links">
+                <a href="https://github.com/SimoneMoreWare/ScoreDigital_SoccerTable" target="_blank"><i class="fab fa-github"></i> Code</a>
+            </div>
+        </div>
+    </div>
+</section>
