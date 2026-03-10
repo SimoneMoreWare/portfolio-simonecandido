@@ -28,6 +28,7 @@ async function loadSections() {
 function initApp() {
     renderSkills();
     calcAge();
+    setDynamicYear();
     setLang('en');
     fetchBlog();
     initContactForm();
@@ -342,6 +343,17 @@ function toggleTheme() {
         });
     }
 })();
+
+// ===== DYNAMIC YEAR =====
+function setDynamicYear() {
+    const currentYear = new Date().getFullYear();
+    const copyrightEl = document.getElementById('copyright');
+    if (copyrightEl) {
+        // Update attributes data-* with the current year
+        copyrightEl.setAttribute('data-en', `&copy; ${currentYear} Simone Pio Candido. All rights reserved.`);
+        copyrightEl.setAttribute('data-it', `&copy; ${currentYear} Simone Pio Candido. Tutti i diritti riservati.`);
+    }
+}
 
 // ===== INIT (handled by loadSections) =====
 
