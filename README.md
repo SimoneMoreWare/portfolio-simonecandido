@@ -25,18 +25,40 @@ Personal portfolio website — Computer Engineer, IoT & Full-Stack Developer.
 ## Project Structure
 
 ```
-portfolio-simonecandido/
+.
+├── .github/
+│   └── workflows/
+│       └── static.yml
+├── assets/
+│   ├── images/
+│   │   ├── blog/
+│   │   ├── exp/
+│   │   ├── notes/
+│   │   ├── projects/
+│   │   ├── eurecomlogo.png
+│   │   ├── favicon.png
+│   │   ├── politologo.png
+│   │   ├── profile.png
+│   │   └── wallpaper.jpg
+│   └── pdf/
+├── scripts/
+│   └── script.js
+├── sections/
+│   ├── about.html
+│   ├── blog.html
+│   ├── contact.html
+│   ├── education.html
+│   ├── experience.html
+│   ├── notes.html
+│   ├── projects.html
+│   ├── skills.html
+│   └── testimonials.html
+├── style/
+│   └── style.css
+├── .gitignore
 ├── index.html
-├── profile.png
-├── README.md
-└── assets/
-    ├── images/
-    │   ├── profile.png
-    │   ├── wallpaper.png
-    │   ├── eurecomlogo.png
-    │   └── politologo.png
-    └── pdf/
-        └── cv.pdf
+├── LICENSE
+└── README.md
 ```
 
 ## Contact Form Setup
