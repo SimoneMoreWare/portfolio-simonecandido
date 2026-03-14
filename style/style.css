@@ -703,7 +703,7 @@ section { min-height: 100vh; padding: 10rem 6%; }
 }
 
 /* ===== BLOG ===== */
-.blog { background: var(--bg-primary); }
+.blog { background: var(--bg-secondary); }
 .blog-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(32rem, 1fr));
@@ -764,7 +764,7 @@ section { min-height: 100vh; padding: 10rem 6%; }
 }
 
 /* ===== NOTES ===== */
-.notes { background: var(--bg-secondary); }
+.notes { background: var(--bg-primary); }
 .notes-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
