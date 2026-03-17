@@ -1,0 +1,63 @@
+/* ===== EDUCATION ===== */
+.education { background: var(--bg-secondary); }
+.edu-container {
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+.edu-card {
+    display: flex;
+    gap: 3rem;
+    padding: 3rem;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    transition: 0.3s;
+    align-items: center;
+}
+.edu-card:hover {
+    border-color: var(--accent);
+    transform: translateX(5px);
+}
+.edu-card .edu-icon {
+    flex-shrink: 0;
+    width: 6rem;
+    height: 6rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(232, 80, 58, 0.1);
+    border-radius: 14px;
+    font-size: 2.6rem;
+    color: var(--accent);
+}
+.edu-card .edu-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 8px;
+}
+.edu-card h3 {
+    font-family: var(--font-display);
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+.edu-card .school {
+    font-size: 1.5rem;
+    color: var(--accent-secondary);
+    font-weight: 600;
+}
+.edu-card .year {
+    font-size: 1.3rem;
+    color: var(--text-muted);
+    margin-top: 0.5rem;
+}
+.edu-card .detail {
+    font-size: 1.4rem;
+    color: var(--text-secondary);
+    margin-top: 0.5rem;
+    text-transform: none;
+}

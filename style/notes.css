@@ -1,0 +1,90 @@
+/* ===== NOTES ===== */
+.notes { background: var(--bg-primary); }
+.notes-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5rem;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+.note-card {
+    display: flex;
+    flex-direction: column;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    overflow: hidden;
+    text-decoration: none;
+    transition: 0.3s;
+}
+.note-card:hover {
+    transform: translateY(-6px);
+    border-color: var(--accent);
+    box-shadow: 0 16px 40px rgba(0,0,0,0.35);
+}
+.note-spine {
+    position: relative;
+    overflow: hidden;
+    background: #0a0a0f;
+    border-bottom: 3px solid var(--accent);
+}
+.note-spine img {
+    width: 100%;
+    display: block;
+    transition: 0.4s;
+}
+.note-card:hover .note-spine img { transform: scale(1.03); }
+.note-body {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+.note-badge {
+    display: inline-block;
+    font-family: var(--font-display);
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--bg-primary);
+    background: var(--accent-secondary);
+    padding: 0.2rem 0.8rem;
+    border-radius: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 0.8rem;
+    width: fit-content;
+}
+.note-card h3 {
+    font-family: var(--font-display);
+    font-size: 1.7rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 0.8rem;
+}
+.note-card p {
+    font-size: 1.3rem;
+    color: var(--text-secondary);
+    text-transform: none;
+    line-height: 1.6;
+    flex-grow: 1;
+}
+.note-tag {
+    display: block;
+    margin-top: 1rem;
+    font-size: 1.15rem;
+    color: var(--accent);
+    font-weight: 600;
+    text-transform: none;
+}
+.note-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 1.2rem;
+    font-family: var(--font-display);
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--text-muted);
+    transition: 0.2s;
+}
+.note-card:hover .note-link { color: var(--accent); }

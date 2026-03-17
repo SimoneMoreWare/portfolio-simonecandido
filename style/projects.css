@@ -1,0 +1,96 @@
+/* ===== PROJECTS ===== */
+.projects { background: var(--bg-secondary); }
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(32rem, 1fr));
+    gap: 2.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.project-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 3rem;
+    transition: 0.3s;
+    display: flex;
+    flex-direction: column;
+}
+.project-card:hover {
+    border-color: var(--accent);
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+}
+.project-card .proj-tag {
+    display: inline-block;
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--accent);
+    background: rgba(232, 80, 58, 0.1);
+    padding: 0.4rem 1rem;
+    border-radius: 6px;
+    margin-bottom: 1.5rem;
+    width: fit-content;
+}
+.project-card h3 {
+    font-family: var(--font-display);
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+.project-card p {
+    font-size: 1.4rem;
+    color: var(--text-secondary);
+    text-transform: none;
+    line-height: 1.7;
+    flex-grow: 1;
+    margin-bottom: 2rem;
+}
+.project-card .tech-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin-bottom: 2rem;
+}
+.project-card .tech-tags span {
+    font-size: 1.2rem;
+    padding: 0.3rem 0.9rem;
+    border-radius: 6px;
+    background: rgba(240, 160, 48, 0.1);
+    color: var(--accent-secondary);
+    font-weight: 600;
+}
+.project-card .proj-links {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+.project-card .proj-links a {
+    font-size: 1.3rem;
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: 0.2s;
+}
+.project-card .proj-links a:hover { color: var(--accent); }
+.project-card .proj-links a.demo-link {
+    color: var(--accent);
+    border: 1.5px solid var(--accent);
+    padding: 0.4rem 1.1rem;
+    border-radius: 2rem;
+    font-size: 1.25rem;
+    font-weight: 600;
+    transition: background 0.2s, color 0.2s;
+}
+.project-card .proj-links a.demo-link:hover {
+    background: var(--accent);
+    color: #fff;
+}
+.projects-hidden { display: none; }
+.projects-hidden.show {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(32rem, 1fr));
+    gap: 2.5rem;
+    max-width: 1200px;
+    margin: 2.5rem auto 0;
+}
