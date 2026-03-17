@@ -10,9 +10,19 @@
             </a>
         </div>
     </div>
+    <div class="proj-filters" id="projFilters">
+        <button class="proj-filter active" data-filter="all" data-en="All" data-it="Tutti">All</button>
+        <button class="proj-filter" data-filter="research" data-en="Research" data-it="Ricerca">Research</button>
+        <button class="proj-filter" data-filter="fullstack" data-en="Full Stack" data-it="Full Stack">Full Stack</button>
+        <button class="proj-filter" data-filter="iot" data-en="IoT / Hardware" data-it="IoT / Hardware">IoT / Hardware</button>
+        <button class="proj-filter" data-filter="ai" data-en="AI" data-it="AI">AI</button>
+        <button class="proj-filter" data-filter="opensource" data-en="Open Source" data-it="Open Source">Open Source</button>
+        <button class="proj-filter" data-filter="fun" data-en="Fun / Creative" data-it="Fun / Creativo">Fun / Creative</button>
+        <button class="proj-filter" data-filter="productivity" data-en="Productivity" data-it="Produttività">Productivity</button>
+    </div>
     <div class="projects-grid">
         <!-- I 6 PROGETTI PRINCIPALI (copia identici come li hai) -->
-        <div class="project-card">
+        <div class="project-card" data-category="research">
             <img src="assets/images/projects/betavae-nlos.png" alt="Beta-VAE NLoS Detection" style="width:100%; border-radius:12px 12px 0 0; margin:-3rem -3rem 2rem -3rem; width:calc(100% + 6rem); object-fit:cover; max-height:22rem;">
             <span class="proj-tag" data-en="RESEARCH — EURECOM" data-it="RICERCA — EURECOM">RESEARCH — EURECOM</span>
             <h3 data-en="NLoS Identification in 5G NR Using Variational Autoencoders" data-it="Identificazione NLoS in 5G NR con Autoencoder Variazionali">NLoS Identification in 5G NR Using Variational Autoencoders</h3>
@@ -23,7 +33,7 @@
             <div class="tech-tags"><span>PyTorch</span><span>Beta-VAE</span><span>O-RAN</span><span>FlexRIC</span><span>LibTorch</span><span>C++</span><span>Python</span><span>xApp</span><span>5G NR</span></div>
             <p style="font-size:1.2rem; color:var(--text-muted); margin:0; text-transform:none;" data-en="Private repository — EURECOM semester project" data-it="Repository privato — progetto semestrale EURECOM">Private repository — EURECOM semester project</p>
         </div>
-        <div class="project-card">
+        <div class="project-card" data-category="fullstack">
             <img src="assets/images/projects/liqodashboard.png" alt="Liqo Telemetry Dashboard" style="width:100%; border-radius:12px 12px 0 0; margin:-3rem -3rem 2rem -3rem; width:calc(100% + 6rem); object-fit:cover; max-height:22rem;">
             <span class="proj-tag" data-en="BACKEND — PoliTo" data-it="BACKEND — PoliTo">BACKEND — PoliTo</span>
             <h3>Liqo Telemetry Dashboard</h3>
@@ -34,7 +44,7 @@
             <div class="tech-tags"><span>Go</span><span>GORM</span><span>PostgreSQL</span><span>AWS DynamoDB</span><span>Grafana</span><span>Kubernetes</span><span>Kind</span><span>Docker</span><span>CloudNativePG</span></div>
             <p style="font-size:1.2rem; color:var(--text-muted); margin:0; text-transform:none;" data-en="Private repository — dashboard screenshots use fictitious data for privacy" data-it="Repository privato — gli screenshot delle dashboard usano dati fittizi per privacy">Private repository — dashboard screenshots use fictitious data for privacy</p>
         </div>
-        <div class="project-card">
+        <div class="project-card" data-category="fullstack">
             <img src="assets/images/projects/stuffhappens.png" alt="Stuff Happens Card Game" style="width:100%; border-radius:12px 12px 0 0; margin:-3rem -3rem 2rem -3rem; width:calc(100% + 6rem); object-fit:cover; max-height:22rem;">
             <span class="proj-tag">FULL STACK</span>
             <h3>Stuff Happens — Card Game</h3>
@@ -48,7 +58,7 @@
                 <a href="https://stuff-happens-web-app.vercel.app/" target="_blank"><i class="fas fa-external-link-alt"></i> Live Demo</a>
             </div>
         </div>
-        <div class="project-card">
+        <div class="project-card" data-category="opensource">
             <img src="assets/images/projects/toretbot.jpg" alt="Turin Toret Bot" style="width:100%; border-radius:12px 12px 0 0; margin:-3rem -3rem 2rem -3rem; width:calc(100% + 6rem); object-fit:cover; max-height:22rem;">
             <span class="proj-tag">OPEN SOURCE</span>
             <h3>Turin Toret Bot</h3>
@@ -64,7 +74,7 @@
                 <a href="https://www.linkedin.com/posts/simone-candido_bot-telegram-turin-activity-6954749121035390976-30ze" target="_blank"><i class="fab fa-linkedin"></i> Post</a>
             </div>
         </div>
-        <div class="project-card">
+        <div class="project-card" data-category="iot">
             <img src="assets/images/projects/plate.png" alt="License Plate Recognition" style="width:100%; border-radius:12px 12px 0 0; margin:-3rem -3rem 2rem -3rem; width:calc(100% + 6rem); object-fit:cover; max-height:22rem;">
             <span class="proj-tag" data-en="IoT / HARDWARE" data-it="IoT / HARDWARE">IoT / HARDWARE</span>
             <h3 data-en="License Plate Recognition Gate Opener" data-it="Riconoscimento Targhe con Apertura Cancello">License Plate Recognition Gate Opener</h3>
@@ -77,7 +87,7 @@
                 <a href="https://www.moreware.org/wp/blog/2024/09/17/riconoscimento-targhe-con-raspberry-pi-cm4-e-ochin-v2/" target="_blank"><i class="fas fa-newspaper"></i> Article</a>
             </div>
         </div>
-        <div class="project-card">
+        <div class="project-card" data-category="fun">
             <img src="assets/images/projects/snakelove.png" alt="Snake Love" style="width:100%; border-radius:12px 12px 0 0; margin:-3rem -3rem 2rem -3rem; width:calc(100% + 6rem); object-fit:cover; max-height:22rem;">
             <span class="proj-tag" data-en="FUN / CREATIVE" data-it="FUN / CREATIVO">FUN / CREATIVE</span>
             <h3>Snake Love</h3>
@@ -101,7 +111,7 @@
     </div>
     <!-- PROGETTI NASCOSTI -->
     <div class="projects-hidden" id="moreProjects">
-        <div class="project-card">
+        <div class="project-card" data-category="fun">
             <img src="assets/images/projects/marioclock.png" alt="Super Mario Bros Clock" style="width:100%; border-radius:12px 12px 0 0; margin:-3rem -3rem 2rem -3rem; width:calc(100% + 6rem); object-fit:cover; max-height:22rem;">
             <span class="proj-tag" data-en="FUN / CREATIVE" data-it="FUN / CREATIVO">FUN / CREATIVE</span>
             <h3>Super Mario Bros LoFi Clock</h3>
@@ -116,7 +126,7 @@
             </div>
         </div>
         <!-- Aggiungi qui altri progetti futuri -->
-         <div class="project-card">
+         <div class="project-card" data-category="iot">
             <img src="assets/images/projects/seismograph.png" alt="Raspberry Pi Seismograph" style="width:100%; border-radius:12px 12px 0 0; margin:-3rem -3rem 2rem -3rem; width:calc(100% + 6rem); object-fit:cover; max-height:22rem;">
             <span class="proj-tag" data-en="IoT / HARDWARE" data-it="IoT / HARDWARE">IoT / HARDWARE</span>
             <h3 data-en="DIY Seismograph with Raspberry Pi" data-it="Sismografo DIY con Raspberry Pi">DIY Seismograph with Raspberry Pi</h3>
@@ -129,7 +139,7 @@
                 <a href="https://www.moreware.org/wp/blog/2022/09/27/raspberry-sismografo-con-gy521-display-e-live-plot/" target="_blank"><i class="fas fa-newspaper"></i> Article</a>
             </div>
         </div>
-        <div class="project-card">
+        <div class="project-card" data-category="iot">
             <img src="assets/images/projects/dispenser.png" alt="Arduino Pet Treat Dispenser" style="width:100%; border-radius:12px 12px 0 0; margin:-3rem -3rem 2rem -3rem; width:calc(100% + 6rem); object-fit:cover; max-height:22rem;">
             <span class="proj-tag" data-en="IoT / HARDWARE" data-it="IoT / HARDWARE">IoT / HARDWARE</span>
             <h3 data-en="Arduino Automatic Pet Treat Dispenser" data-it="Distributore Automatico di Biscottini con Arduino">Arduino Automatic Pet Treat Dispenser</h3>
@@ -142,7 +152,7 @@
                 <a href="https://www.moreware.org/wp/blog/2021/04/05/arduino-realizzare-distributore-automatico-per-biscottini/" target="_blank"><i class="fas fa-newspaper"></i> Article</a>
             </div>
         </div>
-        <div class="project-card">
+        <div class="project-card" data-category="iot">
             <img src="assets/images/projects/progetto1.png" alt="ESP32 Telegram Photo Bot" style="width:100%; border-radius:12px 12px 0 0; margin:-3rem -3rem 2rem -3rem; width:calc(100% + 6rem); object-fit:cover; max-height:22rem;">
             <span class="proj-tag" data-en="IoT / HARDWARE" data-it="IoT / HARDWARE">IoT / HARDWARE</span>
             <h3 data-en="ESP32-CAM Telegram Photo Bot" data-it="Bot Telegram con Foto ESP32-CAM">ESP32-CAM Telegram Photo Bot</h3>
@@ -156,7 +166,7 @@
             </div>
         </div>
 
-        <div class="project-card">
+        <div class="project-card" data-category="iot">
             <img src="assets/images/projects/progetto2.png" alt="Raspberry Pi Camera Web Interface" style="width:100%; border-radius:12px 12px 0 0; margin:-3rem -3rem 2rem -3rem; width:calc(100% + 6rem); object-fit:cover; max-height:22rem;">
             <span class="proj-tag" data-en="IoT / HARDWARE" data-it="IoT / HARDWARE">IoT / HARDWARE</span>
             <h3 data-en="Raspberry Pi Camera Web Interface" data-it="Interfaccia Web per Raspberry Pi Camera">Raspberry Pi Camera Web Interface</h3>
@@ -170,7 +180,7 @@
             </div>
         </div>
 
-        <div class="project-card">
+        <div class="project-card" data-category="iot">
             <img src="assets/images/projects/progetto3.png" alt="MotionEye Surveillance System" style="width:100%; border-radius:12px 12px 0 0; margin:-3rem -3rem 2rem -3rem; width:calc(100% + 6rem); object-fit:cover; max-height:22rem;">
             <span class="proj-tag" data-en="IoT / HARDWARE" data-it="IoT / HARDWARE">IoT / HARDWARE</span>
             <h3 data-en="Video Surveillance with MotionEye" data-it="Videosorveglianza con MotionEye">Video Surveillance with MotionEye</h3>
@@ -184,7 +194,7 @@
             </div>
         </div>
 
-        <div class="project-card">
+        <div class="project-card" data-category="ai">
             <img src="assets/images/projects/progetto4.png" alt="TensorFlow Lite Object Detection" style="width:100%; border-radius:12px 12px 0 0; margin:-3rem -3rem 2rem -3rem; width:calc(100% + 6rem); object-fit:cover; max-height:22rem;">
             <span class="proj-tag">AI / IoT</span>
             <h3 data-en="AI Object Detection with TensorFlow Lite" data-it="Rilevamento Oggetti AI con TensorFlow Lite">AI Object Detection with TensorFlow Lite</h3>
@@ -198,7 +208,7 @@
             </div>
         </div>
 
-        <div class="project-card">
+        <div class="project-card" data-category="ai">
             <img src="assets/images/projects/progetto5.png" alt="Facial Expression Recognition" style="width:100%; border-radius:12px 12px 0 0; margin:-3rem -3rem 2rem -3rem; width:calc(100% + 6rem); object-fit:cover; max-height:22rem;">
             <span class="proj-tag">AI / IoT</span>
             <h3 data-en="Facial Expression Recognition with Raspberry Pi" data-it="Riconoscimento Espressioni Facciali con Raspberry Pi">Facial Expression Recognition with Raspberry Pi</h3>
@@ -212,7 +222,7 @@
             </div>
         </div>
 
-        <div class="project-card">
+        <div class="project-card" data-category="iot">
             <img src="assets/images/projects/progetto6.png" alt="Motion Detection Telegram Bot" style="width:100%; border-radius:12px 12px 0 0; margin:-3rem -3rem 2rem -3rem; width:calc(100% + 6rem); object-fit:cover; max-height:22rem;">
             <span class="proj-tag" data-en="IoT / HARDWARE" data-it="IoT / HARDWARE">IoT / HARDWARE</span>
             <h3 data-en="Motion Detection Telegram Alert System" data-it="Sistema di Allerta Movimenti via Telegram">Motion Detection Telegram Alert System</h3>
@@ -226,7 +236,7 @@
             </div>
         </div>
 
-        <div class="project-card">
+        <div class="project-card" data-category="iot">
             <img src="assets/images/projects/progetto7.png" alt="ESP32 Video Web Server" style="width:100%; border-radius:12px 12px 0 0; margin:-3rem -3rem 2rem -3rem; width:calc(100% + 6rem); object-fit:cover; max-height:22rem;">
             <span class="proj-tag" data-en="IoT / HARDWARE" data-it="IoT / HARDWARE">IoT / HARDWARE</span>
             <h3 data-en="ESP32-CAM Video Web Server" data-it="Video Web Server con ESP32-CAM">ESP32-CAM Video Web Server</h3>
@@ -240,7 +250,7 @@
             </div>
         </div>
 
-        <div class="project-card">
+        <div class="project-card" data-category="iot">
             <img src="assets/images/projects/progetto8.png" alt="ESP32 Camera Web Server" style="width:100%; border-radius:12px 12px 0 0; margin:-3rem -3rem 2rem -3rem; width:calc(100% + 6rem); object-fit:cover; max-height:22rem;">
             <span class="proj-tag" data-en="IoT / HARDWARE" data-it="IoT / HARDWARE">IoT / HARDWARE</span>
             <h3 data-en="ESP32-CAM Camera Web Server" data-it="Camera Web Server con ESP32-CAM">ESP32-CAM Camera Web Server</h3>
@@ -254,7 +264,7 @@
             </div>
         </div>
 
-        <div class="project-card">
+        <div class="project-card" data-category="fun">
             <img src="assets/images/projects/progetto9.png" alt="Simon Says Game" style="width:100%; border-radius:12px 12px 0 0; margin:-3rem -3rem 2rem -3rem; width:calc(100% + 6rem); object-fit:cover; max-height:22rem;">
             <span class="proj-tag" data-en="IoT / HARDWARE" data-it="IoT / HARDWARE">IoT / HARDWARE</span>
             <h3 data-en="Arduino Simon Says Game" data-it="Gioco Simon Says con Arduino">Arduino Simon Says Game</h3>
@@ -268,7 +278,7 @@
             </div>
         </div>
 
-        <div class="project-card">
+        <div class="project-card"  data-category="fun">
             <img src="assets/images/projects/progetto10.png" alt="IR Remote Game" style="width:100%; border-radius:12px 12px 0 0; margin:-3rem -3rem 2rem -3rem; width:calc(100% + 6rem); object-fit:cover; max-height:22rem;">
             <span class="proj-tag" data-en="IoT / HARDWARE" data-it="IoT / HARDWARE">IoT / HARDWARE</span>
             <h3 data-en="Arduino IR Remote Game" data-it="Gioco con Telecomando IR e Arduino">Arduino IR Remote Game</h3>
@@ -282,7 +292,7 @@
             </div>
         </div>
 
-        <div class="project-card">
+        <div class="project-card" data-category="iot">
             <img src="assets/images/projects/progetto11.png" alt="BleBricks IoT Instrument Storage" style="width:100%; border-radius:12px 12px 0 0; margin:-3rem -3rem 2rem -3rem; width:calc(100% + 6rem); object-fit:cover; max-height:22rem;">
             <span class="proj-tag">IoT</span>
             <h3 data-en="BleBricks IoT Instrument Monitor" data-it="Monitor IoT per Strumenti con BleBricks">BleBricks IoT Instrument Monitor</h3>
@@ -295,7 +305,7 @@
                 <a href="https://www.moreware.org/wp/blog/2021/06/01/blebricks-come-conservare-gli-strumenti-con-progetto-iot/" target="_blank"><i class="fas fa-newspaper"></i> Article</a>
             </div>
         </div>
-        <div class="project-card">
+        <div class="project-card" data-category="productivity">
             <img src="assets/images/projects/virtualsecretary.jpg" alt="Virtual Secretary Bot" style="width:100%; border-radius:12px 12px 0 0; margin:-3rem -3rem 2rem -3rem; width:calc(100% + 6rem); object-fit:cover; max-height:22rem;">
             <span class="proj-tag" data-en="PRODUCTIVITY / AI" data-it="PRODUTTIVITÀ / AI">PRODUCTIVITY / AI</span>
             <h3>Virtual Secretary Bot</h3>
@@ -308,7 +318,7 @@
                 <a href="https://github.com/SimoneMoreWare/virtual-secretary-bot" target="_blank"><i class="fab fa-github"></i> Code</a>
             </div>
         </div>
-        <div class="project-card">
+        <div class="project-card" data-category="iot">
             <img src="assets/images/projects/soccertable.jpg" alt="Digital Soccer Table Scoreboard" style="width:100%; border-radius:12px 12px 0 0; margin:-3rem -3rem 2rem -3rem; width:calc(100% + 6rem); object-fit:cover; max-height:22rem;">
             <span class="proj-tag" data-en="IoT / HARDWARE" data-it="IoT / HARDWARE">IoT / HARDWARE</span>
             <h3 data-en="Digital Soccer Table Scoreboard" data-it="Tabellone Digitale per Calcio Balilla">Digital Soccer Table Scoreboard</h3>

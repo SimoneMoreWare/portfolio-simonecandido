@@ -94,3 +94,39 @@
     max-width: 1200px;
     margin: 2.5rem auto 0;
 }
+
+/* ===== PROJECT FILTERS ===== */
+.proj-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    justify-content: center;
+    margin-bottom: 4rem;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.proj-filter {
+    font-family: var(--font-display);
+    font-size: 1.3rem;
+    font-weight: 600;
+    padding: 0.6rem 1.6rem;
+    border-radius: 2rem;
+    border: 1.5px solid var(--border);
+    background: transparent;
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: 0.2s;
+}
+.proj-filter:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+}
+.proj-filter.active {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: #fff;
+}
+.project-card.hidden {
+    display: none !important;
+}
