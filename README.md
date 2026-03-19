@@ -54,7 +54,19 @@ Personal portfolio website — Computer Engineer, IoT & Full-Stack Developer.
 │   ├── skills.html
 │   └── testimonials.html
 ├── style/
-│   └── style.css
+│   ├── about.css
+│   ├── base.css
+│   ├── blog.css
+│   ├── contact.css
+│   ├── education.css
+│   ├── experience.css
+│   ├── header.css
+│   ├── home.css
+│   ├── notes.css
+│   ├── projects.css
+│   ├── responsive.css
+│   ├── skills.css
+│   └── testimonials.css
 ├── .gitignore
 ├── index.html
 ├── LICENSE
