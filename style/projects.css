@@ -121,7 +121,8 @@
 
 /* Badge categoria sull'immagine — bottom-left */
 .proj-tag {
-    position: absolute;
+    display: inline-block;
+    color: var(--accent);
     bottom: 1.2rem;
     left: 1.2rem;
     z-index: 2;
@@ -129,7 +130,7 @@
     font-size: 1rem;
     font-weight: 700;
     color: #fff;
-    background: var(--accent);
+    background: rgba(232, 80, 58, 0.1);
     padding: 0.35rem 0.9rem;
     border-radius: 6px;
     width: fit-content;
