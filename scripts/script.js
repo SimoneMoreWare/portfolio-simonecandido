@@ -414,5 +414,46 @@ function setDynamicYear() {
     }
 }
 
+// ===== PROJECT MODAL =====
+
+function openProjectModal(card) {
+    const modal = document.getElementById('projModal');
+    if (!modal) return;
+
+    // Get tag text (use current lang data-* if present)
+    const tagEl = card.querySelector('.proj-tag');
+    const tagText = tagEl
+        ? (tagEl.getAttribute(`data-${currentLang}`) || tagEl.textContent).trim()
+        : '';
+
+    // Get title (use current lang data-* if present)
+    const titleEl = card.querySelector('h3');
+    const titleText = titleEl
+        ? (titleEl.getAttribute(`data-${currentLang}`) || titleEl.textContent).trim()
+        : '';
+
+    // Get description from hidden .proj-desc element
+    const descEl = card.querySelector(`.desc-${currentLang}`);
+    const descText = descEl ? descEl.textContent.trim() : '';
+
+    document.getElementById('projModalTag').textContent = tagText;
+    document.getElementById('projModalTitle').textContent = titleText;
+    document.getElementById('projModalDesc').textContent = descText;
+
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
+
+function closeProjectModal() {
+    const modal = document.getElementById('projModal');
+    if (modal) modal.classList.remove('active');
+    document.body.style.overflow = '';
+}
+
+// Close modal with Escape key
+document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') closeProjectModal();
+});
+
 // ===== BOOTSTRAP: Load all sections then initialize =====
 loadSections();
