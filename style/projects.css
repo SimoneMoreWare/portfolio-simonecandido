@@ -7,7 +7,7 @@
     gap: 2.5rem;
     max-width: 1200px;
     margin: 0 auto;
-    align-items: start;
+    align-items: stretch;
 }
 
 /* ===== CARD ===== */
@@ -117,6 +117,7 @@
     display: flex;
     flex-direction: column;
     gap: 1.2rem;
+    flex: 1; 
 }
 
 /* Badge categoria sull'immagine — bottom-left */
@@ -245,7 +246,7 @@
     gap: 2.5rem;
     max-width: 1200px;
     margin: 2.5rem auto 0;
-    align-items: start;
+    align-items: stretch;
 }
 .project-card.hidden { display: none !important; }
 

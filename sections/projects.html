@@ -27,6 +27,32 @@
 
         <div class="project-card" data-category="research">
             <div class="proj-desc" hidden>
+                <p class="desc-en">Designed and built SL-RFSIM, a modular broker-based architecture that replaces OpenAirInterface's legacy client-server RF Simulator with a ZeroMQ publish/subscribe broker, enabling true multi-UE 5G NR Sidelink mesh networking beyond the original 2-UE limit. Implemented independent Mobility, Propagation (5 3GPP-compliant path-loss models cross-validated against ns-3), and Reception (UWICORE 6,188-curve BLER dataset) modules communicating over ZMQ, plus a Grafana/InfluxDB real-time monitoring stack. Validated end-to-end multi-hop routing over BATMAN-adv on hidden-node and star topologies, and achieved 92.4%–99.1% agreement between the system-level reception model and OAI's internal PHY decoder. Deployed and stress-tested on the SLICES-RI research infrastructure up to 19 simultaneously connected UEs, identifying the software bottlenecks limiting further scalability.</p>
+                <p class="desc-it">Progettato e sviluppato SL-RFSIM, un'architettura modulare basata su broker che sostituisce il simulatore RF client-server legacy di OpenAirInterface con un broker publish/subscribe ZeroMQ, abilitando una vera rete mesh multi-UE 5G NR Sidelink oltre il limite originale di 2 UE. Implementati moduli indipendenti di Mobility, Propagation (5 modelli di path-loss conformi 3GPP validati contro ns-3) e Reception (dataset UWICORE con 6.188 curve BLER), oltre a uno stack di monitoraggio Grafana/InfluxDB in tempo reale. Validato il routing multi-hop end-to-end su BATMAN-adv in topologie hidden-node e a stella, raggiungendo un accordo del 92,4%–99,1% tra il modello di ricezione a livello di sistema e il decoder PHY interno di OAI. Deployato e testato sotto stress sull'infrastruttura di ricerca SLICES-RI fino a 19 UE connessi simultaneamente, identificando i colli di bottiglia software che limitano un'ulteriore scalabilità.</p>
+            </div>
+            <div class="proj-img-wrap">
+                <img src="assets/images/projects/sl-rfsim.png" alt="SL-RFSIM Mesh Architecture" loading="lazy">
+                <div class="proj-img-overlay">
+                    <button class="proj-detail-btn" onclick="openProjectModal(this.closest('.project-card'))"><i class="fas fa-info-circle"></i><span data-en="Learn more" data-it="Scopri di più">Learn more</span></button>
+                </div>
+            </div>
+            <div class="proj-body">
+                <span class="proj-tag" data-en="RESEARCH — EURECOM" data-it="RICERCA — EURECOM">RESEARCH — EURECOM</span>
+                <h3 data-en="SL-RFSIM: Scalable Multi-Hop 5G NR Sidelink Mesh Networking in OpenAirInterface" data-it="SL-RFSIM: Rete Mesh 5G NR Sidelink Multi-Hop Scalabile in OpenAirInterface">SL-RFSIM: Scalable Multi-Hop 5G NR Sidelink Mesh Networking in OpenAirInterface</h3>
+                <p class="proj-snippet" style="-webkit-line-clamp:unset;overflow:visible;display:block;" data-en="Broker-based pub/sub architecture replacing OAI's client-server RFSim, enabling multi-hop 5G NR Sidelink mesh with BATMAN-adv routing and 92%+ system-level validation..." data-it="Architettura pub/sub basata su broker che sostituisce l'RFSim client-server di OAI, abilitando mesh 5G NR Sidelink multi-hop con routing BATMAN-adv e validazione al 92%+...">Broker-based pub/sub architecture replacing OAI's client-server RFSim, enabling multi-hop 5G NR Sidelink mesh with BATMAN-adv routing and 92%+ system-level validation...</p>
+                <div class="tech-tags"><span>OpenAirInterface</span><span>C</span><span>Python</span><span>ZeroMQ</span><span>Docker</span><span>BATMAN-adv</span><span>Grafana</span><span>InfluxDB</span><span>5G NR Sidelink</span><span>3GPP</span><span>SLICES-RI</span></div>
+                <hr class="proj-divider">
+                <div class="proj-links">
+                    <a href="https://youtu.be/h9Ks4-iPtIs" target="_blank"><i class="fab fa-youtube"></i> Full Demo</a>
+                    <a href="https://youtu.be/_NZB98Sjg-s" target="_blank"><i class="fab fa-youtube"></i> Line Topology</a>
+                    <a href="https://youtu.be/M5QfD9jbq68" target="_blank"><i class="fab fa-youtube"></i> Star Topology</a>
+                </div>
+                <p class="proj-private" data-en="Research project at EURECOM (supervisors: Prof. Jérôme Härri, Jin Yan) — manuscript under submission; full technical report available on request." data-it="Progetto di ricerca a EURECOM (relatori: Prof. Jérôme Härri, Jin Yan) — manoscritto in fase di sottomissione; report tecnico completo disponibile su richiesta.">Research project at EURECOM (supervisors: Prof. Jérôme Härri, Jin Yan) — manuscript under submission; full technical report available on request.</p>
+            </div>
+        </div>
+
+        <div class="project-card" data-category="research">
+            <div class="proj-desc" hidden>
                 <p class="desc-en">Developed a Beta-VAE trained exclusively on LoS Channel Impulse Response data from the GEO-5G testbed at EURECOM. The model detects NLoS signals as out-of-distribution anomalies using the TISSI metric, achieving 88.97% accuracy (balanced) and 97.62% (realistic indoor conditions) — surpassing the 85% UWB benchmark. Deployed as a C++ xApp on the FlexRIC Near-RT RIC via LibTorch, processing 4-antenna CIR measurements in real-time (ms latency) with 99.7% NLoS detection on emulator testing.</p>
                 <p class="desc-it">Sviluppato un Beta-VAE addestrato esclusivamente su dati LoS di Channel Impulse Response dal testbed GEO-5G di EURECOM. Il modello rileva segnali NLoS come anomalie out-of-distribution tramite la metrica TISSI, raggiungendo 88.97% di accuratezza (bilanciato) e 97.62% (condizioni indoor realistiche) — superando il benchmark UWB dell'85%. Deployato come xApp C++ sul Near-RT RIC FlexRIC via LibTorch, elaborando misurazioni CIR a 4 antenne in tempo reale (ms di latenza) con 99.7% di rilevamento NLoS nei test con emulatore.</p>
             </div>
